@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package pacman_service;
+
+// The greeting service definition.
+service PlayerConnection {
+    // Sends a greeting
+    rpc GetCoords (GetCoordsRequest) returns (GetCoordsReply) {}
+}
+
+message Coord {
+    int32 x = 1;
+    int32 y = 2;
+}
+
+
+enum DirectionEnum {
+    UP = 0;
+    RIGHT = 1;
+    DOWN = 2;
+    LEFT = 3;
+}
+
+message Direction {
+    DirectionEnum data = 1;
+}
+
+message SinglePlayer {
+    int32 playerID = 1;
+    Coord coords = 2;
+    Direction direction = 3;
+    int32 livesNumber = 4;
+}
+
+// The request message containing the user's name.
+message GetCoordsRequest {
+    Direction direction = 1;
+}
+
+// The response message containing the greetings
+message GetCoordsReply {
+    repeated SinglePlayer players = 1;
+}
