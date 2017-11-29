@@ -12,7 +12,7 @@
 #include <thread>
 
 #include "Player.h"
-#include "service.grpc.pb.h"
+#include "../service.grpc.pb.h"
 
 #include "PlayerConnectionClient.h"
 
@@ -26,7 +26,7 @@ int main() {
     MyCircle.setFillColor(sf::Color::Red);
 
     sf::Texture t;
-    t.loadFromFile("src/pacimg.png");
+    t.loadFromFile("Client/src/pacimg.png");
 
     Player *player = new Player();
     player->sprite.setTexture(t);

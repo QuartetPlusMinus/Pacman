@@ -26,18 +26,15 @@ CPPFLAGS+=$(SFMLFLAGS)
 
 all: pacman pacman_server
 
-pacman: service.pb.o service.grpc.pb.o PlayerConnectionClient.o main.o
+pacman: service.pb.o service.grpc.pb.o Client/PlayerConnectionClient.o Client/main.o
 	$(CXX) $^ $(LDFLAGS) $(SFMLFLAGS) -o $@
 
-pacman_server: service.pb.o service.grpc.pb.o PlayerConnectionServer.o main.o
-        $(CXX) $^ $(LDFLAGS) -o $@
+pacman_server: service.pb.o service.grpc.pb.o Server/PlayerConnectionServer.o Server/main.o
+	$(CXX) $^ $(LDFLAGS) -o $@
 
-
-.PRECIOUS: %.grpc.pb.cc
 %.grpc.pb.cc: %.proto
 	$(PROTOC) -I $(PROTOS_PATH) --grpc_out=. --plugin=protoc-gen-grpc=$(GRPC_CPP_PLUGIN_PATH) $<
 
-.PRECIOUS: %.pb.cc
 %.pb.cc: %.proto
 	$(PROTOC) -I $(PROTOS_PATH) --cpp_out=. $<
 

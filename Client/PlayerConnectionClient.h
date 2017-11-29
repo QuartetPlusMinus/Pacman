@@ -6,7 +6,7 @@
 #define CLIENT_GETCOORDS_H
 
 #include <grpc++/grpc++.h>
-#include "service.grpc.pb.h"
+#include "../service.grpc.pb.h"
 
 using grpc::Channel;
 using grpc::ClientContext;

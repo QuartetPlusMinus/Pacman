@@ -10,7 +10,7 @@
 #include <grpc++/grpc++.h>
 #include <grpc/support/log.h>
 
-#include "service.grpc.pb.h"
+#include "../service.grpc.pb.h"
 #include "GameObjects/Pacman.h"
 
 using grpc::Server;
@@ -21,8 +21,8 @@ using grpc::ServerCompletionQueue;
 using grpc::Status;
 
 using pacman_service::PlayerConnection;
-using pacman_service::StoreDirectionRequest;
-using pacman_service::StoreDirectionReply;
+//using pacman_service::StoreDirectionRequest;
+//using pacman_service::StoreDirectionReply;
 using pacman_service::GetCoordsRequest;
 using pacman_service::GetCoordsReply;
 using pacman_service::SinglePlayer;

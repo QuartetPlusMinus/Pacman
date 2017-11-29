@@ -7,7 +7,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "service.grpc.pb.h"
+#include "../service.grpc.pb.h"
 
 using pacman_service::DirectionEnum;
 using pacman_service::RIGHT;
