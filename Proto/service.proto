@@ -1,0 +1,82 @@
+
+syntax = "proto3";
+
+package pacman_service;
+service PlayerConnection {
+    rpc Connect (ConnectRequest) returns (ConnectReply) {}
+    rpc Start (StartRequest) returns (StartReply) {}
+    rpc Iteration (IterationRequest) returns (IterationReply) {}
+    rpc End (EndRequest) returns (EndReply) {}
+}
+
+message Point {
+    int32 x = 1;
+    int32 y = 2;
+}
+
+enum Direction{
+    UP = 0;
+    RIGHT = 1;
+    DOWN = 2;
+    LEFT = 3;
+}
+
+enum BeingType {
+    PACMAN = 0;
+    GHOST = 1;
+    //BOSS = 2; )
+}
+
+enum BeingStatus {
+    KILLED = 0;
+    ALIVE = 1;
+    DYING = 2;
+}
+
+message BeingInit {
+    BeingType type = 1;
+    string name = 2;
+    Being data = 3;
+}
+
+message Being {
+    int32 id = 1;
+    Point pos = 2;
+    Direction direction = 3;
+    BeingStatus status = 4;
+}
+
+message ConnectRequest {
+    string name = 1;
+}
+
+message ConnectReply {
+    int32 id = 1;
+}
+
+message StartRequest {
+    int32 id = 1;
+}
+
+message StartReply {
+    int32 time = 1;
+    repeated BeingInit being = 2;
+}
+
+message IterationRequest {
+    int32 id = 1;
+    Direction direction = 2;
+}
+
+message IterationReply {
+    int32 health = 1;
+    repeated Being being = 2;
+}
+
+message EndRequest {
+
+}
+
+message EndReply {
+
+}

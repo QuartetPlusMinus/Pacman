@@ -16,7 +16,7 @@ PROTOC = protoc
 GRPC_CPP_PLUGIN = grpc_cpp_plugin
 GRPC_CPP_PLUGIN_PATH ?= `which $(GRPC_CPP_PLUGIN)`
 
-PROTOS_PATH = Protos
+PROTOS_PATH = ../Proto
 
 vpath %.proto $(PROTOS_PATH)
 
@@ -24,14 +24,10 @@ CLRSRC=FALSE
 SFMLFLAGS=-ISFML/include -lsfml-graphics -lsfml-window -lsfml-system
 CPPFLAGS+=$(SFMLFLAGS)
 
-all: pacman pacman_server
+all: pacman
 
-pacman: service.pb.o service.grpc.pb.o PlayerConnectionClient.o main.o
+pacman: service.pb.o service.grpc.pb.o GameLoop.o PlayerConnectionClient.o main.o
 	$(CXX) $^ $(LDFLAGS) $(SFMLFLAGS) -o $@
-
-pacman_server: service.pb.o service.grpc.pb.o PlayerConnectionServer.o main.o
-        $(CXX) $^ $(LDFLAGS) -o $@
-
 
 .PRECIOUS: %.grpc.pb.cc
 %.grpc.pb.cc: %.proto

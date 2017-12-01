@@ -1,32 +1,40 @@
 //
-// Created by viewsharp on 28.11.17.
+// Created by viewsharp on 01.12.17.
 //
 
-#ifndef CLIENT_GETCOORDS_H
-#define CLIENT_GETCOORDS_H
+#ifndef ONENIGHTPACMAN_PLAYERCONNECTIONCLIENT_H
+#define ONENIGHTPACMAN_PLAYERCONNECTIONCLIENT_H
 
+#include <iostream>
+#include <memory>
+#include <string>
 #include <grpc++/grpc++.h>
+#include <cstdlib>
+#include <list>
+#include <chrono>
+
 #include "service.grpc.pb.h"
+#include "Pacman.h"
 
 using grpc::Channel;
 using grpc::ClientContext;
 using grpc::Status;
-
-using pacman_service::PlayerConnection;
-using pacman_service::GetCoordsRequest;
-using pacman_service::GetCoordsReply;
-using pacman_service::SinglePlayer;
+using namespace pacman_service;
+using namespace std;
 
 class PlayerConnectionClient {
 public:
-    explicit PlayerConnectionClient(std::shared_ptr<Channel> channel)
-    : stub_(PlayerConnection::NewStub(channel)) {}
+    PlayerConnectionClient(std::shared_ptr <Channel> channel)
+            : stub_(PlayerConnection::NewStub(channel))
+    {}
 
-    GetCoordsReply GetCoords();
+    ConnectReply *Connect(ConnectRequest &request);
+    StartReply *Start(StartRequest &request);
+    IterationReply *Iteration (IterationRequest &request);
+    EndReply *End(EndRequest &request);
 
 private:
-    std::unique_ptr<PlayerConnection::Stub> stub_;
-
+    unique_ptr <PlayerConnection::Stub> stub_;
 };
 
-#endif //CLIENT_GETCOORDS_H
+#endif //ONENIGHTPACMAN_PLAYERCONNECTIONCLIENT_H
