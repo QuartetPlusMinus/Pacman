@@ -15,7 +15,7 @@ void BaseBeing::init(int id, int x, int y) {
 }
 
 Being *BaseBeing::getBeing() {
-    Being *data;
+    Being *data = new Being();
     data->set_id(this->id());
     data->set_direction(this->direction());
     data->set_status(this->status());

@@ -15,15 +15,19 @@ void GameLoop::loop() {
     id = connectReply->id();
     delete connectReply;
 
-    StartReply *startReply = new StartReply();
+    StartReply *startReply;
     StartRequest startRequest;
     startRequest.set_id(id);
 
     do {
-        delete  startReply;
         startReply = connection->Start(startRequest);
-        usleep(startReply->time());
+        if (startReply->time() != 0) {
+            usleep(startReply->time());
+        }
+        delete  startReply;
     } while (startReply->time() != 0);
+
+    cout << "yepiii" << endl;
 
     beings = new Being *[startReply->being_size()];
     for (int i = 0; i < startReply->being_size(); i++) {
