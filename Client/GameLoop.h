@@ -24,11 +24,21 @@ class GameLoop {
 
 public:
 
-    GameLoop(RenderWindow *window, PlayerConnectionClient *connection, string name):
-    window (window),
-    connection(connection),
-    name(name) {
-        this->window = window;
+    GameLoop(PlayerConnectionClient *connection, string name) :
+            connection(connection),
+            name(name) {
+
+        this->window = new RenderWindow(sf::VideoMode(800, 800), "SFML!");
+
+        sf::CircleShape MyCircle(10);
+        MyCircle.setFillColor(sf::Color::Red);
+
+        sf::Texture pacTexture;
+        pacTexture.loadFromFile("src/pacimg.png");
+
+        sf::Texture ghostTexture;
+        ghostTexture.loadFromFile("src/ghost.png");
+
         this->connection = connection;
         this->name = name;
         loop();

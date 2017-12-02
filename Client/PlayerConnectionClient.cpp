@@ -6,8 +6,8 @@
 
 ConnectReply *PlayerConnectionClient::Connect(ConnectRequest &request) {
     ConnectReply *reply = new ConnectReply();
-    ClientContext context;
-    Status status = stub_->Connect(&context, request, reply);
+    ClientContext *context_ = new ClientContext();
+    Status status = stub_->Connect(context_, request, reply);
     if (status.ok()) {
         return reply;
     } else {
@@ -17,10 +17,11 @@ ConnectReply *PlayerConnectionClient::Connect(ConnectRequest &request) {
     }
 }
 
-StartReply *PlayerConnectionClient::Start(StartRequest &request) {
+StartReply *PlayerConnectionClient::Start(StartRequest &request, int id) {
     StartReply *reply = new StartReply();
-    ClientContext context;
-    Status status = stub_->Start(&context, request, reply);
+    ClientContext *context_ = new ClientContext();
+    context_->AddMetadata("id", to_string(id));
+    Status status = stub_->Start(context_, request, reply);
     if (status.ok()) {
         return reply;
     } else {
@@ -32,8 +33,8 @@ StartReply *PlayerConnectionClient::Start(StartRequest &request) {
 
 IterationReply *PlayerConnectionClient::Iteration(IterationRequest &request) {
     IterationReply *reply = new IterationReply();
-    ClientContext context;
-    Status status = stub_->Iteration(&context, request, reply);
+    ClientContext *context_ = new ClientContext();
+    Status status = stub_->Iteration(context_, request, reply);
     if (status.ok()) {
         return reply;
     } else {
@@ -45,8 +46,8 @@ IterationReply *PlayerConnectionClient::Iteration(IterationRequest &request) {
 
 EndReply *PlayerConnectionClient::End(EndRequest &request) {
     EndReply *reply = new EndReply();
-    ClientContext context;
-    Status status = stub_->End(&context, request, reply);
+    ClientContext *context_ = new ClientContext();
+    Status status = stub_->End(context_, request, reply);
     if (status.ok()) {
         return reply;
     } else {

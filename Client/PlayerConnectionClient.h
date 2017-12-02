@@ -12,6 +12,7 @@
 #include <cstdlib>
 #include <list>
 #include <chrono>
+#include <string>
 
 #include "service.grpc.pb.h"
 #include "Pacman.h"
@@ -24,12 +25,12 @@ using namespace std;
 
 class PlayerConnectionClient {
 public:
-    PlayerConnectionClient(std::shared_ptr <Channel> channel)
-            : stub_(PlayerConnection::NewStub(channel))
+    PlayerConnectionClient(std::shared_ptr <Channel> channel):
+            stub_(PlayerConnection::NewStub(channel))
     {}
 
     ConnectReply *Connect(ConnectRequest &request);
-    StartReply *Start(StartRequest &request);
+    StartReply *Start(StartRequest &request, int id);
     IterationReply *Iteration (IterationRequest &request);
     EndReply *End(EndRequest &request);
 

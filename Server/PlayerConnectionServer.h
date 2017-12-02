@@ -21,6 +21,7 @@
 #include <string>
 #include <grpc++/grpc++.h>
 #include <list>
+#include <map>
 #include <chrono>
 
 #include "service.grpc.pb.h"
