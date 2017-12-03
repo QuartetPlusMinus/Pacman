@@ -12,6 +12,7 @@
 
 #include "PlayerConnectionClient.h"
 #include "service.grpc.pb.h"
+#include "BeingView.h"
 #include "Pacman.h"
 #include "Ghost.h"
 
@@ -54,8 +55,10 @@ private:
 
     void loopBody();
 
-    int id;
-    Being **beings;
+    BeingView **beings;
+    int beingCount;
+
+    string hex;
     string name;
     Direction direction;
     int health;

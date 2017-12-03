@@ -4,27 +4,25 @@
 
 #include "GameLoop.h"
 
-
 void GameLoop::loop() {
 
     ConnectRequest connectRequest;
     ConnectReply *connectReply;
 
     connectRequest.set_name(name);
-    connectReply = connection->Connect(connectRequest); //Connect
 
+    connectReply = connection->Connect(connectRequest);
 
-    id = connectReply->id();
-    cout<<"Connect to server. id = "<<id<<endl;
+    hex = connectReply->hex();
+    cout<<"Connect to server. id_hex = "<<hex<<endl;
 
     delete connectReply;
 
     StartReply *startReply;
     StartRequest startRequest;
-    startRequest.set_id(id);
 
     do {
-        startReply = connection->Start(startRequest, id);
+        startReply = connection->Start(startRequest, hex);
         cout<<"Start: sleep = " << startReply->time() << endl;
         if (startReply->time() != 0) {
             usleep(startReply->time());
@@ -33,12 +31,14 @@ void GameLoop::loop() {
     } while (startReply->time() != 0);
 
 
-    beings = new Being *[startReply->being_size()];
-    for (int i = 0; i < startReply->being_size(); i++) {
+    beings = new BeingView *[startReply->being_size()];
+    beingCount = startReply->being_size();
+    cout<<"bC = " << beingCount << endl;
+
+    for (int i = 0; i < beingCount; i++) {
         BeingInit beingInit = startReply->being(i);
         switch(beingInit.type()) {
             case PACMAN:
-                cout<< beingInit.name() << &beingInit.data()<<endl;
                 beings[i] = new Pacman(beingInit.name(), beingInit.data());
                 break;
             case GHOST:
@@ -47,11 +47,11 @@ void GameLoop::loop() {
         }
     }
     direction = beings[0]->direction();
-    cout << "yepiii 2" << endl;
 
     delete startReply;
     int qwer = 0;
-    while (true) {
+
+    while (window->isOpen()) {
         auto begin = high_resolution_clock::now();
         cout << ++qwer << endl;
         loopBody();
@@ -62,21 +62,43 @@ void GameLoop::loop() {
 }
 
 void GameLoop::loopBody () {
+
+
+    sf::Event event;
+
+    while (window->pollEvent(event)) {
+        if (event.type == sf::Event::Closed) {
+            window->close();
+        }
+    }
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+        direction = UP;
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+        direction = RIGHT;
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+        direction = DOWN;
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+        direction = LEFT;
+    }
+
     IterationReply *reply;
     IterationRequest request;
 
     request.set_direction(direction);
-    request.set_id(id);
+    reply = connection->Iteration(request, hex);
 
-    reply = connection->Iteration(request);
+    window->clear();
 
-    health = reply->health();
-    //cout << "health = " << health << endl;
+    for (int i = 0; i < beingCount; i++) {
 
-    for (int i = 0; i < reply->being_size(); i++) {
-        Being current = reply->being(i);
-        //cout<<"x = " <<current.pos().x() << "; y = " <<current.pos().x()<<endl;
+
+        beings[i]->setData(reply->being(i));
+        window->draw(*beings[i]->getSprite());
+
     }
+
+    window->display();
 
     delete reply;
 }

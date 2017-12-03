@@ -30,8 +30,8 @@ public:
     {}
 
     ConnectReply *Connect(ConnectRequest &request);
-    StartReply *Start(StartRequest &request, int id);
-    IterationReply *Iteration (IterationRequest &request);
+    StartReply *Start(StartRequest &request, string hex);
+    IterationReply *Iteration(IterationRequest &request, string hex);
     EndReply *End(EndRequest &request);
 
 private:

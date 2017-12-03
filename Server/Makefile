@@ -22,7 +22,7 @@ vpath %.proto $(PROTOS_PATH)
 
 all: pacman_server
 
-pacman_server: service.pb.o service.grpc.pb.o BaseBeing.o PlayerConnectionServer.o main.o
+pacman_server: service.pb.o service.grpc.pb.o BaseBeing.o Ghost.o Pacman.o main.o PlayerConnectionServer.o
 	$(CXX) $^ $(LDFLAGS) $(SFMLFLAGS) -o $@
 
 .PRECIOUS: %.grpc.pb.cc

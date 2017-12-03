@@ -5,11 +5,13 @@
 #ifndef ONENIGHTPACMAN_GHOST_H
 #define ONENIGHTPACMAN_GHOST_H
 
-class Ghost: public Being {
+#include "BeingView.h"
+
+class Ghost: public BeingView {
 
 public:
 
-    Ghost(Being data): Being(data) {}
+    Ghost(Being data): BeingView(data, "src/ghost.png") {}
 
 };
 

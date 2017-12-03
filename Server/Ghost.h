@@ -7,12 +7,11 @@
 
 #include "BaseBeing.h"
 
+
 class Ghost: public BaseBeing {
 
 public:
-    Ghost(int i, int x, int y) {
-        this->init(i, x, y);
-    }
+    Ghost(int x, int y): BaseBeing(x,y) {}
 
 private:
 

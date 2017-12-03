@@ -11,13 +11,13 @@ using namespace pacman_service;
 using namespace std;
 
 
-class Player: public BaseBeing {
+class Pacman: public BaseBeing {
 
 public:
 
-    Player (string name): name(name){}
-
-    string name;
+    Pacman (int x, int y): BaseBeing(x, y) {
+        set_health(10);
+    }
 
 private:
 

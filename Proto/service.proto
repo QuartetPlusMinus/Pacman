@@ -40,10 +40,10 @@ message BeingInit {
 }
 
 message Being {
-    int32 id = 1;
-    Point pos = 2;
-    Direction direction = 3;
-    BeingStatus status = 4;
+    Point pos = 1;
+    Direction direction = 2;
+    BeingStatus status = 3;
+    int32 health = 4;
 }
 
 message ConnectRequest {
@@ -51,26 +51,24 @@ message ConnectRequest {
 }
 
 message ConnectReply {
-    int32 id = 1;
+    string hex = 1;
 }
 
 message StartRequest {
-    int32 id = 1;
 }
 
 message StartReply {
     int32 time = 1;
-    repeated BeingInit being = 2;
+    int32 id = 2;
+    repeated BeingInit being = 3;
 }
 
 message IterationRequest {
-    int32 id = 1;
-    Direction direction = 2;
+    Direction direction = 1;
 }
 
 message IterationReply {
-    int32 health = 1;
-    repeated Being being = 2;
+    repeated Being being = 1;
 }
 
 message EndRequest {

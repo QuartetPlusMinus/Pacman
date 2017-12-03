@@ -3,6 +3,7 @@
 //
 
 #include "PlayerConnectionServer.h"
+#include <cstring>
 
 using namespace std;
 using chrono::high_resolution_clock;
@@ -11,57 +12,56 @@ typedef std::chrono::high_resolution_clock Time;
 typedef std::chrono::milliseconds ms;
 typedef std::chrono::duration<float> fsec;
 
-const int GHOST_COUNT = 4;
+template< typename T >
+std::string PlayerConnectionImpl::hex( T i )
+{
+    std::stringstream stream;
+    stream << std::hex << i;
+    return stream.str();
+}
+
+LocClient *PlayerConnectionImpl::clientFromContext(ServerContext *context) {
+    auto hex_str = context->client_metadata().find("hex")->second;
+    char* hex_chars = new char[hex_str.length() + 1];
+    strncpy(hex_chars, hex_str.data(), hex_str.length());
+    hex_chars[hex_str.length()] = '\0';
+    return  clientMap.find(hex_chars)->second;
+}
 
 Status PlayerConnectionImpl::Connect(ServerContext *context, const ConnectRequest *request,
                ConnectReply *reply) {
-    reply->set_id(rand());
-    players.push_back(Player(request->name()));
+
+    auto client = new LocClient(request->name());
+    string hexStr = hex<LocClient *>(client);
+
+    clients.push(client);
+    cout << "pair: " <<hexStr << " , "<< client<< endl;
+    clientMap.insert(pair<string,Client<PLAYER_COUNT, GHOST_COUNT> *>(hexStr, client) );
+    reply->set_hex(hexStr);
+
     cout << request->name() <<": connect to Server" << endl;
+
     return Status::OK;
 }
 
 Status PlayerConnectionImpl::Start(ServerContext *context, const StartRequest *request,
              StartReply *reply) {
-    auto context_map = context->client_metadata();
-    cout << "\nmyMultimap contains:\n";
-    for (auto it = context_map.begin(); it != context_map.end(); ++it)
-    {
-        cout << it->first << " : " << it->second << endl;
-    }
-    if (players.size() < 2) {
-        reply->set_time(1000000);
-        time = Time::now();
-        cout << "please wait second player..." << endl;
-    } else {
-        if (start) {
-            cout << "time 0" <<endl;
-            reply->set_time(0);
+    if (start) {
+        LocClient *client = clientFromContext(context);
 
-            int i = 0;
-            for (auto pIter = players.begin(); pIter != players.end(); ++pIter) {
-                pIter->init(i, 80 * i, 0);
-                BeingInit *data = reply->add_being();
-                data->set_name(pIter->name);
-                //cout << pIter->name << endl;
-                data->set_allocated_data(pIter->getBeing());
-                data->set_type(PACMAN);
-                i++;
-            }
-            for (int i = 0; i < 2; i++) {
-                cout << reply->being(i).name() << endl;
-            }
-            for (int i = 0; i < GHOST_COUNT; i++) {
-                Ghost *ghost = new Ghost(i + players.size(), 400 + 80 * i, 400);
-                ghosts.push_back(*ghost);
-                BeingInit *data = reply->add_being();
-                data->set_allocated_data(ghost->getBeing());
-                data->set_type(GHOST);
-            }
+        reply->set_id(client->getId());
+        reply->set_time(0);
+
+        client->room->getStartReply(reply);
+    } else {
+        if (clients.size() < PLAYER_COUNT) {
+            reply->set_time(1000000);
+            time = Time::now();
         } else {
-            cout << "time not 0" <<endl;
             auto pause = Time::now() - time;
             reply->set_time(int(pause.count()/1000));
+
+            startGame();
             start = true;
         }
     }
@@ -70,20 +70,24 @@ Status PlayerConnectionImpl::Start(ServerContext *context, const StartRequest *r
 
 Status PlayerConnectionImpl::Iteration(ServerContext *context, const IterationRequest *request,
                  IterationReply *reply) {
+    LocClient *client = clientFromContext(context);
 
-    for (auto player: players) {
-        player.step();
-        player.getBeing(reply->add_being());
-    }
-    for (auto ghost: ghosts) {
-        ghost.step();
-        ghost.getBeing(reply->add_being());
-    }
-    reply->set_health(10);
+    client->setEvent(request->direction());
+    client->room->getIterationReply(reply);
+    client->room->step();
     return Status::OK;
 }
 
 Status PlayerConnectionImpl::End(ServerContext *context, const EndRequest *request,
            EndReply *reply) {
     return Status::OK;
+}
+
+void PlayerConnectionImpl::startGame() {
+    auto gameRoom = new GameRoom<PLAYER_COUNT, GHOST_COUNT>();
+    for (int i = 0; i < PLAYER_COUNT; i++) {
+        LocClient* client = clients.front();
+        clients.pop();
+        client->setRoom(gameRoom);
+    }
 }

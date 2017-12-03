@@ -4,16 +4,19 @@
 
 #ifndef ONENIGHTPACMAN_PLAYER_H
 #define ONENIGHTPACMAN_PLAYER_H
-#include "service.grpc.pb.h"
+
+#include "BeingView.h"
 #include <string>
+
 using namespace pacman_service;
 using namespace std;
 
-class Pacman: public Being {
+class Pacman : public BeingView {
 
 public:
 
-    Pacman(string name, Being data) : name(name), Being(data){}
+    Pacman(string name, Being data) : name(name), BeingView(data, "src/pacimg.png") {}
+
     string name;
 
 private:

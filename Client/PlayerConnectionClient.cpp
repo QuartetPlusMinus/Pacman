@@ -17,10 +17,10 @@ ConnectReply *PlayerConnectionClient::Connect(ConnectRequest &request) {
     }
 }
 
-StartReply *PlayerConnectionClient::Start(StartRequest &request, int id) {
+StartReply *PlayerConnectionClient::Start(StartRequest &request, string hex) {
     StartReply *reply = new StartReply();
     ClientContext *context_ = new ClientContext();
-    context_->AddMetadata("id", to_string(id));
+    context_->AddMetadata("hex", hex);
     Status status = stub_->Start(context_, request, reply);
     if (status.ok()) {
         return reply;
@@ -31,9 +31,10 @@ StartReply *PlayerConnectionClient::Start(StartRequest &request, int id) {
     }
 }
 
-IterationReply *PlayerConnectionClient::Iteration(IterationRequest &request) {
+IterationReply *PlayerConnectionClient::Iteration(IterationRequest &request, string hex) {
     IterationReply *reply = new IterationReply();
     ClientContext *context_ = new ClientContext();
+    context_->AddMetadata("hex", hex);
     Status status = stub_->Iteration(context_, request, reply);
     if (status.ok()) {
         return reply;

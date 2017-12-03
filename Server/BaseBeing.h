@@ -4,6 +4,7 @@
 
 #ifndef ONENIGHTPACMAN_BASEBEING_H
 #define ONENIGHTPACMAN_BASEBEING_H
+
 #include "service.grpc.pb.h"
 #include <string>
 
@@ -14,9 +15,15 @@ class BaseBeing: public Being {
 
 public:
 
-    BaseBeing(): speed(1) {}
-
-    void init(int id, int x, int y);
+    BaseBeing(int x, int y):
+            speed(1) {
+        set_direction(RIGHT);
+        set_status(ALIVE);
+        Point *pos = new Point();
+        pos->set_x(x);
+        pos->set_y(y);
+        set_allocated_pos(pos);
+    }
 
     void getBeing(Being *data);
 

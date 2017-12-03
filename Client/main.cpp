@@ -1,3 +1,4 @@
+#include <string>
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
@@ -7,23 +8,34 @@
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
 
-    if (argc < 2) {
-        cout<<"not found player name"<<endl;
-        return -1;
+    string host;
+
+    switch (argc) {
+        case 1:
+            cout << "Error: not found player name" << endl;
+            return -1;
+        case 2:
+            host = "localhost";
+            break;
+        case 3:
+            host = argv[2];
+            break;
+    }
+
+    PlayerConnectionClient *connection;
+
+    try {
+        connection = new PlayerConnectionClient(grpc::CreateChannel(
+                host + ":29563", grpc::InsecureChannelCredentials()));
+
+    } catch (...) {
+        cout << "Error: server not found" << endl;
     }
 
 
-    PlayerConnectionClient connection(grpc::CreateChannel(
-            "localhost:29563", grpc::InsecureChannelCredentials()));
-
-//    ConnectRequest request;
-//    while (true) {
-//        ConnectReply reply = connection.Connect(request);
-//        usleep(200000);
-//    }
-    GameLoop game(&connection, argv[1]);
+    GameLoop game(connection, argv[1]);
 
     return 0;
 }
