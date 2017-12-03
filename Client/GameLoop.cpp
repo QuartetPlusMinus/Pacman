@@ -63,7 +63,6 @@ void GameLoop::loop() {
 
 void GameLoop::loopBody () {
 
-
     sf::Event event;
 
     while (window->pollEvent(event)) {
@@ -72,14 +71,26 @@ void GameLoop::loopBody () {
         }
     }
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-        direction = UP;
-    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-        direction = RIGHT;
-    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-        direction = DOWN;
-    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-        direction = LEFT;
+    if (wasd) {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+            direction = UP;
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+            direction = RIGHT;
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+            direction = DOWN;
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+            direction = LEFT;
+        }
+    } else {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+            direction = UP;
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+            direction = RIGHT;
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+            direction = DOWN;
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+            direction = LEFT;
+        }
     }
 
     IterationReply *reply;
@@ -91,11 +102,8 @@ void GameLoop::loopBody () {
     window->clear();
 
     for (int i = 0; i < beingCount; i++) {
-
-
         beings[i]->setData(reply->being(i));
         window->draw(*beings[i]->getSprite());
-
     }
 
     window->display();

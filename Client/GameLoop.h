@@ -25,9 +25,10 @@ class GameLoop {
 
 public:
 
-    GameLoop(PlayerConnectionClient *connection, string name) :
+    GameLoop(PlayerConnectionClient *connection, string name, bool wasd) :
             connection(connection),
-            name(name) {
+            name(name),
+            wasd(wasd) {
 
         this->window = new RenderWindow(sf::VideoMode(800, 800), "SFML!");
 
@@ -62,6 +63,7 @@ private:
     string name;
     Direction direction;
     int health;
+    bool wasd;
 
 };
 

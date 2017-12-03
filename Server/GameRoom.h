@@ -5,15 +5,22 @@
 #ifndef PACMAN_GAMEROOM_H
 #define PACMAN_GAMEROOM_H
 
+#include <chrono>
+
 #include "service.grpc.pb.h"
 #include "Pacman.h"
 #include "Ghost.h"
 
-template <int PACMAN_COUNT, int GHOST_COUNT>
+using namespace std::chrono;
+
+template<int PACMAN_COUNT, int GHOST_COUNT>
 class GameRoom {
 
 public:
-    GameRoom(): clientInitCount(0) {
+    GameRoom() :
+            clientInitCount(0),
+            stepTime(16666666667),
+            time(steady_clock::now()) {
         for (int i = 0; i < GHOST_COUNT; i++) {
             ghosts[i] = new Ghost(400 + 80 * i, 400);
         }
@@ -22,7 +29,7 @@ public:
         }
     }
 
-    void getStartReply(StartReply * reply) {
+    void getStartReply(StartReply *reply) {
         for (int i = 0; i < PACMAN_COUNT; i++) {
             BeingInit *data = reply->add_being();
             Being *being = new Being();
@@ -39,7 +46,7 @@ public:
         }
     }
 
-    void getIterationReply(IterationReply * reply) {
+    void getIterationReply(IterationReply *reply) {
         for (int i = 0; i < PACMAN_COUNT; i++) {
             pacmans[i]->getBeing(reply->add_being());
         }
@@ -49,11 +56,9 @@ public:
     }
 
     void step() {
-        for (int i = 0; i < PACMAN_COUNT; i++) {
-            pacmans[i]->step();
-        }
-        for (int i = 0; i < GHOST_COUNT; i++) {
-            ghosts[i]->step();
+        if (steady_clock::now() - time > stepTime) {
+            stepBody();
+            time += stepTime;
         }
     }
 
@@ -67,6 +72,17 @@ private:
 
     Pacman *pacmans[PACMAN_COUNT];
     Ghost *ghosts[GHOST_COUNT];
+    steady_clock::time_point time;
+    const nanoseconds stepTime;
+
+    void stepBody() {
+        for (int i = 0; i < PACMAN_COUNT; i++) {
+            pacmans[i]->step();
+        }
+        for (int i = 0; i < GHOST_COUNT; i++) {
+            ghosts[i]->step();
+        }
+    }
 
 };
 

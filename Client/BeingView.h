@@ -6,7 +6,7 @@
 #define PACMAN_BEINGVIEW_H
 
 #include "service.grpc.pb.h"
-#include <SFML/Graphics.hpp>
+#include "SFML/Graphics.hpp"
 #include <string>
 
 using namespace pacman_service;
@@ -24,9 +24,9 @@ public:
         s->setTexture(texture);
     }
 
-    void setData(Being data) {
+    void setData(const Being &data) {
         clear_pos();
-        Point *pos = new Point();
+        auto *pos = new Point();
         pos->set_x(data.pos().x());
         pos->set_y(data.pos().y());
         set_allocated_pos(pos);
