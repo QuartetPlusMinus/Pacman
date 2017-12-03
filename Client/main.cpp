@@ -31,6 +31,5 @@ int main(int argc, char *argv[]) {
     } catch (...) {
         cout << "Error: server not found" << endl;
     }
-
     return 0;
 }
