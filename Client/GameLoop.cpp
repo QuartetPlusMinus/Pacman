@@ -3,6 +3,7 @@
 //
 
 #include "GameLoop.h"
+#include "tile_map.h"
 
 void GameLoop::loop() {
 
@@ -52,16 +53,19 @@ void GameLoop::loop() {
     }
     direction = beings[0]->direction();
 
+    TileMap tMap(startReply, window);
+
     delete startReply;
     int qwer = 0;
 
     while (window->isOpen()) {
-        auto begin = steady_clock::now();
-//        cout << ++qwer << endl;
+        //auto begin = steady_clock::now();
+        cout << ++qwer << endl;
         loopBody();
-        auto pause = chrono::duration_cast<chrono::milliseconds>(steady_clock::now() - begin);
-        if (pause.count() < 16667)
-            usleep(16667 - (unsigned int)pause.count());
+        window->setFramerateLimit(60);
+        //auto pause = chrono::duration_cast<chrono::milliseconds>(steady_clock::now() - begin);
+        //if (pause.count() < 16667)
+          //  usleep(16667 - (unsigned int)pause.count());
     }
 }
 
@@ -101,7 +105,7 @@ void GameLoop::loopBody () {
     reply = connection->Iteration(request, hex);
 
     window->clear();
-
+    // map drawing
     for (int i = 0; i < beingCount; i++) {
         beings[i]->setData(reply->being(i));
         window->draw(*beings[i]->getSprite());

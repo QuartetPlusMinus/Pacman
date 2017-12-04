@@ -18,7 +18,7 @@ public:
 
     BaseBeing(int x, int y):
             speed(1) {
-        set_direction(RIGHT);
+        set_direction(LEFT);
         set_status(ALIVE);
         auto *pos = new Point();
         pos->set_x(x);
@@ -35,6 +35,8 @@ public:
 private:
 
     int speed;
+//    int max_x;
+//    int
 
 };
 

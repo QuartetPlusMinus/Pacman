@@ -31,7 +31,9 @@ void BaseBeing::step() {
     //Point *point = mutable_pos();
     switch (direction()) {
         case UP:
-            point->set_y(pos().y() - speed);
+//            if (pos().y() > speed) {
+                point->set_y(pos().y() - speed);
+//            }
             break;
         case RIGHT:
             point->set_x(pos().x() + speed);
@@ -40,7 +42,9 @@ void BaseBeing::step() {
             point->set_y(pos().y() + speed);
             break;
         case LEFT:
-            point->set_x(pos().x() - speed);
+//            if (pos().x() > speed) {
+                point->set_x(pos().x() - speed);
+//            }
             break;
         default:
             break;

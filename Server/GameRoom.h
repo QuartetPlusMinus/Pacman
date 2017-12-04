@@ -79,6 +79,7 @@ private:
 
     void stepBody() {
         for (int i = 0; i < PACMAN_COUNT; i++) {
+//            pacmans[i]->pos().
             pacmans[i]->step();
         }
         for (int i = 0; i < GHOST_COUNT; i++) {
