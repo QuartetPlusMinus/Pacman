@@ -17,5 +17,4 @@ public:
 private:
 
 };
-
 #endif //ONENIGHTPACMAN_GHOST_H
