@@ -9,9 +9,10 @@
 #include <chrono>
 #include <unistd.h>
 #include <SFML/Graphics.hpp>
+#include <generated/service.pb.h>
 
 #include "PlayerConnectionClient.h"
-#include "service.grpc.pb.h"
+//#include "service.grpc.pb.h"
 #include "BeingView.h"
 #include "Pacman.h"
 #include "Ghost.h"

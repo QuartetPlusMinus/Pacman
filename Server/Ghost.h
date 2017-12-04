@@ -11,7 +11,8 @@
 class Ghost: public BaseBeing {
 
 public:
-    Ghost(int x, int y): BaseBeing(x,y) {}
+    Ghost(int x, int y): BaseBeing(x,y) {
+    }
 
 private:
 

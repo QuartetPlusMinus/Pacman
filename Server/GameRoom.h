@@ -44,7 +44,7 @@ public:
             auto *being = new Being();
             ghosts[i]->getBeing(being);
             data->set_allocated_data(being);
-            data->set_type(PACMAN);
+            data->set_type(GHOST);
         }
     }
 

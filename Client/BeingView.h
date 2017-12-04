@@ -5,9 +5,10 @@
 #ifndef PACMAN_BEINGVIEW_H
 #define PACMAN_BEINGVIEW_H
 
-#include "service.grpc.pb.h"
+//#include "service.grpc.pb.h"
 #include "SFML/Graphics.hpp"
 #include <string>
+#include <generated/service.grpc.pb.h>
 
 using namespace pacman_service;
 using namespace std;
@@ -19,9 +20,9 @@ public:
             Being(data),
             s(new sf::Sprite)
     {
-        sf::Texture texture;
-        texture.loadFromFile(imgPath);
-        s->setTexture(texture);
+        auto texture = new sf::Texture;
+        texture->loadFromFile(imgPath);
+        s->setTexture(*texture);
     }
 
     void setData(const Being &data);

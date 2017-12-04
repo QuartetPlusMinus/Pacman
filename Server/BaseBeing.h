@@ -5,8 +5,9 @@
 #ifndef ONENIGHTPACMAN_BASEBEING_H
 #define ONENIGHTPACMAN_BASEBEING_H
 
-#include "service.grpc.pb.h"
+//#include "service.grpc.pb.h"
 #include <string>
+#include <generated/service.pb.h>
 
 using namespace pacman_service;
 using namespace std;

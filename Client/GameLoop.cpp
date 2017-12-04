@@ -37,8 +37,10 @@ void GameLoop::loop() {
 
     for (int i = 0; i < beingCount; i++) {
         const BeingInit *beingInit = &(startReply->being(i));
+        int ii = 1;
         switch(beingInit->type()) {
             case PACMAN:
+                cout << ii++ << endl;
                 beings[i] = new Pacman(beingInit->name(), beingInit->data());
                 break;
             case GHOST:
@@ -55,7 +57,7 @@ void GameLoop::loop() {
 
     while (window->isOpen()) {
         auto begin = steady_clock::now();
-        cout << ++qwer << endl;
+//        cout << ++qwer << endl;
         loopBody();
         auto pause = chrono::duration_cast<chrono::milliseconds>(steady_clock::now() - begin);
         if (pause.count() < 16667)
