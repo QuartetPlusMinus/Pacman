@@ -61,6 +61,7 @@ message StartReply {
     uint64 time = 1;
     uint32 id = 2;
     repeated BeingInit being = 3;
+    repeated string map = 4;
 }
 
 message IterationRequest {
