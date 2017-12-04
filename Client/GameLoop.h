@@ -16,6 +16,7 @@
 #include "Pacman.h"
 #include "Ghost.h"
 #include "../cmake-build-debug/generated/service.pb.h"
+#include "tile_map.h"
 
 using namespace sf;
 using namespace std;
@@ -70,7 +71,7 @@ private:
     Direction direction;
     bool wasd;
     sf::Event event;
-
+    TileMap *tMap;
 };
 
 #endif //ONENIGHTPACMAN_GAMELOOP_H

@@ -53,7 +53,7 @@ void GameLoop::loop() {
     }
     direction = beings[0]->direction();
 
-    TileMap tMap(startReply, window);
+    tMap = new TileMap(startReply, window);
 
     delete startReply;
     int qwer = 0;
@@ -106,11 +106,14 @@ void GameLoop::loopBody () {
     reply = connection->Iteration(request, hex);
 
     window->clear();
+    window->draw(tMap->map_s);
+
     // map drawing
     for (int i = 0; i < beingCount; i++) {
         beings[i]->setData(reply->being(i));
         window->draw(*beings[i]->getSprite());
     }
+
 
     window->display();
 
