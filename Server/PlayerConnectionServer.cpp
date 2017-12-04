@@ -13,14 +13,17 @@ std::string PlayerConnectionImpl::hex( T i )
     return stream.str();
 }
 
-LocClient *PlayerConnectionImpl::clientFromContext(ServerContext *context) {
+LocClient &PlayerConnectionImpl::clientFromContext(ServerContext *context) {
     auto hex_str = context->client_metadata().find("hex")->second;
+
     auto hex_chars = new char[hex_str.length() + 1];
     strncpy(hex_chars, hex_str.data(), hex_str.length());
     hex_chars[hex_str.length()] = '\0';
+
     auto result = clientMap.find(hex_chars)->second;
     delete hex_chars;
-    return result;
+
+    return *result;
 }
 
 Status PlayerConnectionImpl::Connect(ServerContext *context, const ConnectRequest *request,
@@ -40,15 +43,17 @@ Status PlayerConnectionImpl::Connect(ServerContext *context, const ConnectReques
 
 Status PlayerConnectionImpl::Start(ServerContext *context, const StartRequest *request,
              StartReply *reply) {
-    if (start) {
-        LocClient *client = clientFromContext(context);
 
-        reply->set_id(client->getId());
+    LocClient client = clientFromContext(context);
+
+    if (client.room != nullptr) {
+
+        reply->set_id(client.getId());
         reply->set_time(0);
 
         MapManager::getMap(reply);
 
-        client->room->getStartReply(reply);
+        client.room->getStartReply(reply);
     } else {
         if (clients.size() < PLAYER_COUNT) {
             reply->set_time(1000000);
@@ -57,8 +62,6 @@ Status PlayerConnectionImpl::Start(ServerContext *context, const StartRequest *r
             reply->set_time((google::protobuf::uint64)duration_cast<chrono::milliseconds>(steady_clock::now() - time).count());
 
             startGame();
-
-            start = true;
         }
     }
     return Status::OK;
@@ -66,11 +69,11 @@ Status PlayerConnectionImpl::Start(ServerContext *context, const StartRequest *r
 
 Status PlayerConnectionImpl::Iteration(ServerContext *context, const IterationRequest *request,
                  IterationReply *reply) {
-    LocClient *client = clientFromContext(context);
+    LocClient client = clientFromContext(context);
 
-    client->setEvent(request->direction());
-    client->room->getIterationReply(reply);
-    client->room->step();
+    client.setEvent(request->direction());
+    client.room->getIterationReply(reply);
+    client.room->step();
     return Status::OK;
 }
 

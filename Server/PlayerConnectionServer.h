@@ -38,8 +38,7 @@ class PlayerConnectionImpl : public PlayerConnection::Service {
 public:
 
     explicit PlayerConnectionImpl(const string &memcachedHost) :
-            PlayerConnection::Service(),
-            start(false)//,
+            PlayerConnection::Service()
             /*mcClient(memcachedHost)*/ {}
 
     Status Connect(ServerContext *context, const ConnectRequest *request,
@@ -63,10 +62,9 @@ private:
 
     queue<LocClient *> clients;
     chrono::steady_clock::time_point time;
-    bool start;
     map<string, LocClient *> clientMap;
 
-    LocClient *clientFromContext(ServerContext *context);
+    LocClient &clientFromContext(ServerContext *context);
 
     //memcache::Memcache mcClient;
 

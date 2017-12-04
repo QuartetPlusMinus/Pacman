@@ -13,7 +13,8 @@ class Client {
 
 public:
     explicit Client(const string &name) :
-            id(-1)
+            id(-1),
+            room(nullptr)
     {
         this->name = name;
     }

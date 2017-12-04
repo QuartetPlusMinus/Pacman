@@ -1,10 +1,12 @@
+//
+// Created by viewsharp on 28.11.17.
+//
+
 #include "service.grpc.pb.h"
 #include "PlayerConnectionServer.h"
 
-
 using grpc::Server;
 using grpc::ServerBuilder;
-
 
 int main() {
 
