@@ -12,11 +12,11 @@
 using namespace pacman_service;
 using namespace std;
 
-class BaseBeing: public Being {
+class BaseBeing : public Being {
 
 public:
 
-    BaseBeing(int x, int y):
+    BaseBeing(int x, int y) :
             speed(1) {
         set_direction(RIGHT);
         set_status(ALIVE);

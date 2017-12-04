@@ -12,10 +12,10 @@
 #include <generated/service.pb.h>
 
 #include "PlayerConnectionClient.h"
-//#include "service.grpc.pb.h"
 #include "BeingView.h"
 #include "Pacman.h"
 #include "Ghost.h"
+#include "../cmake-build-debug/generated/service.pb.h"
 
 using namespace sf;
 using namespace std;

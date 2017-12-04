@@ -17,7 +17,7 @@
 #include <iomanip>
 //#include <libmemcached/memcached.hpp>
 
-#include "service.grpc.pb.h"
+#include "generated/service.grpc.pb.h"
 #include "Client.h"
 #include "GameRoom.h"
 

@@ -55,6 +55,7 @@ void GameLoop::loop() {
     delete startReply;
     int qwer = 0;
 
+
     while (window->isOpen()) {
         auto begin = steady_clock::now();
 //        cout << ++qwer << endl;

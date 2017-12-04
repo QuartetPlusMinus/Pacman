@@ -3,6 +3,7 @@
 //
 
 #include "PlayerConnectionServer.h"
+#include "MapManager.h"
 
 template< typename T >
 std::string PlayerConnectionImpl::hex( T i )
@@ -43,6 +44,8 @@ Status PlayerConnectionImpl::Start(ServerContext *context, const StartRequest *r
 
         reply->set_id(client->getId());
         reply->set_time(0);
+
+        MapManager::getMap(reply);
 
         client->room->getStartReply(reply);
     } else {
