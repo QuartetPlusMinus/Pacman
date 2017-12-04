@@ -19,7 +19,7 @@ public:
             speed(1) {
         set_direction(RIGHT);
         set_status(ALIVE);
-        Point *pos = new Point();
+        auto *pos = new Point();
         pos->set_x(x);
         pos->set_y(y);
         set_allocated_pos(pos);
@@ -27,7 +27,7 @@ public:
 
     void getBeing(Being *data);
 
-    Being *getBeing();
+    //Being *getBeing();
 
     void step();
 

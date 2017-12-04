@@ -25,13 +25,8 @@ int main(int argc, char *argv[]) {
             host = argv[2];
     }
 
-    PlayerConnectionClient *connection;
-
     try {
-        connection = new PlayerConnectionClient(grpc::CreateChannel(
-                host + ":29563", grpc::InsecureChannelCredentials()));
-        GameLoop game(connection, argv[1], host == "localhost");
-
+        GameLoop game(host, argv[1], host == "localhost");
     } catch (...) {
         cout << "Error: server not found" << endl;
     }

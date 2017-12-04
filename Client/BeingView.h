@@ -15,7 +15,7 @@ using namespace std;
 class BeingView: public Being {
 
 public:
-    BeingView(Being data, string imgPath):
+    BeingView(const Being &data, const char *imgPath):
             Being(data),
             s(new sf::Sprite)
     {
@@ -24,20 +24,9 @@ public:
         s->setTexture(texture);
     }
 
-    void setData(const Being &data) {
-        clear_pos();
-        auto *pos = new Point();
-        pos->set_x(data.pos().x());
-        pos->set_y(data.pos().y());
-        set_allocated_pos(pos);
-        set_status(data.status());
-        set_direction(data.direction());
-    }
+    void setData(const Being &data);
 
-    sf::Sprite *getSprite() {
-        s->setPosition(pos().x(), pos().y());
-        return s;
-    }
+    sf::Sprite *getSprite();
 
 private:
     sf::Sprite *s;

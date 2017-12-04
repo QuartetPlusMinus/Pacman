@@ -5,9 +5,6 @@
 #ifndef PLAYERCONNECTIONSERVER_H
 #define PLAYERCONNECTIONSERVER_H
 
-//#include "GameRoom.cpp"
-//#include "Client.cpp" // оооочень плохо
-
 #include <iostream>
 #include <memory>
 #include <string>
@@ -18,28 +15,32 @@
 #include <chrono>
 #include <sstream>
 #include <iomanip>
+//#include <libmemcached/memcached.hpp>
 
 #include "service.grpc.pb.h"
 #include "Client.h"
 #include "GameRoom.h"
 
-using grpc::ServerContext;
-using grpc::Status;
 using namespace pacman_service;
 using namespace std;
+
+using grpc::ServerContext;
+using grpc::Status;
+using chrono::steady_clock;
 
 const int GHOST_COUNT = 4;
 const int PLAYER_COUNT = 2;
 
-typedef std::chrono::high_resolution_clock Time;
 typedef Client<PLAYER_COUNT, GHOST_COUNT> LocClient;
 
-class PlayerConnectionImpl: public PlayerConnection::Service {
+class PlayerConnectionImpl : public PlayerConnection::Service {
 
 public:
 
-    PlayerConnectionImpl() : PlayerConnection::Service(), start(false) {
-    }
+    explicit PlayerConnectionImpl(const string &memcachedHost) :
+            PlayerConnection::Service(),
+            start(false)//,
+            /*mcClient(memcachedHost)*/ {}
 
     Status Connect(ServerContext *context, const ConnectRequest *request,
                    ConnectReply *reply) override;
@@ -57,13 +58,18 @@ public:
 
 private:
 
-    template< typename T >
-    std::string hex( T i );
+    template<typename T>
+    std::string hex(T i);
+
     queue<LocClient *> clients;
-    chrono::time_point<std::chrono::_V2::system_clock, std::chrono::duration<long int, std::ratio<1l, 1000000000l> > > time;
+    chrono::steady_clock::time_point time;
     bool start;
     map<string, LocClient *> clientMap;
+
     LocClient *clientFromContext(ServerContext *context);
+
+    //memcache::Memcache mcClient;
+
 };
 
 #endif //PACMAN_GAMEROOM_H

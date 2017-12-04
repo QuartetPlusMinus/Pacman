@@ -36,13 +36,15 @@ void GameLoop::loop() {
     cout<<"bC = " << beingCount << endl;
 
     for (int i = 0; i < beingCount; i++) {
-        BeingInit beingInit = startReply->being(i);
-        switch(beingInit.type()) {
+        const BeingInit *beingInit = &(startReply->being(i));
+        switch(beingInit->type()) {
             case PACMAN:
-                beings[i] = new Pacman(beingInit.name(), beingInit.data());
+                beings[i] = new Pacman(beingInit->name(), beingInit->data());
                 break;
             case GHOST:
-                beings[i] = new Ghost(beingInit.data());
+                beings[i] = new Ghost(beingInit->data());
+                break;
+            default:
                 break;
         }
     }
@@ -52,19 +54,16 @@ void GameLoop::loop() {
     int qwer = 0;
 
     while (window->isOpen()) {
-        auto begin = high_resolution_clock::now();
+        auto begin = steady_clock::now();
         cout << ++qwer << endl;
         loopBody();
-        auto pause = begin - high_resolution_clock::now();
-        if (pause.count() < 16666667)
-            usleep(16667 - pause.count() / 1000);
+        auto pause = chrono::duration_cast<chrono::milliseconds>(steady_clock::now() - begin);
+        if (pause.count() < 16667)
+            usleep(16667 - (unsigned int)pause.count());
     }
 }
 
 void GameLoop::loopBody () {
-
-    sf::Event event;
-
     while (window->pollEvent(event)) {
         if (event.type == sf::Event::Closed) {
             window->close();

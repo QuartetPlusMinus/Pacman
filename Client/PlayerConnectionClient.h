@@ -20,13 +20,15 @@
 using grpc::Channel;
 using grpc::ClientContext;
 using grpc::Status;
-using namespace pacman_service;
+
 using namespace std;
+using namespace pacman_service;
 
 class PlayerConnectionClient {
 public:
-    PlayerConnectionClient(std::shared_ptr <Channel> channel):
-            stub_(PlayerConnection::NewStub(channel))
+    explicit PlayerConnectionClient(const string &host):
+            stub_(PlayerConnection::NewStub(grpc::CreateChannel(
+                    host + ":29563", grpc::InsecureChannelCredentials())))
     {}
 
     ConnectReply *Connect(ConnectRequest &request);

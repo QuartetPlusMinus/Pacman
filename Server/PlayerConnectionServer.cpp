@@ -3,14 +3,6 @@
 //
 
 #include "PlayerConnectionServer.h"
-#include <cstring>
-
-using namespace std;
-using chrono::high_resolution_clock;
-
-typedef std::chrono::high_resolution_clock Time;
-typedef std::chrono::milliseconds ms;
-typedef std::chrono::duration<float> fsec;
 
 template< typename T >
 std::string PlayerConnectionImpl::hex( T i )
@@ -22,7 +14,7 @@ std::string PlayerConnectionImpl::hex( T i )
 
 LocClient *PlayerConnectionImpl::clientFromContext(ServerContext *context) {
     auto hex_str = context->client_metadata().find("hex")->second;
-    char* hex_chars = new char[hex_str.length() + 1];
+    auto hex_chars = new char[hex_str.length() + 1];
     strncpy(hex_chars, hex_str.data(), hex_str.length());
     hex_chars[hex_str.length()] = '\0';
     return  clientMap.find(hex_chars)->second;
@@ -56,12 +48,12 @@ Status PlayerConnectionImpl::Start(ServerContext *context, const StartRequest *r
     } else {
         if (clients.size() < PLAYER_COUNT) {
             reply->set_time(1000000);
-            time = Time::now();
+            time = steady_clock::now();
         } else {
-            auto pause = Time::now() - time;
-            reply->set_time(int(pause.count()/1000));
+            reply->set_time(duration_cast<chrono::milliseconds>(steady_clock::now() - time).count());
 
             startGame();
+
             start = true;
         }
     }
@@ -84,7 +76,10 @@ Status PlayerConnectionImpl::End(ServerContext *context, const EndRequest *reque
 }
 
 void PlayerConnectionImpl::startGame() {
+
+
     auto gameRoom = new GameRoom<PLAYER_COUNT, GHOST_COUNT>();
+
     for (int i = 0; i < PLAYER_COUNT; i++) {
         LocClient* client = clients.front();
         clients.pop();

@@ -19,17 +19,22 @@
 using namespace sf;
 using namespace std;
 using namespace pacman_service;
-using chrono::high_resolution_clock;
+
+using chrono::steady_clock;
 
 class GameLoop {
 
 public:
 
-    GameLoop(PlayerConnectionClient *connection, string name, bool wasd) :
-            connection(connection),
+    GameLoop(const string &host, const string &name, bool wasd) :
+            connection(new PlayerConnectionClient(host)),
             name(name),
-            wasd(wasd) {
-
+            wasd(wasd),
+            beings(nullptr),
+            beingCount(0),
+            direction(RIGHT),
+            event() 
+    {
         this->window = new RenderWindow(sf::VideoMode(800, 800), "SFML!");
 
         sf::CircleShape MyCircle(10);
@@ -62,8 +67,8 @@ private:
     string hex;
     string name;
     Direction direction;
-    int health;
     bool wasd;
+    sf::Event event;
 
 };
 

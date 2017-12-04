@@ -19,8 +19,10 @@ class GameRoom {
 public:
     GameRoom() :
             clientInitCount(0),
-            stepTime(16666666667),
-            time(steady_clock::now()) {
+            stepTime(16666667),
+            time(steady_clock::now()),
+            pacmans(),
+            ghosts() {
         for (int i = 0; i < GHOST_COUNT; i++) {
             ghosts[i] = new Ghost(400 + 80 * i, 400);
         }
@@ -32,14 +34,14 @@ public:
     void getStartReply(StartReply *reply) {
         for (int i = 0; i < PACMAN_COUNT; i++) {
             BeingInit *data = reply->add_being();
-            Being *being = new Being();
+            auto *being = new Being();
             pacmans[i]->getBeing(being);
             data->set_allocated_data(being);
             data->set_type(PACMAN);
         }
         for (int i = 0; i < GHOST_COUNT; i++) {
             BeingInit *data = reply->add_being();
-            Being *being = new Being();
+            auto *being = new Being();
             ghosts[i]->getBeing(being);
             data->set_allocated_data(being);
             data->set_type(PACMAN);
