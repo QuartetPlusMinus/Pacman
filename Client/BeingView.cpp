@@ -15,6 +15,6 @@ void BeingView::setData(const Being &data) {
 }
 
 sf::Sprite *BeingView::getSprite() {
-    s->setPosition(pos().x(), pos().y());
-    return s;
+    sprite->setPosition(pos().x(), pos().y());
+    return sprite;
 }

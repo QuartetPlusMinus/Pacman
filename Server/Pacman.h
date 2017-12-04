@@ -15,7 +15,7 @@ class Pacman: public BaseBeing {
 
 public:
 
-    Pacman (int x, int y): BaseBeing(x, y) {
+    Pacman (unsigned int x, unsigned int y): BaseBeing(x, y) {
         set_health(10);
     }
 

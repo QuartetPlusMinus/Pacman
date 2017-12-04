@@ -18,11 +18,15 @@ class BeingView: public Being {
 public:
     BeingView(const Being &data, const char *imgPath):
             Being(data),
-            s(new sf::Sprite)
+            sprite(new sf::Sprite)
     {
-        auto texture = new sf::Texture;
+        texture = new sf::Texture;
         texture->loadFromFile(imgPath);
-        s->setTexture(*texture);
+        sprite->setTexture(*texture);
+    }
+    ~BeingView() override {
+        delete texture;
+        delete sprite;
     }
 
     void setData(const Being &data);
@@ -30,7 +34,8 @@ public:
     sf::Sprite *getSprite();
 
 private:
-    sf::Sprite *s;
+    sf::Sprite *sprite;
+    sf::Texture *texture;
 
 };
 

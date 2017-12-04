@@ -16,7 +16,7 @@ class BaseBeing : public Being {
 
 public:
 
-    BaseBeing(int x, int y) :
+    BaseBeing(unsigned int x, unsigned int y) :
             speed(1) {
         set_direction(LEFT);
         set_status(ALIVE);
@@ -25,18 +25,18 @@ public:
         pos->set_y(y);
         set_allocated_pos(pos);
     }
+    
+    ~BaseBeing() override {
+        clear_pos();
+    }
 
     void getBeing(Being *data);
-
-    //Being *getBeing();
 
     void step();
 
 private:
 
     int speed;
-//    int max_x;
-//    int
 
 };
 

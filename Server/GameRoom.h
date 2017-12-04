@@ -17,7 +17,7 @@ template<int PACMAN_COUNT, int GHOST_COUNT>
 class GameRoom {
 
 public:
-    GameRoom() :
+    GameRoom():
             clientInitCount(0),
             stepTime(16666667),
             time(steady_clock::now()),
@@ -29,6 +29,11 @@ public:
         for (int i = 0; i < PACMAN_COUNT; i++) {
             pacmans[i] = new Pacman(80 * i, 10);
         }
+    }
+    
+    ~GameRoom() {
+        delete[] ghosts;
+        delete[] pacmans;
     }
 
     void getStartReply(StartReply *reply) {

@@ -13,10 +13,8 @@
 #include <list>
 #include <chrono>
 #include <string>
-//#include <generated/service.pb.h>
 #include <generated/service.grpc.pb.h>
 
-//#include "service.grpc.pb.h"
 #include "Pacman.h"
 
 using grpc::Channel;
@@ -39,6 +37,7 @@ public:
     EndReply *End(EndRequest &request);
 
 private:
+
     unique_ptr <PlayerConnection::Stub> stub_;
 };
 

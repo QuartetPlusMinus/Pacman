@@ -41,7 +41,7 @@ set(GENERATED_PROTOBUF_FILES ${SERVICE_PB_H_FILE} ${SERVICE_PB_CPP_FILE}
 include_directories(${GENERATED_PROTOBUF_PATH})
 link_libraries(grpc++_unsecure grpc gpr ${PROTOBUF_LIBRARY})
 
-set(CLIENT_FILES Client/main.cpp Client/PlayerConnectionClient.cpp Client/GameLoop.cpp Client/Ghost.cpp Client/Pacman.cpp Client/BeingView.cpp Client/tile_map.cpp Client/tile_map.h)
+set(CLIENT_FILES Client/main.cpp Client/PlayerConnectionClient.cpp Client/GameLoop.cpp Client/Ghost.cpp Client/Pacman.cpp Client/BeingView.cpp Client/TileMap.cpp Client/TileMap.h)
 set(SERVER_FILES Server/main.cpp Server/PlayerConnectionServer.cpp Server/BaseBeing.cpp Server/Ghost.cpp Server/Pacman.cpp Server/MapManager.cpp Server/Client.h Server/GameRoom.h )
 
 # Define sources and executable

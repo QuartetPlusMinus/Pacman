@@ -4,17 +4,6 @@
 
 #include "BaseBeing.h"
 
-//Being *BaseBeing::getBeing() {
-//    Being *data = new Being();
-//    data->set_direction(direction());
-//    data->set_status(status());
-//    auto point = new Point;
-//    point->set_x(pos().x());
-//    point->set_y(pos().y());
-//    data->set_allocated_pos(point);
-//    return data;
-//}
-
 void BaseBeing::getBeing(Being *data) {
     data->set_direction(direction());
     data->set_status(status());
@@ -25,15 +14,12 @@ void BaseBeing::getBeing(Being *data) {
 }
 
 void BaseBeing::step() {
-    Point *point = new Point();
+    auto point = new Point();
     point->set_x(pos().x());
     point->set_y(pos().y());
-    //Point *point = mutable_pos();
     switch (direction()) {
         case UP:
-//            if (pos().y() > speed) {
-                point->set_y(pos().y() - speed);
-//            }
+            point->set_y(pos().y() - speed);
             break;
         case RIGHT:
             point->set_x(pos().x() + speed);
@@ -42,13 +28,11 @@ void BaseBeing::step() {
             point->set_y(pos().y() + speed);
             break;
         case LEFT:
-//            if (pos().x() > speed) {
-                point->set_x(pos().x() - speed);
-//            }
+            point->set_x(pos().x() - speed);
             break;
         default:
             break;
     }
-    //clear_pos();
+    clear_pos();
     set_allocated_pos(point);
 }

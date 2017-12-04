@@ -6,7 +6,7 @@
 #define ONENIGHTPACMAN_GAMELOOP_H
 
 #include <string>
-#include <chrono>
+//#include <chrono>
 #include <unistd.h>
 #include <SFML/Graphics.hpp>
 #include <generated/service.pb.h>
@@ -16,13 +16,11 @@
 #include "Pacman.h"
 #include "Ghost.h"
 #include "../cmake-build-debug/generated/service.pb.h"
-#include "tile_map.h"
+#include "TileMap.h"
 
 using namespace sf;
 using namespace std;
 using namespace pacman_service;
-
-using chrono::steady_clock;
 
 class GameLoop {
 
@@ -30,26 +28,15 @@ public:
 
     GameLoop(const string &host, const string &name, bool wasd) :
             connection(new PlayerConnectionClient(host)),
+            window(new RenderWindow(sf::VideoMode(800, 640), "SFML!")),
             name(name),
             wasd(wasd),
             beings(nullptr),
             beingCount(0),
             direction(RIGHT),
-            event() 
+            event(),
+            tMap(nullptr)
     {
-        this->window = new RenderWindow(sf::VideoMode(800, 800), "SFML!");
-
-        sf::CircleShape MyCircle(10);
-        MyCircle.setFillColor(sf::Color::Red);
-
-        sf::Texture pacTexture;
-        pacTexture.loadFromFile("src/pacimg.png");
-
-        sf::Texture ghostTexture;
-        ghostTexture.loadFromFile("src/ghost.png");
-
-        this->connection = connection;
-        this->name = name;
         loop();
     }
 

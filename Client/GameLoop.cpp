@@ -3,7 +3,7 @@
 //
 
 #include "GameLoop.h"
-#include "tile_map.h"
+#include "TileMap.h"
 
 void GameLoop::loop() {
 
@@ -26,7 +26,7 @@ void GameLoop::loop() {
         startReply = connection->Start(startRequest, hex);
         cout<<"Start: sleep = " << startReply->time() << endl;
         if (startReply->time() != 0) {
-            usleep(startReply->time());
+            usleep((useconds_t)startReply->time());
             delete  startReply;
         }
     } while (startReply->time() != 0);
@@ -38,10 +38,8 @@ void GameLoop::loop() {
 
     for (int i = 0; i < beingCount; i++) {
         const BeingInit *beingInit = &(startReply->being(i));
-        int ii = 1;
         switch(beingInit->type()) {
             case PACMAN:
-                cout << ii++ << endl;
                 beings[i] = new Pacman(beingInit->name(), beingInit->data());
                 break;
             case GHOST:
@@ -56,17 +54,12 @@ void GameLoop::loop() {
     tMap = new TileMap(startReply, window);
 
     delete startReply;
-    int qwer = 0;
+    //int qwer = 0;
 
 
     while (window->isOpen()) {
-        //auto begin = steady_clock::now();
-        cout << ++qwer << endl;
         loopBody();
         window->setFramerateLimit(60);
-        //auto pause = chrono::duration_cast<chrono::milliseconds>(steady_clock::now() - begin);
-        //if (pause.count() < 16667)
-          //  usleep(16667 - (unsigned int)pause.count());
     }
 }
 
@@ -106,14 +99,12 @@ void GameLoop::loopBody () {
     reply = connection->Iteration(request, hex);
 
     window->clear();
-    window->draw(tMap->map_s);
+    tMap->draw();
 
-    // map drawing
     for (int i = 0; i < beingCount; i++) {
         beings[i]->setData(reply->being(i));
         window->draw(*beings[i]->getSprite());
     }
-
 
     window->display();
 

@@ -11,7 +11,7 @@ class Ghost: public BeingView {
 
 public:
 
-    Ghost(Being data): BeingView(data, "src/ghost.png") {}
+    explicit Ghost(const Being &data): BeingView(data, "src/ghost.png") {}
 
 };
 

@@ -12,8 +12,11 @@ template <int PACMAN_COUNT, int GHOST_COUNT>
 class Client {
 
 public:
-    Client(string name) :
-            name(name) {}
+    explicit Client(const string &name) :
+            id(-1)
+    {
+        this->name = name;
+    }
 
     void setRoom(GameRoom<PACMAN_COUNT, GHOST_COUNT> *room) {
         this->room = room;
@@ -21,14 +24,15 @@ public:
     }
 
     void setEvent(Direction direction) {
-        cout<<"id = " << id << endl;
         room->setEvent(id, direction);
     }
 
     GameRoom<PACMAN_COUNT, GHOST_COUNT> *room;
 
-    int getId() {
-        return id;
+    unsigned int getId() {
+        if (id == -1)
+            throw -1; // Нужен нормальны эксептион
+        return (unsigned)id;
     }
 
 private:

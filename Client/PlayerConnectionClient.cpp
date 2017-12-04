@@ -6,54 +6,50 @@
 
 ConnectReply *PlayerConnectionClient::Connect(ConnectRequest &request) {
     auto *reply = new ConnectReply();
-    auto *context_ = new ClientContext();
-    Status status = stub_->Connect(context_, request, reply);
-    if (status.ok()) {
-        return reply;
-    } else {
+    ClientContext context;
+    Status status = stub_->Connect(&context, request, reply);
+    if (!status.ok()) {
         std::cout << status.error_code() << ": " << status.error_message()
                   << std::endl;
         throw status.error_code();
     }
+    return reply;
 }
 
 StartReply *PlayerConnectionClient::Start(StartRequest &request, string hex) {
     auto *reply = new StartReply();
-    auto *context_ = new ClientContext();
-    context_->AddMetadata("hex", hex);
-    Status status = stub_->Start(context_, request, reply);
-    if (status.ok()) {
-        return reply;
-    } else {
+    ClientContext context;
+    context.AddMetadata("hex", hex);
+    Status status = stub_->Start(&context, request, reply);
+    if (!status.ok()) {
         std::cout << status.error_code() << ": " << status.error_message()
                   << std::endl;
         throw status.error_code();
     }
+    return reply;
 }
 
 IterationReply *PlayerConnectionClient::Iteration(IterationRequest &request, string hex) {
     auto *reply = new IterationReply();
-    auto *context_ = new ClientContext();
-    context_->AddMetadata("hex", hex);
-    Status status = stub_->Iteration(context_, request, reply);
-    if (status.ok()) {
-        return reply;
-    } else {
+    ClientContext context;
+    context.AddMetadata("hex", hex);
+    Status status = stub_->Iteration(&context, request, reply);
+    if (!status.ok()) {
         std::cout << status.error_code() << ": " << status.error_message()
                   << std::endl;
         throw status.error_code();
     }
+    return reply;
 }
 
 EndReply *PlayerConnectionClient::End(EndRequest &request) {
     auto *reply = new EndReply();
-    auto *context_ = new ClientContext();
-    Status status = stub_->End(context_, request, reply);
-    if (status.ok()) {
-        return reply;
-    } else {
+    ClientContext context;
+    Status status = stub_->End(&context, request, reply);
+    if (!status.ok()) {
         std::cout << status.error_code() << ": " << status.error_message()
                   << std::endl;
         throw status.error_code();
     }
+    return reply;
 }

@@ -18,7 +18,9 @@ LocClient *PlayerConnectionImpl::clientFromContext(ServerContext *context) {
     auto hex_chars = new char[hex_str.length() + 1];
     strncpy(hex_chars, hex_str.data(), hex_str.length());
     hex_chars[hex_str.length()] = '\0';
-    return  clientMap.find(hex_chars)->second;
+    auto result = clientMap.find(hex_chars)->second;
+    delete hex_chars;
+    return result;
 }
 
 Status PlayerConnectionImpl::Connect(ServerContext *context, const ConnectRequest *request,
@@ -28,7 +30,6 @@ Status PlayerConnectionImpl::Connect(ServerContext *context, const ConnectReques
     string hexStr = hex<LocClient *>(client);
 
     clients.push(client);
-    cout << "pair: " <<hexStr << " , "<< client<< endl;
     clientMap.insert(pair<string,Client<PLAYER_COUNT, GHOST_COUNT> *>(hexStr, client) );
     reply->set_hex(hexStr);
 
@@ -53,7 +54,7 @@ Status PlayerConnectionImpl::Start(ServerContext *context, const StartRequest *r
             reply->set_time(1000000);
             time = steady_clock::now();
         } else {
-            reply->set_time(duration_cast<chrono::milliseconds>(steady_clock::now() - time).count());
+            reply->set_time((google::protobuf::uint64)duration_cast<chrono::milliseconds>(steady_clock::now() - time).count());
 
             startGame();
 
