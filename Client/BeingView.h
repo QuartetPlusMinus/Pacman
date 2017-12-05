@@ -16,12 +16,14 @@ using namespace std;
 class BeingView: public Being {
 
 public:
-    BeingView(const Being &data, const char *imgPath):
+    explicit BeingView(const Being &data, int imgX = 0, int imgY = 0):
             Being(data),
+            imgX(imgX),
+            imgY(imgY),
             sprite(new sf::Sprite)
     {
         texture = new sf::Texture;
-        texture->loadFromFile(imgPath);
+        texture->loadFromFile("src/img.png");
         sprite->setTexture(*texture);
     }
     ~BeingView() override {
@@ -36,6 +38,9 @@ public:
 private:
     sf::Sprite *sprite;
     sf::Texture *texture;
+    int imgX;
+    int imgY;
+    bool status;
 
 };
 

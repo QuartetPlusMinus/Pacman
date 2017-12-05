@@ -75,96 +75,34 @@ public:
     }
 
     bool have_collision(BaseBeing *being) {
-        int x_left = being->pos().x();
-        int x_right = x_left + tileSize;
-        int y_top = being->pos().y();
-        int y_bot = y_top + tileSize;
-
+        int y = being->pos().y();
+        int x = being->pos().x();
         switch (being->direction()) {
             case UP:
-                for (int i = 0; i < MapManager::H; i++) {
-                    for (int j = 0; j < MapManager::W; j++) {
-                        if (TileMap[i][j] == 's') {
-                            int x_left_t = (j + 1) * tileSize;
-                            int x_rigt_t = (j + 2) * tileSize;
-                            int y_bot_t = (i + 2) * tileSize;
-                            if ((y_top - being->getSpeed() <= (i + 2) * tileSize) &&
-                                ((x_left >= x_left_t && x_left <= x_rigt_t) ||
-                                 (x_right >= x_left_t && x_right <= x_rigt_t))) {
-                                return true;
-                            }
-                        }
-                    }
-                }
-                if (being->pos().y() - being->getSpeed() > tileSize) {
-                    return false;
-                }
-                return true;
+                y -= being->getSpeed();
                 break;
             case RIGHT:
-                for (int i = 0; i < MapManager::H; i++) {
-                    for (int j = 0; j < MapManager::W; j++) {
-                        if (TileMap[i][j] == 's') {
-                            int x_left_t = (j + 1) * tileSize;
-                            int y_top_t = (i + 1) * tileSize;
-                            int y_bot_t = (i + 2) * tileSize;
-                            if ((x_right + being->getSpeed() >= x_left_t) &&
-                                ((y_top > y_top_t && y_top < y_bot_t) ||
-                                 (y_bot > y_top_t && y_bot < y_bot_t))) {
-                                return true;
-                            }
-                        }
-                    }
-                }
-                if (being->pos().x() + being->getSpeed() < (MapManager::W) * tileSize) {
-                    return false;
-                }
-                return true;
+                x += being->getSpeed();
                 break;
             case DOWN:
-                for (int i = 0; i < MapManager::H; i++) {
-                    for (int j = 0; j < MapManager::W; j++) {
-                        if (TileMap[i][j] == 's') {
-                            int x_left_t = (j + 1) * tileSize;
-                            int x_right_t = (j + 2) * tileSize;
-                            int y_top_t = (i + 1) * tileSize;
-                            if ((y_bot + being->getSpeed() >= y_top_t) &&
-                                ((x_left > x_left_t && x_left < x_right_t) ||
-                                 (x_right > x_left_t && x_right < x_right_t))) {
-                                return true;
-                            }
-                        }
-                    }
-                }
-                if (being->pos().y() + being->getSpeed() < (MapManager::H) * tileSize) {
-                    return false;
-                }
-                return true;
+                y += being->getSpeed();
                 break;
             case LEFT:
-                for (int i = 0; i < MapManager::H; i++) {
-                    for (int j = 0; j < MapManager::W; j++) {
-                        if (TileMap[i][j] == 's') {
-                            int x_right_t = (j + 2) * tileSize;
-                            int y_top_t = (i + 1) * tileSize;
-                            int y_bot_t = (i + 2) * tileSize;
-                            if ((x_left - being->getSpeed() <= x_right_t) &&
-                                ((y_top > y_top_t && y_top < y_bot_t) ||
-                                 (y_bot > y_top_t && y_bot < y_bot_t))) {
-                                return true;
-                            }
-                        }
-                    }
-                }
-                if (being->pos().x() - being->getSpeed() > tileSize) {
-                    return false;
-                };
-                return true;
+                x -= being->getSpeed();
                 break;
             default:
-                return true;
                 break;
         }
+        int i = x / 32;
+        int j = y / 32;
+        if (j >= MapManager::H || i >= MapManager::W || j <= 0 || i <= 0 )
+            return  true;
+        if (!(y % 32) && (being->direction() == LEFT || being->direction() == RIGHT))
+            return (TileMap[j-1][i-1] == 's' || TileMap[j-1][i] == 's');
+        if (!(x % 32) && (being->direction() == UP || being->direction() == DOWN))
+            return (TileMap[j-1][i-1] == 's' || TileMap[j][i-1] == 's');
+        return (TileMap[j-1][i-1] == 's' || TileMap[j][i-1] == 's' || TileMap[j-1][i] == 's' || TileMap[j][i] == 's');
+
     }
 
     int clientInitCount;
@@ -180,6 +118,7 @@ private:
         for (int i = 0; i < PACMAN_COUNT; i++) {
             if (!have_collision(pacmans[i])) {
                 pacmans[i]->step();
+                cout << "x= " << pacmans[i]->pos().x() << " y= "<< pacmans[i]->pos().y() << endl;
             }
         }
         for (int i = 0; i < GHOST_COUNT; i++) {

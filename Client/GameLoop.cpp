@@ -106,6 +106,8 @@ void GameLoop::loopBody () {
         window->draw(*beings[i]->getSprite());
     }
 
+
+
     window->display();
 
     delete reply;

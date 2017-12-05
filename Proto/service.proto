@@ -15,10 +15,10 @@ message Point {
 }
 
 enum Direction{
-    UP = 0;
-    RIGHT = 1;
-    DOWN = 2;
-    LEFT = 3;
+    RIGHT = 0;
+    DOWN = 1;
+    LEFT = 2;
+    UP = 3;
 }
 
 enum BeingType {

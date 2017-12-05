@@ -16,7 +16,7 @@ class Pacman : public BeingView {
 public:
 
     Pacman(const string &name, const Being &data):
-            BeingView(data, "src/pacimg.png") {
+            BeingView(data, 320, 0){
         this->name = name;
     }
 
