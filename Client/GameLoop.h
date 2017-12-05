@@ -29,14 +29,15 @@ public:
     GameLoop(const string &host, const string &name, bool wasd) :
             connection(new PlayerConnectionClient(host)),
             window(new RenderWindow(sf::VideoMode(800, 640), "SFML!")),
-            name(name),
             wasd(wasd),
             beings(nullptr),
             beingCount(0),
             direction(RIGHT),
             event(),
-            tMap(nullptr)
+            tMap(nullptr),
+            id(-1)
     {
+        this->name = name;
         loop();
     }
 
@@ -59,6 +60,8 @@ private:
     bool wasd;
     sf::Event event;
     TileMap *tMap;
+    
+    int id;
 };
 
 #endif //ONENIGHTPACMAN_GAMELOOP_H

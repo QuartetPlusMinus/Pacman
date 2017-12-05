@@ -15,9 +15,19 @@ class Pacman: public BaseBeing {
 
 public:
 
-    Pacman (unsigned int x, unsigned int y): BaseBeing(x, y) {
+    Pacman (unsigned int x, unsigned int y):
+            BaseBeing(x, y),
+            tryCount(0),
+            newDirection(this->direction()){
         set_health(10);
     }
+
+//    void tryStep();
+
+    void setNewDirection();
+
+    int tryCount;
+    Direction newDirection;
 
 private:
 

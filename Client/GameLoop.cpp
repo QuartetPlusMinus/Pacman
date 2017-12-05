@@ -49,13 +49,12 @@ void GameLoop::loop() {
                 break;
         }
     }
-    direction = beings[0]->direction();
+    id = startReply->id();
+    direction = beings[id]->direction();
 
     tMap = new TileMap(startReply, window);
 
     delete startReply;
-    //int qwer = 0;
-
 
     while (window->isOpen()) {
         loopBody();
@@ -97,6 +96,8 @@ void GameLoop::loopBody () {
 
     request.set_direction(direction);
     reply = connection->Iteration(request, hex);
+    
+    direction = reply->being(id).direction();
 
     window->clear();
     tMap->draw();
@@ -105,9 +106,7 @@ void GameLoop::loopBody () {
         beings[i]->setData(reply->being(i));
         window->draw(*beings[i]->getSprite());
     }
-
-
-
+    
     window->display();
 
     delete reply;

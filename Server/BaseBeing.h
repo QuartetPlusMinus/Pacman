@@ -20,19 +20,14 @@ public:
             speed(1) {
         set_direction(RIGHT);
         set_status(ALIVE);
-        auto *pos = new Point();
-        pos->set_x(x);
-        pos->set_y(y);
-        set_allocated_pos(pos);
-    }
-    
-    ~BaseBeing() override {
-        clear_pos();
+        mutable_pos()->set_x(x);
+        mutable_pos()->set_y(y);
     }
 
     void getBeing(Being *data);
 
     void step();
+
     int getSpeed() {
         return speed;
     }

@@ -24,11 +24,11 @@ public:
             time(steady_clock::now()),
             pacmans(),
             ghosts() {
-        for (int i = 0; i < GHOST_COUNT; i++) {
-            ghosts[i] = new Ghost(400 + 32 * i, 400);
+        for (unsigned int i = 0; i < GHOST_COUNT; i++) {
+            ghosts[i] = new Ghost(320 + 32 * i, 416);
         }
-        for (int i = 0; i < PACMAN_COUNT; i++) {
-            pacmans[i] = new Pacman(64 * i + 66, 97);
+        for (unsigned int i = 0; i < PACMAN_COUNT; i++) {
+            pacmans[i] = new Pacman(32 + 64 * i, 96);
         }
     }
 
@@ -70,38 +70,53 @@ public:
         }
     }
 
-    void setEvent(int id, Direction direction) {
-        pacmans[id]->set_direction(direction);
+    void setEvent(int id, const Direction &direction) {
+        //pacmans[id]->set_direction(direction);
+        if (pacmans[id]->direction() != direction) {
+                    pacmans[id]->newDirection = direction;
+                    pacmans[id]->tryCount = 32;
+            }
     }
 
     bool have_collision(BaseBeing *being) {
+        return have_collision(being, being->direction());
+    }
+
+    bool have_collision(BaseBeing *being, const Direction &direction) {
+
         int y = being->pos().y();
         int x = being->pos().x();
-        switch (being->direction()) {
+        int i = x / 32 - 1;
+        int j = y / 32 - 1;
+        switch (direction) {
             case UP:
-                y -= being->getSpeed();
-                break;
+                if ((j == 0 && x % 32 == 0) || x % 32 != 0)
+                    return true;
+                if (y % 32 !=0)
+                    return false;
+                return (TileMap[j-1][i] == 's');
             case RIGHT:
-                x += being->getSpeed();
-                break;
+                if ((i == MapManager::W - 1 && y % 32 == 0) || y % 32 != 0)
+                    return true;
+                if (x % 32 !=0)
+                    return false;
+                return (TileMap[j][i+1] == 's');
             case DOWN:
-                y += being->getSpeed();
-                break;
+                if ((j == MapManager::H - 1 && x % 32 == 0) || x % 32 != 0)
+                    return true;
+                if (y % 32 !=0)
+                    return false;
+                return  (TileMap[j+1][i] == 's');
             case LEFT:
-                x -= being->getSpeed();
-                break;
+                if ((i == 0 && y % 32 == 0) || y % 32 != 0)
+                    return true;
+                if (x % 32 !=0)
+                    return false;
+                return (TileMap[j][i-1] == 's');
             default:
                 break;
         }
-        int i = x / 32;
-        int j = y / 32;
-        if (j >= MapManager::H || i >= MapManager::W || j <= 0 || i <= 0 )
-            return  true;
-        if (!(y % 32) && (being->direction() == LEFT || being->direction() == RIGHT))
-            return (TileMap[j-1][i-1] == 's' || TileMap[j-1][i] == 's');
-        if (!(x % 32) && (being->direction() == UP || being->direction() == DOWN))
-            return (TileMap[j-1][i-1] == 's' || TileMap[j][i-1] == 's');
-        return (TileMap[j-1][i-1] == 's' || TileMap[j][i-1] == 's' || TileMap[j-1][i] == 's' || TileMap[j][i] == 's');
+        return true;
 
     }
 
@@ -116,6 +131,15 @@ private:
 
     void stepBody() {
         for (int i = 0; i < PACMAN_COUNT; i++) {
+            if (pacmans[i]->tryCount) {
+                if (!have_collision(pacmans[i], pacmans[i]->newDirection)) {
+                    pacmans[i]->setNewDirection();
+                }
+                else {
+                    pacmans[i]->tryCount--;
+                }
+            }
+
             if (!have_collision(pacmans[i])) {
                 pacmans[i]->step();
                 cout << "x= " << pacmans[i]->pos().x() << " y= "<< pacmans[i]->pos().y() << endl;
