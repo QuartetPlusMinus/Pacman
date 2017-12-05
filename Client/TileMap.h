@@ -50,6 +50,18 @@ public:
                     case 's':
                         back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 17, 32 * 3, 32, 32));
                         break;
+                    case 'T':
+                        back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 3, 32 * 5, 32, 32));
+                        break;
+                    case 't':
+                        back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32*5, 32*5, 32, 32));
+                        break;
+                    case 'B':
+                        back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 3, 32 * 7, 32, 32));
+                        break;
+                    case 'b':
+                        back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 5, 32 * 7, 32, 32));
+                        break;
                     default:
                         break;
                 }

@@ -18,7 +18,7 @@ public:
 
     BaseBeing(unsigned int x, unsigned int y) :
             speed(1) {
-        set_direction(LEFT);
+        set_direction(RIGHT);
         set_status(ALIVE);
         auto *pos = new Point();
         pos->set_x(x);
@@ -33,7 +33,9 @@ public:
     void getBeing(Being *data);
 
     void step();
-
+    int getSpeed() {
+        return speed;
+    }
 private:
 
     int speed;
