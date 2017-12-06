@@ -90,7 +90,9 @@ public:
         int j = y / 32 - 1;
         switch (direction) {
             case UP:
-                if ((j == 0 && x % 32 == 0) || x % 32 != 0)
+                if (y == 32)
+                    return  true;
+                if ((j < 0 && x % 32 == 0) || x % 32 != 0)
                     return true;
                 if (y % 32 !=0)
                     return false;
@@ -108,7 +110,9 @@ public:
                     return false;
                 return  (TileMap[j+1][i] == 's');
             case LEFT:
-                if ((i == 0 && y % 32 == 0) || y % 32 != 0)
+                if (x == 32)
+                    return  true;
+                if ((i < 0 && y % 32 == 0) || y % 32 != 0)
                     return true;
                 if (x % 32 !=0)
                     return false;

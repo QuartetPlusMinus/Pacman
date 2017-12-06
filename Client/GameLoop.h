@@ -26,10 +26,8 @@ class GameLoop {
 
 public:
 
-    GameLoop(const string &host, const string &name, bool wasd) :
-            connection(new PlayerConnectionClient(host)),
-            window(new RenderWindow(sf::VideoMode(800, 640), "SFML!")),
-            wasd(wasd),
+//    GameLoop(const string &host, const string &name, bool wasd) :
+    explicit GameLoop() :
             beings(nullptr),
             beingCount(0),
             direction(RIGHT),
@@ -37,7 +35,21 @@ public:
             tMap(nullptr),
             id(-1)
     {
-        this->name = name;
+        cout << "Enter IP ..." << endl;
+        string host = "";
+        cin >> host;
+        if (host == "localhost") {
+            wasd = true;
+        }
+        else {
+            wasd = false;
+        }
+        string playerName;
+        cout << "Enter player name ..." << endl;
+        cin >> playerName;
+        this->name = playerName;
+        connection = new PlayerConnectionClient(host);
+
         loop();
     }
 
@@ -60,7 +72,7 @@ private:
     bool wasd;
     sf::Event event;
     TileMap *tMap;
-    
+    Health *health;
     int id;
 };
 

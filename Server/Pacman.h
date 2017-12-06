@@ -19,10 +19,18 @@ public:
             BaseBeing(x, y),
             tryCount(0),
             newDirection(this->direction()){
-        set_health(10);
+        set_health(4);
     }
 
 //    void tryStep();
+
+    void getBeing(Being *data) override {
+        data->set_health(health());
+        data->set_direction(direction());
+        data->set_status(status());
+        data->mutable_pos()->set_x(pos().x());
+        data->mutable_pos()->set_y(pos().y());
+    }
 
     void setNewDirection();
 

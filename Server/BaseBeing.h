@@ -24,9 +24,12 @@ public:
         mutable_pos()->set_y(y);
     }
 
-    void getBeing(Being *data);
+    virtual void getBeing(Being *data);
 
     void step();
+    int setSpeed(int sp) {
+        speed = sp;
+    }
 
     int getSpeed() {
         return speed;

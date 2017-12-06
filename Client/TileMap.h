@@ -67,6 +67,10 @@ public:
                 }
             }
         }
+//        sf::Image healthInfo;
+//        healthInfo.loadFromFile("src/y_health.png");
+////        healthInfo.createMaskFromColor(sf::Color::Black);
+//        back.copy(healthInfo, 130,608);
 
         texture.loadFromImage(back);
 

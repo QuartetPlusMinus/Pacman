@@ -4,8 +4,10 @@
 
 #include "GameLoop.h"
 #include "TileMap.h"
+#include "Pacman.h"
 
 void GameLoop::loop() {
+//    window->clear(sf::Color::Yellow);
 
     ConnectRequest connectRequest;
     ConnectReply *connectReply;
@@ -21,7 +23,7 @@ void GameLoop::loop() {
 
     StartReply *startReply;
     StartRequest startRequest;
-
+//    window->clear(sf::Color::Yellow);
     do {
         startReply = connection->Start(startRequest, hex);
         cout<<"Start: sleep = " << startReply->time() << endl;
@@ -30,7 +32,7 @@ void GameLoop::loop() {
             delete  startReply;
         }
     } while (startReply->time() != 0);
-
+    window = new RenderWindow(sf::VideoMode(800, 640), "SFML!");
 
     beings = new BeingView *[startReply->being_size()];
     beingCount = startReply->being_size();
@@ -41,6 +43,7 @@ void GameLoop::loop() {
         switch(beingInit->type()) {
             case PACMAN:
                 beings[i] = new Pacman(beingInit->name(), beingInit->data());
+                cout << "Health" << beings[i]->health() << endl;
                 break;
             case GHOST:
                 beings[i] = new Ghost(beingInit->data());
@@ -52,9 +55,12 @@ void GameLoop::loop() {
     id = startReply->id();
     direction = beings[id]->direction();
 
+
     tMap = new TileMap(startReply, window);
 
     delete startReply;
+
+    health = new Health();
 
     while (window->isOpen()) {
         loopBody();
@@ -106,7 +112,20 @@ void GameLoop::loopBody () {
         beings[i]->setData(reply->being(i));
         window->draw(*beings[i]->getSprite());
     }
-    
+
+    // draw player health
+    for (int i = 0; i < beings[id]->health(); ++i) {
+        window->draw(*health->getSprite());
+        health->setPos(health->getImgX() + 32, health->getImgY());
+    }
+    health->setPos(800 - 32, health->getImgY());
+    // draw friend health
+    for (int i = 0; i < beings[1 - id]->health(); ++i) {
+        window->draw(*health->getSprite());
+        health->setPos(health->getImgX() - 32, health->getImgY());
+    }
+    health->setPos(0, health->getImgY());
+
     window->display();
 
     delete reply;
