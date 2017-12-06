@@ -14,14 +14,15 @@ std::string PlayerConnectionImpl::hex( T i )
 }
 
 LocClient &PlayerConnectionImpl::clientFromContext(ServerContext *context) {
+    // Exception if hex will not be found in context
     auto hex_str = context->client_metadata().find("hex")->second;
 
     auto hex_chars = new char[hex_str.length() + 1];
-    strncpy(hex_chars, hex_str.data(), hex_str.length());
+    strncpy(hex_chars, hex_str.data(), hex_str.length()); // strncpy is deprecated: use snprintf (in C, string in C++)
     hex_chars[hex_str.length()] = '\0';
 
-    auto result = clientMap.find(hex_chars)->second;
-    delete hex_chars;
+    auto result = clientMap.find(hex_chars)->second; // exception id session will not be found
+    delete hex_chars; // mem leak if prev line throghs an exception
 
     return *result;
 }

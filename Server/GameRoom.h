@@ -25,7 +25,7 @@ public:
             pacmans(),
             ghosts() {
         for (unsigned int i = 0; i < GHOST_COUNT; i++) {
-            ghosts[i] = new Ghost(320 + 32 * i, 416);
+            ghosts[i] = new Ghost(320 + 32 * i, 416, PACMAN_COUNT);
         }
         for (unsigned int i = 0; i < PACMAN_COUNT; i++) {
             pacmans[i] = new Pacman(32 + 64 * i, 96);
@@ -73,9 +73,39 @@ public:
     void setEvent(int id, const Direction &direction) {
         //pacmans[id]->set_direction(direction);
         if (pacmans[id]->direction() != direction) {
-                    pacmans[id]->newDirection = direction;
-                    pacmans[id]->tryCount = 32;
-            }
+            pacmans[id]->newDirection = direction;
+            pacmans[id]->tryCount = 32;
+        }
+    }
+
+    char nextBlock(BaseBeing *being) {
+        return nextBlock(being, being->direction());
+    }
+
+    char nextBlock(BaseBeing *being, const Direction &direction) {
+        int i = being->pos().x() / 32 - 1;
+        int j = being->pos().y() / 32 - 1;
+        //if (i < 0 && j < 0)
+        switch (direction) {
+            case UP:
+                if (j == 0)
+                    return 's';
+                return TileMap[j - 1][i];
+            case RIGHT:
+                if (i == MapManager::W - 1)
+                    return 's';
+                return TileMap[j][i + 1];
+            case DOWN:
+                if (j == MapManager::H - 1)
+                    return 's';
+                return TileMap[j + 1][i];
+            case LEFT:
+                if (i == 0)
+                    return 's';
+                return TileMap[j][i - 1];
+            default:
+                return 0;
+        }
     }
 
     bool have_collision(BaseBeing *being) {
@@ -86,37 +116,14 @@ public:
 
         int y = being->pos().y();
         int x = being->pos().x();
-        int i = x / 32 - 1;
-        int j = y / 32 - 1;
-        switch (direction) {
-            case UP:
-                if ((j == 0 && x % 32 == 0) || x % 32 != 0)
-                    return true;
-                if (y % 32 !=0)
-                    return false;
-                return (TileMap[j-1][i] == 's');
-            case RIGHT:
-                if ((i == MapManager::W - 1 && y % 32 == 0) || y % 32 != 0)
-                    return true;
-                if (x % 32 !=0)
-                    return false;
-                return (TileMap[j][i+1] == 's');
-            case DOWN:
-                if ((j == MapManager::H - 1 && x % 32 == 0) || x % 32 != 0)
-                    return true;
-                if (y % 32 !=0)
-                    return false;
-                return  (TileMap[j+1][i] == 's');
-            case LEFT:
-                if ((i == 0 && y % 32 == 0) || y % 32 != 0)
-                    return true;
-                if (x % 32 !=0)
-                    return false;
-                return (TileMap[j][i-1] == 's');
-            default:
-                break;
-        }
-        return true;
+        if (x % 32 == 0 && y % 32 == 0)
+            return nextBlock(being, direction) == 's';
+        if ((direction == UP || direction == DOWN) && (x % 32))
+            return true;
+        if ((direction == LEFT || direction == RIGHT) && (y % 32))
+            return true;
+        //return nextBlock(being, direction) == 's';
+        return false;
 
     }
 
@@ -134,21 +141,36 @@ private:
             if (pacmans[i]->tryCount) {
                 if (!have_collision(pacmans[i], pacmans[i]->newDirection)) {
                     pacmans[i]->setNewDirection();
-                }
-                else {
+                } else {
                     pacmans[i]->tryCount--;
                 }
             }
 
             if (!have_collision(pacmans[i])) {
                 pacmans[i]->step();
-                cout << "x= " << pacmans[i]->pos().x() << " y= "<< pacmans[i]->pos().y() << endl;
             }
         }
+
         for (int i = 0; i < GHOST_COUNT; i++) {
+            if (ghosts[i]->pos().x() % 32 == 0 && ghosts[i]->pos().y() % 32 == 0)
+                if (nextBlock(ghosts[i], ghosts[i]->left()) != 's' ||
+                    nextBlock(ghosts[i], ghosts[i]->right()) != 's' ||
+                    nextBlock(ghosts[i]) == 's') {
+                    cout << "id = " << i;
+                    ghosts[i]->changeDirection(
+                            nextBlock(ghosts[i], RIGHT) != 's',
+                            nextBlock(ghosts[i], DOWN) != 's',
+                            nextBlock(ghosts[i], LEFT) != 's',
+                            nextBlock(ghosts[i], UP) != 's'
+                    );
+                    cout << endl;
+                }
+
             if (!have_collision(ghosts[i])) {
                 ghosts[i]->step();
             }
+
+//            cout << "x= " << pacmans[i]->pos().x() << " y= " << pacmans[i]->pos().y() << endl;
         }
     }
 

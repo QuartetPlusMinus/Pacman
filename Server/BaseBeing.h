@@ -26,7 +26,7 @@ public:
 
     void getBeing(Being *data);
 
-    void step();
+    virtual void step();
 
     int getSpeed() {
         return speed;

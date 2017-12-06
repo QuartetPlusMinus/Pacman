@@ -38,7 +38,7 @@ class MapManager {
 
 public:
 
-    static const int H = 18;
+    static const int H = 18; // XXX: no hardcode
     static const int W = 23;
 
     static void getMap(StartReply *reply) {

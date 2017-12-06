@@ -29,7 +29,7 @@ void GameLoop::loop() {
             usleep((useconds_t)startReply->time());
             delete  startReply;
         }
-    } while (startReply->time() != 0);
+    } while (startReply->time() != 0); // CORE
 
 
     beings = new BeingView *[startReply->being_size()];
@@ -39,6 +39,7 @@ void GameLoop::loop() {
     for (int i = 0; i < beingCount; i++) {
         const BeingInit *beingInit = &(startReply->being(i));
         switch(beingInit->type()) {
+		// Read about `Factory` pattern
             case PACMAN:
                 beings[i] = new Pacman(beingInit->name(), beingInit->data());
                 break;
