@@ -26,29 +26,34 @@ class GameLoop {
 
 public:
 
-//    GameLoop(const string &host, const string &name, bool wasd) :
-    explicit GameLoop() :
+    GameLoop(const string &host, const string &name, bool wasd) :
+//    explicit GameLoop() :
             beings(nullptr),
             beingCount(0),
             direction(RIGHT),
             event(),
             tMap(nullptr),
-            id(-1)
+            id(-1),
+            wasd(wasd)
     {
-        cout << "Enter IP ..." << endl;
-        string host = "";
-        cin >> host;
-        if (host == "localhost") {
-            wasd = true;
-        }
-        else {
-            wasd = false;
-        }
-        string playerName;
-        cout << "Enter player name ..." << endl;
-        cin >> playerName;
-        this->name = playerName;
+//        cout << "Enter IP ..." << endl;
+//        string host = "";
+//        cin >> host;
+//        if (host == "localhost") {
+//            wasd = true;
+//        }
+//        else {
+//            wasd = false;
+//        }
+//        string playerName;
+//        cout << "Enter player name ..." << endl;
+//        cin >> playerName;
+        this->name = name;
         connection = new PlayerConnectionClient(host);
+        if (!font.loadFromFile("src/pacfont.regular.ttf"))
+        {
+            cout << "Can't load fonts" << endl;
+        }
 
         loop();
     }
@@ -73,6 +78,8 @@ private:
     sf::Event event;
     TileMap *tMap;
     Health *health;
+    sf::Text **nicknames;
+    sf::Font font;
     int id;
 };
 

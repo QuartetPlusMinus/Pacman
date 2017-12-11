@@ -61,11 +61,25 @@ void GameLoop::loop() {
     delete startReply;
 
     health = new Health();
+    nicknames = new Text *[2];
+    for (int i =0; i < 2; i++) {
+        nicknames[i] = new Text();
+        nicknames[i]->setFont(font);
+        nicknames[i]->setString(((Pacman*)beings[i])->name);
+        nicknames[i]->setCharacterSize(24);
+        nicknames[i]->setColor(sf::Color::Cyan);
+
+    }
 
     while (window->isOpen()) {
         loopBody();
         window->setFramerateLimit(60);
     }
+    delete[] health;
+    for (int i =0; i < 2; i++) {
+        delete[] nicknames[i];
+    }
+    delete[] nicknames;
 }
 
 void GameLoop::loopBody () {
@@ -112,9 +126,21 @@ void GameLoop::loopBody () {
         beings[i]->setData(reply->being(i));
         window->draw(*beings[i]->getSprite());
     }
+//    // Declare and load a font
+//    sf::Font font;
+//    font.loadFromFile("src/pacfont.regular.ttf");
+//// Create a text
+//    sf::Text text("hello", font);
+//    text.setCharacterSize(30);
+//    text.setStyle(sf::Text::Bold);
+//    text.setColor(sf::Color::Red);
+//// Draw it
+//    window->draw(text);
 
-    // draw player health
+    // draw player health and nickname
     for (int i = 0; i < beings[id]->health(); ++i) {
+        nicknames[i]->setPosition(beings[id]->pos().x(),beings[id]->pos().y());
+        window->draw(*nicknames[id]);
         window->draw(*health->getSprite());
         health->setPos(health->getImgX() + 32, health->getImgY());
     }

@@ -16,7 +16,16 @@ void BeingView::setData(const Being &data) {
 
 sf::Sprite *BeingView::getSprite() {
 //    if (status) {
-        sprite->setTextureRect(sf::IntRect(imgX, imgY + (direction()*32), 32, 32));
+    static int count = 0;
+    if (count < 90) {
+        sprite->setTextureRect(sf::IntRect(imgX, imgY + (direction() * 32), 32, 32));
+    } else if (count < 180) {
+        sprite->setTextureRect(sf::IntRect(imgX + 32, imgY + (direction() * 32), 32, 32));
+    } else {
+        count = 0;
+    }
+    count++;
+
 //    } else {
 //        sprite->setTextureRect(sf::IntRect(imgX+32, imgY, 32, 32));
 //    }
