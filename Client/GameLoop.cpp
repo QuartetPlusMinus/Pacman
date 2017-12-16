@@ -3,7 +3,6 @@
 //
 
 #include "GameLoop.h"
-#include "TileMap.h"
 
 void GameLoop::loop() {
 
@@ -31,6 +30,7 @@ void GameLoop::loop() {
         }
     } while (startReply->time() != 0); // CORE
 
+    window = new RenderWindow(sf::VideoMode(800, 640), "SFML!");
 
     beings = new BeingView *[startReply->being_size()];
     beingCount = startReply->being_size();
@@ -42,6 +42,7 @@ void GameLoop::loop() {
 		// Read about `Factory` pattern
             case PACMAN:
                 beings[i] = new Pacman(beingInit->name(), beingInit->data());
+                cout << "Health" << beings[i]->health() << endl;
                 break;
             case GHOST:
                 beings[i] = new Ghost(beingInit->data());
@@ -57,10 +58,29 @@ void GameLoop::loop() {
 
     delete startReply;
 
+    health = new Health();
+    nicknames = new Text *[2];
+
+    for (int i =0; i < 2; i++) {
+        nicknames[i] = new Text();
+        nicknames[i]->setFont(font);
+        nicknames[i]->setString(((Pacman*)beings[i])->name);
+        nicknames[i]->setCharacterSize(24);
+        nicknames[i]->setColor(sf::Color::Red);
+
+        cout << (((Pacman*)beings[i])->name) << endl;
+    }
+
     while (window->isOpen()) {
         loopBody();
         window->setFramerateLimit(60);
     }
+
+    delete[] health;
+    for (int i =0; i < 2; i++) {
+        delete[] nicknames[i];
+    }
+    delete[] nicknames;
 }
 
 void GameLoop::loopBody () {
@@ -107,6 +127,21 @@ void GameLoop::loopBody () {
         beings[i]->setData(reply->being(i));
         window->draw(*beings[i]->getSprite());
     }
+
+    // draw player health and nickname
+    for (int i = 0; i < beings[id]->health(); ++i) {
+        nicknames[i]->setPosition(beings[id]->pos().x(),beings[id]->pos().y());
+        window->draw(*nicknames[id]);
+        window->draw(*health->getSprite());
+        health->setPos(health->getImgX() + 32, health->getImgY());
+    }
+    health->setPos(800 - 32, health->getImgY());
+    // draw friend health
+    for (int i = 0; i < beings[1 - id]->health(); ++i) {
+        window->draw(*health->getSprite());
+        health->setPos(health->getImgX() - 32, health->getImgY());
+    }
+    health->setPos(0, health->getImgY());
     
     window->display();
 

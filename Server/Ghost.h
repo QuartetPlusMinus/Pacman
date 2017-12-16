@@ -19,14 +19,8 @@ public:
             playerCount(playerCount),
             playerId(random() % playerCount) {}
 
-    void changeDirection(bool dirs, ...) {
-        bool* iter = &dirs;
-        bool frontB = iter[(int)front()];
-        bool rightB = iter[(int)right()];
-        bool backB  = iter[(int)back()];
-        bool leftB  = iter[(int)left()];
+    void changeDirection(bool &frontB, bool &rightB, bool &backB, bool &leftB) {
         if (!(frontB || rightB || leftB )) {
-            cout << " back";
             set_direction(back());
             return;
         }

@@ -6,16 +6,16 @@
 #define ONENIGHTPACMAN_GAMELOOP_H
 
 #include <string>
-//#include <chrono>
 #include <unistd.h>
 #include <SFML/Graphics.hpp>
 #include <generated/service.pb.h>
 
 #include "PlayerConnectionClient.h"
+
 #include "BeingView.h"
+#include "TileMap.h"
 #include "Pacman.h"
 #include "Ghost.h"
-#include "../cmake-build-debug/generated/service.pb.h"
 #include "TileMap.h"
 
 using namespace sf;
@@ -38,6 +38,12 @@ public:
             id(-1)
     {
         this->name = name;
+        connection = new PlayerConnectionClient(host);
+        if (!font.loadFromFile("src/pacfont.regular.ttf"))
+        {
+            cout << "Can't load fonts" << endl;
+        }
+
         loop();
     }
 
@@ -60,7 +66,9 @@ private:
     bool wasd;
     sf::Event event;
     TileMap *tMap;
-    
+    Health *health;
+    sf::Text **nicknames;
+    sf::Font font;
     int id;
 };
 

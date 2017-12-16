@@ -5,8 +5,7 @@
 #ifndef PACMAN_BEINGVIEW_H
 #define PACMAN_BEINGVIEW_H
 
-//#include "service.grpc.pb.h"
-#include "SFML/Graphics.hpp"
+#include <SFML/Graphics.hpp>
 #include <string>
 #include <generated/service.grpc.pb.h>
 
@@ -40,7 +39,7 @@ private:
     sf::Texture *texture;
     int imgX;
     int imgY;
-    bool status;
+ //   bool status;
 
 };
 

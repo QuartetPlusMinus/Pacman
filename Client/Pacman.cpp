@@ -3,3 +3,9 @@
 //
 
 #include "Pacman.h"
+
+sf::Sprite *Health::getSprite() {
+
+    sprite->setPosition(imgX, imgY);
+    return sprite;
+}

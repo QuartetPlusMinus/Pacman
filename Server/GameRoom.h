@@ -6,6 +6,7 @@
 #define PACMAN_GAMEROOM_H
 
 #include <chrono>
+#include <vector>
 
 #include "service.grpc.pb.h"
 #include "Pacman.h"
@@ -43,6 +44,7 @@ public:
             auto *being = new Being();
             pacmans[i]->getBeing(being);
             data->set_allocated_data(being);
+
             data->set_type(PACMAN);
         }
         for (int i = 0; i < GHOST_COUNT; i++) {
@@ -135,6 +137,8 @@ private:
     Ghost *ghosts[GHOST_COUNT];
     steady_clock::time_point time;
     const nanoseconds stepTime;
+    vector<Point> coins;
+
 
     void stepBody() {
         for (int i = 0; i < PACMAN_COUNT; i++) {
@@ -152,19 +156,15 @@ private:
         }
 
         for (int i = 0; i < GHOST_COUNT; i++) {
-            if (ghosts[i]->pos().x() % 32 == 0 && ghosts[i]->pos().y() % 32 == 0)
-                if (nextBlock(ghosts[i], ghosts[i]->left()) != 's' ||
-                    nextBlock(ghosts[i], ghosts[i]->right()) != 's' ||
-                    nextBlock(ghosts[i]) == 's') {
-                    cout << "id = " << i;
-                    ghosts[i]->changeDirection(
-                            nextBlock(ghosts[i], RIGHT) != 's',
-                            nextBlock(ghosts[i], DOWN) != 's',
-                            nextBlock(ghosts[i], LEFT) != 's',
-                            nextBlock(ghosts[i], UP) != 's'
-                    );
-                    cout << endl;
+            if (ghosts[i]->pos().x() % 32 == 0 && ghosts[i]->pos().y() % 32 == 0) {
+                bool front = nextBlock(ghosts[i]) != 's';
+                bool right = nextBlock(ghosts[i], ghosts[i]->right()) != 's';
+                bool back = nextBlock(ghosts[i], ghosts[i]->back()) != 's';
+                bool left = nextBlock(ghosts[i], ghosts[i]->left()) != 's';
+                if (left || right || !front) {
+                    ghosts[i]->changeDirection(front, right, back, left);
                 }
+            }
 
             if (!have_collision(ghosts[i])) {
                 ghosts[i]->step();
