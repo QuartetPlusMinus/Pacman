@@ -37,13 +37,14 @@ void GameLoop::loop() {
     beings = new BeingView *[startReply->being_size()];
     beingCount = startReply->being_size();
     cout<<"bC = " << beingCount << endl;
-
     for (int i = 0; i < beingCount; i++) {
         const BeingInit *beingInit = &(startReply->being(i));
         switch(beingInit->type()) {
             case PACMAN:
                 beings[i] = new Pacman(beingInit->name(), beingInit->data());
                 cout << "Health" << beings[i]->health() << endl;
+                cout << (((Pacman*)beings[i])->name) << endl;
+
                 break;
             case GHOST:
                 beings[i] = new Ghost(beingInit->data());
@@ -65,9 +66,10 @@ void GameLoop::loop() {
     for (int i =0; i < 2; i++) {
         nicknames[i] = new Text();
         nicknames[i]->setFont(font);
-        nicknames[i]->setString(((Pacman*)beings[i])->name);
-        nicknames[i]->setCharacterSize(24);
-        nicknames[i]->setColor(sf::Color::Cyan);
+        nicknames[i]->setString("lol");
+        nicknames[i]->setCharacterSize(14);
+        nicknames[i]->setColor(sf::Color::Red);
+        cout << (((Pacman*)beings[i])->name) << endl;
 
     }
 
@@ -139,7 +141,7 @@ void GameLoop::loopBody () {
 
     // draw player health and nickname
     for (int i = 0; i < beings[id]->health(); ++i) {
-        nicknames[i]->setPosition(beings[id]->pos().x(),beings[id]->pos().y());
+        nicknames[i]->setPosition(beings[id]->pos().x()-16,beings[id]->pos().y()-16);
         window->draw(*nicknames[id]);
         window->draw(*health->getSprite());
         health->setPos(health->getImgX() + 32, health->getImgY());
