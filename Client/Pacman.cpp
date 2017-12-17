@@ -17,8 +17,9 @@ void Pacman::draw(sf::RenderWindow *window) {
         window->draw(*healthView.getSprite());
         healthView.setPos(healthView.getImgX() + 32, healthView.getImgY());
     }
-    healthView.setPos(800 - 32, healthView.getImgY());
-    
+//    healthView.setPos(800 - 32, healthView.getImgY());
+    healthView.setPos(0, healthView.getImgY());
+
     nickname.setPosition(pos().x(), pos().y());
     window->draw(nickname);
 }
