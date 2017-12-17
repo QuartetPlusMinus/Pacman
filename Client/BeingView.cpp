@@ -26,3 +26,8 @@ sf::Sprite *BeingView::getSprite() {
     sprite->setPosition(pos().x(), pos().y());
     return sprite;
 }
+
+
+void BeingView::draw(sf::RenderWindow *window) {
+    window->draw(*getSprite());
+}

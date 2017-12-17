@@ -28,47 +28,41 @@ public:
 
     GameLoop(const string &host, const string &name, bool wasd) :
             connection(new PlayerConnectionClient(host)),
-            window(new RenderWindow(sf::VideoMode(800, 640), "SFML!")),
             wasd(wasd),
             beings(nullptr),
             beingCount(0),
             direction(RIGHT),
             event(),
-            tMap(nullptr),
             id(-1)
     {
-        this->name = name;
         connection = new PlayerConnectionClient(host);
         if (!font.loadFromFile("src/pacfont.regular.ttf"))
         {
             cout << "Can't load fonts" << endl;
+            throw "Ilnur";
         }
 
-        loop();
+        loop(name);
     }
 
 
 private:
 
-    RenderWindow *window;
     PlayerConnectionClient *connection;
 
-    void loop();
+    void loop(string name);
 
-    void loopBody();
+    void loopBody(RenderWindow &window);
 
     BeingView **beings;
     int beingCount;
 
     string hex;
-    string name;
     Direction direction;
     bool wasd;
-    sf::Event event;
-    TileMap *tMap;
-    Health *health;
-    sf::Text **nicknames;
-    sf::Font font;
+    Event event;
+
+    Font font;
     int id;
 };
 

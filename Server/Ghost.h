@@ -14,10 +14,17 @@ using namespace std;
 class Ghost: public BaseBeing {
 
 public:
-    Ghost(unsigned int x, unsigned int y, int playerCount):
+
+    explicit Ghost(unsigned int x = 0, unsigned int y = 0, int playerCount = 0):
             BaseBeing(x,y),
-            playerCount(playerCount),
-            playerId(random() % playerCount) {}
+            playerCount(playerCount) {
+        if (playerCount != 0) {
+            playerId = random() % playerCount;
+        }
+        else {
+                playerId = -1;
+        };
+    }
 
     void changeDirection(bool &frontB, bool &rightB, bool &backB, bool &leftB) {
         if (!(frontB || rightB || leftB )) {

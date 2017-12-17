@@ -31,14 +31,15 @@ public:
     }
 
     void setData(const Being &data);
-
-    sf::Sprite *getSprite();
+    
+    virtual void draw(sf::RenderWindow *window);
 
 private:
     sf::Sprite *sprite;
     sf::Texture *texture;
     int imgX;
     int imgY;
+    sf::Sprite *getSprite();
  //   bool status;
 
 };

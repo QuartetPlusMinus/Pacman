@@ -4,27 +4,13 @@
 
 #ifndef ONENIGHTPACMAN_PLAYER_H
 #define ONENIGHTPACMAN_PLAYER_H
+#define SFML_STATIC
 
 #include "BeingView.h"
 #include <string>
 
 using namespace pacman_service;
 using namespace std;
-
-class Pacman : public BeingView {
-
-public:
-
-    Pacman(const string &name, const Being &data):
-            BeingView(data, 320, 0){
-        this->name = name;
-    }
-
-    string name;
-
-private:
-
-};
 
 class Health {
 
@@ -64,6 +50,30 @@ private:
     sf::Texture *texture;
     int imgX;
     int imgY;
+};
+
+class Pacman : public BeingView {
+
+public:
+
+    Pacman(const string &name, const Being &data, sf::Font &nameFont):
+            BeingView(data, 320, 0){
+        this->name = name;
+        nickname.setFont(nameFont);
+        nickname.setString(name);
+        nickname.setCharacterSize(14);
+        nickname.setColor(sf::Color::Red);
+//        nickname.setFillColor(sf::Color::Red);
+    }
+
+    void draw(sf::RenderWindow *window) final;
+
+    string name;
+    sf::Text nickname;
+    Health healthView;
+
+private:
+
 };
 
 #endif //ONENIGHTPACMAN_PLAYER_H

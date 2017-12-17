@@ -5,9 +5,9 @@
 #include "TileMap.h"
 
 TileMap::TileMap(StartReply *reply, sf::RenderWindow *window) :
-window(window),
-height(HEIGHT_MAP + 2),
-width(WIDTH_MAP + 2) {
+        window(window),
+        height(HEIGHT_MAP + 2),
+        width(WIDTH_MAP + 2) {
 
     sf::Image mapImage;
     mapImage.loadFromFile("src/map.png");
@@ -16,8 +16,8 @@ width(WIDTH_MAP + 2) {
     back.create(800, 640);
 
     for (unsigned int i = 0; i < width; i++) {
-        back.copy(mapImage, 32*i, 0, sf::IntRect(32, 64, 32, 32));
-        back.copy(mapImage, 32*i, 32 * (height-1), sf::IntRect(32, 64, 32, 32));
+        back.copy(mapImage, 32 * i, 0, sf::IntRect(32, 64, 32, 32));
+        back.copy(mapImage, 32 * i, 32 * (height - 1), sf::IntRect(32, 64, 32, 32));
     }
 
     for (unsigned int i = 0; i < height; i++) {
@@ -40,15 +40,13 @@ width(WIDTH_MAP + 2) {
                 back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 3, 32 * 7, 32, 32));
             } else if (i == height - 2 && j == width - 2) {
                 back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 5, 32 * 7, 32, 32));
-            }
-            else if (i == height - 2) { //bottom
+            } else if (i == height - 2) { //bottom
                 back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 4, 32 * 7, 32, 32));
             } else if (j == 1) {
                 back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 3, 32 * 6, 32, 32));
             } else if (j == width - 2) {
                 back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 5, 32 * 6, 32, 32));
-            }
-            else {
+            } else {
 
 
                 switch (map_str[j - 1]) {

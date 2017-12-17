@@ -1,4 +1,4 @@
+/home/viewsharp/GitHub/Pacman/CMakeFiles/rebuild_cache.dir
 /home/viewsharp/GitHub/Pacman/CMakeFiles/edit_cache.dir
 /home/viewsharp/GitHub/Pacman/CMakeFiles/pacman_server.dir
-/home/viewsharp/GitHub/Pacman/CMakeFiles/rebuild_cache.dir
 /home/viewsharp/GitHub/Pacman/CMakeFiles/pacman.dir

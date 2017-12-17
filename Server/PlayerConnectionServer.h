@@ -31,7 +31,7 @@ using chrono::steady_clock;
 const int GHOST_COUNT = 4;
 const int PLAYER_COUNT = 2;
 
-typedef Client<PLAYER_COUNT, GHOST_COUNT> LocClient;
+typedef Client<GHOST_COUNT> LocClient;
 
 class PlayerConnectionImpl : public PlayerConnection::Service {
 

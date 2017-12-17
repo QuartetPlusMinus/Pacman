@@ -3,7 +3,6 @@
 //
 
 #include "PlayerConnectionServer.h"
-#include "MapManager.h"
 
 template< typename T >
 std::string PlayerConnectionImpl::hex( T i )
@@ -14,15 +13,19 @@ std::string PlayerConnectionImpl::hex( T i )
 }
 
 LocClient &PlayerConnectionImpl::clientFromContext(ServerContext *context) {
-    // Exception if hex will not be found in context
-    auto hex_str = context->client_metadata().find("hex")->second;
+    auto str_ref = context->client_metadata().find("hex")->second;
 
-    auto hex_chars = new char[hex_str.length() + 1];
-    strncpy(hex_chars, hex_str.data(), hex_str.length()); // strncpy is deprecated: use snprintf (in C, string in C++)
-    hex_chars[hex_str.length()] = '\0';
+    if (str_ref.data() == nullptr)
+        throw "pasha-1";
 
-    auto result = clientMap.find(hex_chars)->second; // exception id session will not be found
-    delete hex_chars; // mem leak if prev line throghs an exception
+    string hex = str_ref.data();
+
+    hex = hex.substr(0, str_ref.length()); // lenght != size
+
+    auto result = clientMap.find(hex)->second;
+
+    if (str_ref.data() == nullptr)
+        throw "pasha-2";
 
     return *result;
 }
@@ -34,7 +37,7 @@ Status PlayerConnectionImpl::Connect(ServerContext *context, const ConnectReques
     string hexStr = hex<LocClient *>(client);
 
     clients.push(client);
-    clientMap.insert(pair<string,Client<PLAYER_COUNT, GHOST_COUNT> *>(hexStr, client) );
+    clientMap.insert(pair<string,Client<GHOST_COUNT> *>(hexStr, client) );
     reply->set_hex(hexStr);
 
     cout << request->name() <<": connect to Server" << endl;
@@ -45,7 +48,12 @@ Status PlayerConnectionImpl::Connect(ServerContext *context, const ConnectReques
 Status PlayerConnectionImpl::Start(ServerContext *context, const StartRequest *request,
              StartReply *reply) {
 
-    LocClient client = clientFromContext(context);
+    LocClient client;
+    try {
+        client = clientFromContext(context);
+    } catch(...) {
+        return Status::CANCELLED;
+    }
 
     if (client.room != nullptr) {
 
@@ -70,11 +78,17 @@ Status PlayerConnectionImpl::Start(ServerContext *context, const StartRequest *r
 
 Status PlayerConnectionImpl::Iteration(ServerContext *context, const IterationRequest *request,
                  IterationReply *reply) {
-    LocClient client = clientFromContext(context);
+    LocClient client;
+
+    try {
+        client = clientFromContext(context);
+    } catch (...) {
+        return Status::CANCELLED;
+    }
 
     client.setEvent(request->direction());
-    client.room->getIterationReply(reply);
     client.room->step();
+    client.room->getIterationReply(reply);
     return Status::OK;
 }
 
@@ -85,12 +99,15 @@ Status PlayerConnectionImpl::End(ServerContext *context, const EndRequest *reque
 
 void PlayerConnectionImpl::startGame() {
 
-
-    auto gameRoom = new GameRoom<PLAYER_COUNT, GHOST_COUNT>();
+    auto gameRoom = new GameRoom<GHOST_COUNT>();
 
     for (int i = 0; i < PLAYER_COUNT; i++) {
         LocClient* client = clients.front();
-        clients.pop();
+
+        gameRoom->addPlayer(client->name);
         client->setRoom(gameRoom);
+        clients.pop();
     }
+
+    gameRoom->start();
 }

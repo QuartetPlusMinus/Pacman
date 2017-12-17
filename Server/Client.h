@@ -8,18 +8,22 @@
 #include "service.grpc.pb.h"
 #include "GameRoom.h"
 
-template <int PACMAN_COUNT, int GHOST_COUNT>
+template<int GHOST_COUNT>
 class Client {
 
 public:
-    explicit Client(const string &name) :
+    Client() :
+            name(""),
             id(-1),
-            room(nullptr)
-    {
+            room(nullptr) {}
+
+    explicit Client(const string &name, int id = -1) :
+            id(id),
+            room(nullptr) {
         this->name = name;
     }
 
-    void setRoom(GameRoom<PACMAN_COUNT, GHOST_COUNT> *room) {
+    void setRoom(GameRoom<GHOST_COUNT> *room) {
         this->room = room;
         id = room->clientInitCount++;
     }
@@ -28,17 +32,17 @@ public:
         room->setEvent(id, direction);
     }
 
-    GameRoom<PACMAN_COUNT, GHOST_COUNT> *room;
+    GameRoom<GHOST_COUNT> *room;
 
     unsigned int getId() {
         if (id == -1)
             throw -1; // Нужен нормальны эксептион
-        return (unsigned)id;
+        return (unsigned) id;
     }
+    string name;
 
 private:
     int id;
-    string name;
 
 };
 

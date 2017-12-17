@@ -24,7 +24,7 @@ public:
         mutable_pos()->set_y(y);
     }
 
-    void getBeing(Being *data);
+    virtual void getBeing(Being *data);
 
     virtual void step();
 
