@@ -95,7 +95,7 @@ void GameLoop::loopBody (RenderWindow &window) {
     reply = connection->Iteration(request, hex);
     
     direction = reply->being(id).direction();
-
+    ((Pacman*)beings[id])->setSide(1);
 
     for (int i = 0; i < beingCount; i++) {
         beings[i]->setData(reply->being(i));
@@ -103,7 +103,8 @@ void GameLoop::loopBody (RenderWindow &window) {
     }
 
     for (int i = 0; i < reply->coins_size(); i++) {
-        //drawCoin(reply->coins(i));
+        coin.setPosition(reply->coins(i).x() * 32 + 40 ,reply->coins(i).y() * 32 + 40);
+        window.draw(coin);
     }
 
     delete reply;

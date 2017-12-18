@@ -30,48 +30,28 @@ TileMap::TileMap(StartReply *reply, sf::RenderWindow *window) :
     for (unsigned int i = 1; i < height - 1; i++) {
         map_str = reply->map(i - 1);
         for (unsigned int j = 1; j < width - 1; j++) {
-            if (i == 1 && j == 1) { // top left corner
-                back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 3, 32 * 5, 32, 32));
-            } else if (i == 1 && j == width - 2) { //top right corner
-                back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 5, 32 * 5, 32, 32));
-            } else if (i == 1) { //top
-                back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 4, 32 * 5, 32, 32));
-            } else if (i == height - 2 && j == 1) { // bottom left corner
-                back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 3, 32 * 7, 32, 32));
-            } else if (i == height - 2 && j == width - 2) {
-                back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 5, 32 * 7, 32, 32));
-            } else if (i == height - 2) { //bottom
-                back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 4, 32 * 7, 32, 32));
-            } else if (j == 1) {
-                back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 3, 32 * 6, 32, 32));
-            } else if (j == width - 2) {
-                back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 5, 32 * 6, 32, 32));
-            } else {
-
-
-                switch (map_str[j - 1]) {
-                    case '.':
-                        back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 4, 32 * 6, 32, 32));
-                        break;
-                    case 's':
-//                            back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 17, 32 * 3, 32, 32));
-                        back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 4, 32 * 3, 32, 32));
-                        break;
-                    case 'T':
-                        back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 3, 32 * 5, 32, 32));
-                        break;
-                    case 't':
-                        back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 5, 32 * 5, 32, 32));
-                        break;
-                    case 'B':
-                        back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 3, 32 * 7, 32, 32));
-                        break;
-                    case 'b':
-                        back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 5, 32 * 7, 32, 32));
-                        break;
-                    default:
-                        break;
+            if (map_str[j - 1] != 's') {
+                if (i == 1 && j == 1) { // top left corner
+                    back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 3, 32 * 5, 32, 32));
+                } else if (i == 1 && j == width - 2) { //top right corner
+                    back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 5, 32 * 5, 32, 32));
+                } else if (i == 1) { //top
+                    back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 4, 32 * 5, 32, 32));
+                } else if (i == height - 2 && j == 1) { // bottom left corner
+                    back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 3, 32 * 7, 32, 32));
+                } else if (i == height - 2 && j == width - 2) {
+                    back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 5, 32 * 7, 32, 32));
+                } else if (i == height - 2) { //bottom
+                    back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 4, 32 * 7, 32, 32));
+                } else if (j == 1) {
+                    back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 3, 32 * 6, 32, 32));
+                } else if (j == width - 2) {
+                    back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 5, 32 * 6, 32, 32));
+                }else if(map_str[j - 1] == '.') {
+                    back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 4, 32 * 6, 32, 32));
                 }
+            } else {
+                back.copy(mapImage, 32 * j, 32 * i, sf::IntRect(32 * 4, 32 * 3, 32, 32));
             }
         }
     }

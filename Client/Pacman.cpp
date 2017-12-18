@@ -12,13 +12,23 @@ sf::Sprite *Health::getSprite() {
 
 void Pacman::draw(sf::RenderWindow *window) {
     BeingView::draw(window);
-    
-    for (int i = 0; i < health(); ++i) {
-        window->draw(*healthView.getSprite());
-        healthView.setPos(healthView.getImgX() + 32, healthView.getImgY());
+    if (getSide() == 1) {
+        healthView.setPos(0, healthView.getImgY());
+        for (int i = 0; i < health(); ++i) {
+            window->draw(*healthView.getSprite());
+            healthView.setPos(healthView.getImgX() + 32, healthView.getImgY());
+        }
     }
-    healthView.setPos(800 - 32, healthView.getImgY());
+    else {
+        healthView.setPos(768, healthView.getImgY());
+        for (int i = 0; i < health(); ++i) {
+            window->draw(*healthView.getSprite());
+            healthView.setPos(healthView.getImgX() - 32, healthView.getImgY());
+        }
+    }
+
+//    healthView.setPos(800 - 32, healthView.getImgY());
     
-    nickname.setPosition(pos().x(), pos().y());
+    nickname.setPosition(pos().x() - 16, pos().y() - 16);
     window->draw(nickname);
 }

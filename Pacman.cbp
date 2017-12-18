@@ -8,45 +8,45 @@
 		<Option virtualFolders="CMake Files\;CMake Files\cmake-modules\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/viewsharp/GitHub/Pacman"/>
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/viewsharp/GitHub/Pacman"/>
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/viewsharp/GitHub/Pacman"/>
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="pacman_server">
-				<Option output="/home/viewsharp/GitHub/Pacman/pacman_server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/viewsharp/GitHub/Pacman"/>
+				<Option output="/home/murt/GitHub/Pacman/pacman_server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/viewsharp/GitHub/Pacman"/>
+					<Add directory="/home/murt/GitHub/Pacman"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/home/viewsharp/GitHub/Pacman/generated"/>
+					<Add directory="/home/murt/GitHub/Pacman/generated"/>
 					<Add directory="/usr/local"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
@@ -57,22 +57,22 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman_server"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman_server"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="pacman_server/fast">
-				<Option output="/home/viewsharp/GitHub/Pacman/pacman_server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/viewsharp/GitHub/Pacman"/>
+				<Option output="/home/murt/GitHub/Pacman/pacman_server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/viewsharp/GitHub/Pacman"/>
+					<Add directory="/home/murt/GitHub/Pacman"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/home/viewsharp/GitHub/Pacman/generated"/>
+					<Add directory="/home/murt/GitHub/Pacman/generated"/>
 					<Add directory="/usr/local"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
@@ -83,22 +83,22 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman_server/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman_server/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="pacman">
-				<Option output="/home/viewsharp/GitHub/Pacman/pacman" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/viewsharp/GitHub/Pacman"/>
+				<Option output="/home/murt/GitHub/Pacman/pacman" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/viewsharp/GitHub/Pacman"/>
+					<Add directory="/home/murt/GitHub/Pacman"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/home/viewsharp/GitHub/Pacman/generated"/>
+					<Add directory="/home/murt/GitHub/Pacman/generated"/>
 					<Add directory="/usr/local"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
@@ -109,22 +109,22 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="pacman/fast">
-				<Option output="/home/viewsharp/GitHub/Pacman/pacman" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/viewsharp/GitHub/Pacman"/>
+				<Option output="/home/murt/GitHub/Pacman/pacman" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/viewsharp/GitHub/Pacman"/>
+					<Add directory="/home/murt/GitHub/Pacman"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/home/viewsharp/GitHub/Pacman/generated"/>
+					<Add directory="/home/murt/GitHub/Pacman/generated"/>
 					<Add directory="/usr/local"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
@@ -135,121 +135,121 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/BeingView.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/BeingView.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/BeingView.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/BeingView.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/Factory.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/Factory.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/Factory.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/Factory.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/GameLoop.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/GameLoop.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/GameLoop.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/GameLoop.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/Ghost.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/Ghost.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/Ghost.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/Ghost.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/Pacman.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/Pacman.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/Pacman.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/Pacman.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/PlayerConnectionClient.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/PlayerConnectionClient.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/PlayerConnectionClient.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/PlayerConnectionClient.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/TileMap.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/TileMap.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/TileMap.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/TileMap.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/main.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/main.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/BaseBeing.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Server/BaseBeing.cpp">
 			<Option target="pacman_server"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/BaseBeing.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Server/BaseBeing.h">
 			<Option target="pacman_server"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/Client.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Server/Client.h">
 			<Option target="pacman_server"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/GameRoom.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Server/GameRoom.h">
 			<Option target="pacman_server"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/Ghost.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Server/Ghost.cpp">
 			<Option target="pacman_server"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/Ghost.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Server/Ghost.h">
 			<Option target="pacman_server"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/MapManager.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Server/MapManager.cpp">
 			<Option target="pacman_server"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/MapManager.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Server/MapManager.h">
 			<Option target="pacman_server"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/Pacman.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Server/Pacman.cpp">
 			<Option target="pacman_server"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/Pacman.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Server/Pacman.h">
 			<Option target="pacman_server"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/PlayerConnectionServer.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Server/PlayerConnectionServer.cpp">
 			<Option target="pacman_server"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/PlayerConnectionServer.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Server/PlayerConnectionServer.h">
 			<Option target="pacman_server"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/main.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Server/main.cpp">
 			<Option target="pacman_server"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/generated/service.grpc.pb.cc">
-			<Option target="pacman_server"/>
-			<Option target="pacman"/>
-		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/generated/service.grpc.pb.h">
+		<Unit filename="/home/murt/GitHub/Pacman/generated/service.grpc.pb.cc">
 			<Option target="pacman_server"/>
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/generated/service.pb.cc">
+		<Unit filename="/home/murt/GitHub/Pacman/generated/service.grpc.pb.h">
 			<Option target="pacman_server"/>
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/generated/service.pb.h">
+		<Unit filename="/home/murt/GitHub/Pacman/generated/service.pb.cc">
 			<Option target="pacman_server"/>
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/generated/service.pb.h.rule">
+		<Unit filename="/home/murt/GitHub/Pacman/generated/service.pb.h">
 			<Option target="pacman_server"/>
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/CMakeLists.txt">
+		<Unit filename="/home/murt/GitHub/Pacman/generated/service.pb.h.rule">
+			<Option target="pacman_server"/>
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/cmake-modules/FindSFML.cmake">
+		<Unit filename="/home/murt/GitHub/Pacman/cmake-modules/FindSFML.cmake">
 			<Option virtualFolder="CMake Files\cmake-modules\"/>
 		</Unit>
 	</Project>

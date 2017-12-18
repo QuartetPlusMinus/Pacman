@@ -12,6 +12,7 @@
 using namespace pacman_service;
 using namespace std;
 
+
 class Health {
 
 public:
@@ -57,7 +58,7 @@ class Pacman : public BeingView {
 public:
 
     Pacman(const string &name, const Being &data, sf::Font &nameFont):
-            BeingView(data, 320, 0){
+            BeingView(data, 320, 0), side(0){
         this->name = name;
         nickname.setFont(nameFont);
         nickname.setString(name);
@@ -71,9 +72,15 @@ public:
     string name;
     sf::Text nickname;
     Health healthView;
+    void setSide(int s) {
+        side = s;
+    }
+    int getSide(){
+        return side;
+    }
 
 private:
-
+    int side;
 };
 
 #endif //ONENIGHTPACMAN_PLAYER_H

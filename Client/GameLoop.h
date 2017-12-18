@@ -42,6 +42,9 @@ public:
             cout << "Can't load fonts" << endl;
             throw "Ilnur";
         }
+        Texture texture;
+        texture.loadFromFile("src/lol.png");
+        coin.setTexture(texture);
 
         loop(name);
     }
@@ -64,6 +67,7 @@ private:
     Event event;
 
     Font font;
+    Sprite coin;
     int id;
 };
 
