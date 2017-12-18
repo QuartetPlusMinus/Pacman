@@ -1,2 +1,0 @@
-# Hashes of file build rules.
-ff32a3236e0532460ffd8f0b50fb705c generated/service.pb.h
