@@ -24,7 +24,7 @@ void GameLoop::loop(string name) {
     while (true) {
         startReply = connection->Start(startRequest, hex);
         cout<<"Start: sleep = " << startReply->time() << endl;
-        if (startReply->time() != 0)
+        if (startReply->time() == 0)
             break;
         usleep((useconds_t)startReply->time());
         delete  startReply;
