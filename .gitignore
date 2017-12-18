@@ -35,3 +35,5 @@
 
 # Cmake
 cmake-build-debug
+CMakeFiles
+generated
