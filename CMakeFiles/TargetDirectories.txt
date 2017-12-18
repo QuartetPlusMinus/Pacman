@@ -1,6 +1,0 @@
-/home/murt/GitHub/Pacman/CMakeFiles/rebuild_cache.dir
-/home/murt/GitHub/Pacman/CMakeFiles/edit_cache.dir
-/home/murt/GitHub/Pacman/CMakeFiles/pacman_server.dir
-/home/murt/GitHub/Pacman/CMakeFiles/pacman.dir
-/home/murt/GitHub/Pacman/CMakeFiles/pacman_server_autogen.dir
-/home/murt/GitHub/Pacman/CMakeFiles/pacman_autogen.dir
