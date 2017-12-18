@@ -5,48 +5,49 @@
 		<Option title="Pacman"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\cmake-modules\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\Qt\;CMake Files\..\..\Qt\5.10.0\;CMake Files\..\..\Qt\5.10.0\gcc_64\;CMake Files\..\..\Qt\5.10.0\gcc_64\lib\;CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\;CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Core\;CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\;CMake Files\cmake-modules\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/viewsharp/GitHub/Pacman"/>
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/viewsharp/GitHub/Pacman"/>
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/viewsharp/GitHub/Pacman"/>
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="pacman_server">
-				<Option output="/home/viewsharp/GitHub/Pacman/pacman_server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/viewsharp/GitHub/Pacman"/>
+				<Option output="/home/murt/GitHub/Pacman/pacman_server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/viewsharp/GitHub/Pacman"/>
+					<Add directory="/home/murt/GitHub/Pacman/pacman_server_autogen/include"/>
+					<Add directory="/home/murt/GitHub/Pacman"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/home/viewsharp/GitHub/Pacman/generated"/>
+					<Add directory="/home/murt/GitHub/Pacman/generated"/>
 					<Add directory="/usr/local"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
@@ -57,22 +58,23 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman_server"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman_server"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="pacman_server/fast">
-				<Option output="/home/viewsharp/GitHub/Pacman/pacman_server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/viewsharp/GitHub/Pacman"/>
+				<Option output="/home/murt/GitHub/Pacman/pacman_server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/viewsharp/GitHub/Pacman"/>
+					<Add directory="/home/murt/GitHub/Pacman/pacman_server_autogen/include"/>
+					<Add directory="/home/murt/GitHub/Pacman"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/home/viewsharp/GitHub/Pacman/generated"/>
+					<Add directory="/home/murt/GitHub/Pacman/generated"/>
 					<Add directory="/usr/local"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
@@ -83,23 +85,32 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman_server/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman_server/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="pacman">
-				<Option output="/home/viewsharp/GitHub/Pacman/pacman" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/viewsharp/GitHub/Pacman"/>
+				<Option output="/home/murt/GitHub/Pacman/pacman" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/viewsharp/GitHub/Pacman"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="/home/murt/GitHub/Pacman/pacman_autogen/include"/>
+					<Add directory="/home/murt/GitHub/Pacman"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/home/viewsharp/GitHub/Pacman/generated"/>
+					<Add directory="/home/murt/GitHub/Pacman/generated"/>
 					<Add directory="/usr/local"/>
+					<Add directory="/home/murt/Qt/5.10.0/gcc_64/include"/>
+					<Add directory="/home/murt/Qt/5.10.0/gcc_64/include/QtWidgets"/>
+					<Add directory="/home/murt/Qt/5.10.0/gcc_64/include/QtGui"/>
+					<Add directory="/home/murt/Qt/5.10.0/gcc_64/include/QtCore"/>
+					<Add directory="/home/murt/Qt/5.10.0/gcc_64/./mkspecs/linux-g++"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -109,23 +120,32 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="pacman/fast">
-				<Option output="/home/viewsharp/GitHub/Pacman/pacman" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/viewsharp/GitHub/Pacman"/>
+				<Option output="/home/murt/GitHub/Pacman/pacman" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/viewsharp/GitHub/Pacman"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="/home/murt/GitHub/Pacman/pacman_autogen/include"/>
+					<Add directory="/home/murt/GitHub/Pacman"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/home/viewsharp/GitHub/Pacman/generated"/>
+					<Add directory="/home/murt/GitHub/Pacman/generated"/>
 					<Add directory="/usr/local"/>
+					<Add directory="/home/murt/Qt/5.10.0/gcc_64/include"/>
+					<Add directory="/home/murt/Qt/5.10.0/gcc_64/include/QtWidgets"/>
+					<Add directory="/home/murt/Qt/5.10.0/gcc_64/include/QtGui"/>
+					<Add directory="/home/murt/Qt/5.10.0/gcc_64/include/QtCore"/>
+					<Add directory="/home/murt/Qt/5.10.0/gcc_64/./mkspecs/linux-g++"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -135,115 +155,279 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/viewsharp/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pacman_server_autogen">
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman_server_autogen"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pacman_autogen">
+				<Option working_dir="/home/murt/GitHub/Pacman"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 pacman_autogen"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/murt/GitHub/Pacman/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/BeingView.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/BeingView.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/BeingView.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/BeingView.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/GameLoop.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/GameLoop.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/GameLoop.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/GameLoop.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/Ghost.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/Ghost.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/Ghost.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/Ghost.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/Pacman.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/Pacman.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/Pacman.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/Pacman.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/PlayerConnectionClient.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/PlayerConnectionClient.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/PlayerConnectionClient.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/PlayerConnectionClient.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/TileMap.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/TileMap.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/TileMap.h">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/TileMap.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/main.cpp">
+		<Unit filename="/home/murt/GitHub/Pacman/Client/main.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/BaseBeing.cpp">
-			<Option target="pacman_server"/>
-		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/BaseBeing.h">
-			<Option target="pacman_server"/>
-		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/Client.h">
-			<Option target="pacman_server"/>
-		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/GameRoom.h">
-			<Option target="pacman_server"/>
-		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/Ghost.cpp">
-			<Option target="pacman_server"/>
-		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/Ghost.h">
-			<Option target="pacman_server"/>
-		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/MapManager.cpp">
-			<Option target="pacman_server"/>
-		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/MapManager.h">
-			<Option target="pacman_server"/>
-		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/Pacman.cpp">
-			<Option target="pacman_server"/>
-		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/Pacman.h">
-			<Option target="pacman_server"/>
-		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/PlayerConnectionServer.cpp">
-			<Option target="pacman_server"/>
-		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/PlayerConnectionServer.h">
-			<Option target="pacman_server"/>
-		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/Server/main.cpp">
-			<Option target="pacman_server"/>
-		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/generated/service.grpc.pb.cc">
-			<Option target="pacman_server"/>
+		<Unit filename="/home/murt/GitHub/Pacman/Client/mainwindow.cpp">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/generated/service.grpc.pb.h">
-			<Option target="pacman_server"/>
+		<Unit filename="/home/murt/GitHub/Pacman/Client/mainwindow.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/generated/service.pb.cc">
+		<Unit filename="/home/murt/GitHub/Pacman/Server/BaseBeing.cpp">
+			<Option target="pacman_server"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/Server/BaseBeing.h">
+			<Option target="pacman_server"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/Server/Client.h">
+			<Option target="pacman_server"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/Server/GameRoom.h">
+			<Option target="pacman_server"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/Server/Ghost.cpp">
+			<Option target="pacman_server"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/Server/Ghost.h">
+			<Option target="pacman_server"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/Server/MapManager.cpp">
+			<Option target="pacman_server"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/Server/MapManager.h">
+			<Option target="pacman_server"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/Server/Pacman.cpp">
+			<Option target="pacman_server"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/Server/Pacman.h">
+			<Option target="pacman_server"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/Server/PlayerConnectionServer.cpp">
+			<Option target="pacman_server"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/Server/PlayerConnectionServer.h">
+			<Option target="pacman_server"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/Server/main.cpp">
+			<Option target="pacman_server"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/generated/service.grpc.pb.cc">
 			<Option target="pacman_server"/>
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/generated/service.pb.h">
+		<Unit filename="/home/murt/GitHub/Pacman/generated/service.grpc.pb.h">
 			<Option target="pacman_server"/>
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/generated/service.pb.h.rule">
+		<Unit filename="/home/murt/GitHub/Pacman/generated/service.pb.cc">
 			<Option target="pacman_server"/>
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/CMakeLists.txt">
+		<Unit filename="/home/murt/GitHub/Pacman/generated/service.pb.h">
+			<Option target="pacman_server"/>
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/generated/service.pb.h.rule">
+			<Option target="pacman_server"/>
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/pacman_autogen/moc_compilation.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/pacman_server_autogen/moc_compilation.cpp">
+			<Option target="pacman_server"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/viewsharp/GitHub/Pacman/cmake-modules/FindSFML.cmake">
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QGtk3ThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/../../Qt/5.10.0/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\Qt\5.10.0\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/murt/GitHub/Pacman/cmake-modules/FindSFML.cmake">
 			<Option virtualFolder="CMake Files\cmake-modules\"/>
 		</Unit>
 	</Project>

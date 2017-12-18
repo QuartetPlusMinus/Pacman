@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/pacman_server_autogen.dir//AutogenOldSettings.cmake"
+  "pacman_server_autogen/"
+  "CMakeFiles/pacman_autogen.dir//AutogenOldSettings.cmake"
+  "pacman_autogen/"
   "generated/service.pb.h"
   "generated/service.pb.cc"
   "generated/service.grpc.pb.h"
@@ -11,6 +15,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/pacman_server.dir/Server/MapManager.cpp.o"
   "CMakeFiles/pacman_server.dir/generated/service.pb.cc.o"
   "CMakeFiles/pacman_server.dir/generated/service.grpc.pb.cc.o"
+  "CMakeFiles/pacman_server.dir/pacman_server_autogen/moc_compilation.cpp.o"
   "pacman_server.pdb"
   "pacman_server"
 )

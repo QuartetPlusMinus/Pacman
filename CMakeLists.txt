@@ -41,14 +41,23 @@ set(GENERATED_PROTOBUF_FILES ${SERVICE_PB_H_FILE} ${SERVICE_PB_CPP_FILE}
 include_directories(${GENERATED_PROTOBUF_PATH})
 link_libraries(grpc++_unsecure grpc gpr ${PROTOBUF_LIBRARY})
 
+set(CMAKE_PREFIX_PATH "/home/murt/Qt/5.10.0/gcc_64")
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+find_package(Qt5Core REQUIRED)
+find_package(Qt5Widgets REQUIRED)
+find_package(Qt5Gui REQUIRED)
+#set(SOURCE_FILES main.cpp mainwindow.h mainwindow.cpp)
 
-set(CLIENT_FILES Client/main.cpp Client/PlayerConnectionClient.cpp Client/GameLoop.cpp Client/Ghost.cpp Client/Pacman.cpp Client/BeingView.cpp Client/TileMap.cpp Client/TileMap.h)
+
+
+set(CLIENT_FILES Client/main.cpp Client/PlayerConnectionClient.cpp Client/GameLoop.cpp Client/Ghost.cpp Client/Pacman.cpp Client/BeingView.cpp Client/TileMap.cpp Client/TileMap.h Client/mainwindow.h Client/mainwindow.cpp)
 set(SERVER_FILES Server/main.cpp Server/PlayerConnectionServer.cpp Server/BaseBeing.cpp Server/Ghost.cpp Server/Pacman.cpp Server/MapManager.cpp Server/Client.h Server/GameRoom.h )
 
 # Define sources and executable
 set(EXECUTABLE_NAME "pacman")
 
-add_executable(pacman ${CLIENT_FILES} ${GENERATED_PROTOBUF_FILES} )
+add_executable(pacman ${CLIENT_FILES} ${GENERATED_PROTOBUF_FILES} ${SOURCE_FILES})
 add_executable(pacman_server ${SERVER_FILES} ${GENERATED_PROTOBUF_FILES})
 
 # Detect and add SFML
@@ -60,3 +69,4 @@ if(SFML_FOUND)
     include_directories(${SFML_INCLUDE_DIR})
     target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES} ${SFML_DEPENDENCIES} )
 endif()
+target_link_libraries(${EXECUTABLE_NAME} Qt5::Widgets Qt5::Core)

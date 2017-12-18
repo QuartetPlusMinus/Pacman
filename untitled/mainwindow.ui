@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>317</width>
+                <height>308</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Pacman Launcher</string>
+        </property>
+        <widget class="QWidget" name="centralWidget">
+            <widget class="QPushButton" name="ButtonConnect">
+                <property name="geometry">
+                    <rect>
+                        <x>60</x>
+                        <y>170</y>
+                        <width>199</width>
+                        <height>25</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Connect</string>
+                </property>
+            </widget>
+            <widget class="QWidget" name="">
+                <property name="geometry">
+                    <rect>
+                        <x>60</x>
+                        <y>30</y>
+                        <width>191</width>
+                        <height>111</height>
+                    </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_3">
+                    <item>
+                        <layout class="QVBoxLayout" name="verticalLayout_2">
+                            <item>
+                                <widget class="QLabel" name="label_2">
+                                    <property name="text">
+                                        <string>Ip</string>
+                                    </property>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QLineEdit" name="lineEditIP"/>
+                            </item>
+                        </layout>
+                    </item>
+                    <item>
+                        <layout class="QVBoxLayout" name="verticalLayout">
+                            <item>
+                                <widget class="QLabel" name="label">
+                                    <property name="text">
+                                        <string>Nickname</string>
+                                    </property>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QLineEdit" name="lineEditName"/>
+                            </item>
+                        </layout>
+                    </item>
+                </layout>
+            </widget>
+        </widget>
+        <widget class="QStatusBar" name="statusBar"/>
+    </widget>
+    <layoutdefault spacing="6" margin="11"/>
+    <resources/>
+    <connections/>
+</ui>
