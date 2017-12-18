@@ -5,7 +5,6 @@
 #ifndef ONENIGHTPACMAN_BASEBEING_H
 #define ONENIGHTPACMAN_BASEBEING_H
 
-//#include "service.grpc.pb.h"
 #include <string>
 #include <generated/service.pb.h>
 
@@ -24,13 +23,8 @@ public:
         mutable_pos()->set_y(y);
     }
 
-    virtual void getBeing(Being *data);
-
     virtual void step();
 
-    int getSpeed() {
-        return speed;
-    }
 private:
 
     int speed;

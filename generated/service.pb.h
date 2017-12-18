@@ -1178,11 +1178,24 @@ class IterationReply : public ::google::protobuf::Message /* @@protoc_insertion_
   const ::google::protobuf::RepeatedPtrField< ::pacman_service::Being >&
       being() const;
 
+  // repeated .pacman_service.Point coins = 2;
+  int coins_size() const;
+  void clear_coins();
+  static const int kCoinsFieldNumber = 2;
+  const ::pacman_service::Point& coins(int index) const;
+  ::pacman_service::Point* mutable_coins(int index);
+  ::pacman_service::Point* add_coins();
+  ::google::protobuf::RepeatedPtrField< ::pacman_service::Point >*
+      mutable_coins();
+  const ::google::protobuf::RepeatedPtrField< ::pacman_service::Point >&
+      coins() const;
+
   // @@protoc_insertion_point(class_scope:pacman_service.IterationReply)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::pacman_service::Being > being_;
+  ::google::protobuf::RepeatedPtrField< ::pacman_service::Point > coins_;
   mutable int _cached_size_;
   friend struct ::protobuf_service_2eproto::TableStruct;
   friend void ::protobuf_service_2eproto::InitDefaultsIterationReplyImpl();
@@ -1926,6 +1939,36 @@ inline const ::google::protobuf::RepeatedPtrField< ::pacman_service::Being >&
 IterationReply::being() const {
   // @@protoc_insertion_point(field_list:pacman_service.IterationReply.being)
   return being_;
+}
+
+// repeated .pacman_service.Point coins = 2;
+inline int IterationReply::coins_size() const {
+  return coins_.size();
+}
+inline void IterationReply::clear_coins() {
+  coins_.Clear();
+}
+inline const ::pacman_service::Point& IterationReply::coins(int index) const {
+  // @@protoc_insertion_point(field_get:pacman_service.IterationReply.coins)
+  return coins_.Get(index);
+}
+inline ::pacman_service::Point* IterationReply::mutable_coins(int index) {
+  // @@protoc_insertion_point(field_mutable:pacman_service.IterationReply.coins)
+  return coins_.Mutable(index);
+}
+inline ::pacman_service::Point* IterationReply::add_coins() {
+  // @@protoc_insertion_point(field_add:pacman_service.IterationReply.coins)
+  return coins_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::pacman_service::Point >*
+IterationReply::mutable_coins() {
+  // @@protoc_insertion_point(field_mutable_list:pacman_service.IterationReply.coins)
+  return &coins_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::pacman_service::Point >&
+IterationReply::coins() const {
+  // @@protoc_insertion_point(field_list:pacman_service.IterationReply.coins)
+  return coins_;
 }
 
 // -------------------------------------------------------------------

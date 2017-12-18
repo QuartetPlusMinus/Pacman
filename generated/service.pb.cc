@@ -257,6 +257,7 @@ void InitDefaultsIterationReplyImpl() {
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
   protobuf_service_2eproto::InitDefaultsBeing();
+  protobuf_service_2eproto::InitDefaultsPoint();
   {
     void* ptr = &::pacman_service::_IterationReply_default_instance_;
     new (ptr) ::pacman_service::IterationReply();
@@ -378,6 +379,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pacman_service::IterationReply, being_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pacman_service::IterationReply, coins_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pacman_service::EndRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -399,8 +401,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 41, -1, sizeof(::pacman_service::StartReply)},
   { 50, -1, sizeof(::pacman_service::IterationRequest)},
   { 56, -1, sizeof(::pacman_service::IterationReply)},
-  { 62, -1, sizeof(::pacman_service::EndRequest)},
-  { 67, -1, sizeof(::pacman_service::EndReply)},
+  { 63, -1, sizeof(::pacman_service::EndRequest)},
+  { 68, -1, sizeof(::pacman_service::EndReply)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -452,24 +454,25 @@ void AddDescriptorsImpl() {
       "\nStartReply\022\014\n\004time\030\001 \001(\004\022\n\n\002id\030\002 \001(\r\022(\n"
       "\005being\030\003 \003(\0132\031.pacman_service.BeingInit\022"
       "\013\n\003map\030\004 \003(\t\"@\n\020IterationRequest\022,\n\tdire"
-      "ction\030\001 \001(\0162\031.pacman_service.Direction\"6"
+      "ction\030\001 \001(\0162\031.pacman_service.Direction\"\\"
       "\n\016IterationReply\022$\n\005being\030\001 \003(\0132\025.pacman"
-      "_service.Being\"\014\n\nEndRequest\"\n\n\010EndReply"
-      "*2\n\tDirection\022\t\n\005RIGHT\020\000\022\010\n\004DOWN\020\001\022\010\n\004LE"
-      "FT\020\002\022\006\n\002UP\020\003*\"\n\tBeingType\022\n\n\006PACMAN\020\000\022\t\n"
-      "\005GHOST\020\001*/\n\013BeingStatus\022\n\n\006KILLED\020\000\022\t\n\005A"
-      "LIVE\020\001\022\t\n\005DYING\020\0022\262\002\n\020PlayerConnection\022I"
-      "\n\007Connect\022\036.pacman_service.ConnectReques"
-      "t\032\034.pacman_service.ConnectReply\"\000\022C\n\005Sta"
-      "rt\022\034.pacman_service.StartRequest\032\032.pacma"
-      "n_service.StartReply\"\000\022O\n\tIteration\022 .pa"
-      "cman_service.IterationRequest\032\036.pacman_s"
-      "ervice.IterationReply\"\000\022=\n\003End\022\032.pacman_"
-      "service.EndRequest\032\030.pacman_service.EndR"
-      "eply\"\000b\006proto3"
+      "_service.Being\022$\n\005coins\030\002 \003(\0132\025.pacman_s"
+      "ervice.Point\"\014\n\nEndRequest\"\n\n\010EndReply*2"
+      "\n\tDirection\022\t\n\005RIGHT\020\000\022\010\n\004DOWN\020\001\022\010\n\004LEFT"
+      "\020\002\022\006\n\002UP\020\003*\"\n\tBeingType\022\n\n\006PACMAN\020\000\022\t\n\005G"
+      "HOST\020\001*/\n\013BeingStatus\022\n\n\006KILLED\020\000\022\t\n\005ALI"
+      "VE\020\001\022\t\n\005DYING\020\0022\262\002\n\020PlayerConnection\022I\n\007"
+      "Connect\022\036.pacman_service.ConnectRequest\032"
+      "\034.pacman_service.ConnectReply\"\000\022C\n\005Start"
+      "\022\034.pacman_service.StartRequest\032\032.pacman_"
+      "service.StartReply\"\000\022O\n\tIteration\022 .pacm"
+      "an_service.IterationRequest\032\036.pacman_ser"
+      "vice.IterationReply\"\000\022=\n\003End\022\032.pacman_se"
+      "rvice.EndRequest\032\030.pacman_service.EndRep"
+      "ly\"\000b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1094);
+      descriptor, 1132);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "service.proto", &protobuf_RegisterTypes);
 }
@@ -2853,6 +2856,7 @@ void IterationReply::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int IterationReply::kBeingFieldNumber;
+const int IterationReply::kCoinsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 IterationReply::IterationReply()
@@ -2867,6 +2871,7 @@ IterationReply::IterationReply(const IterationReply& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       being_(from.being_),
+      coins_(from.coins_),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:pacman_service.IterationReply)
@@ -2914,6 +2919,7 @@ void IterationReply::Clear() {
   (void) cached_has_bits;
 
   being_.Clear();
+  coins_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -2932,6 +2938,17 @@ bool IterationReply::MergePartialFromCodedStream(
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_being()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .pacman_service.Point coins = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_coins()));
         } else {
           goto handle_unusual;
         }
@@ -2971,6 +2988,13 @@ void IterationReply::SerializeWithCachedSizes(
       1, this->being(static_cast<int>(i)), output);
   }
 
+  // repeated .pacman_service.Point coins = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->coins_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->coins(static_cast<int>(i)), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -2991,6 +3015,14 @@ void IterationReply::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         1, this->being(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .pacman_service.Point coins = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->coins_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, this->coins(static_cast<int>(i)), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -3018,6 +3050,17 @@ size_t IterationReply::ByteSizeLong() const {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSize(
           this->being(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .pacman_service.Point coins = 2;
+  {
+    unsigned int count = static_cast<unsigned int>(this->coins_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->coins(static_cast<int>(i)));
     }
   }
 
@@ -3051,6 +3094,7 @@ void IterationReply::MergeFrom(const IterationReply& from) {
   (void) cached_has_bits;
 
   being_.MergeFrom(from.being_);
+  coins_.MergeFrom(from.coins_);
 }
 
 void IterationReply::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3078,6 +3122,7 @@ void IterationReply::Swap(IterationReply* other) {
 void IterationReply::InternalSwap(IterationReply* other) {
   using std::swap;
   being_.InternalSwap(&other->being_);
+  coins_.InternalSwap(&other->coins_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
 }

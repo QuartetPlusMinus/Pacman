@@ -28,28 +28,28 @@ The CXX compiler identification is GNU, found in "/home/viewsharp/GitHub/Pacman/
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_9c773/fast"
-/usr/bin/make -f CMakeFiles/cmTC_9c773.dir/build.make CMakeFiles/cmTC_9c773.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_69eb2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_69eb2.dir/build.make CMakeFiles/cmTC_69eb2.dir/build
 make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_9c773.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_9c773.dir/testCCompiler.c.o   -c /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_9c773
-/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9c773.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_9c773.dir/testCCompiler.c.o  -o cmTC_9c773 
+Building C object CMakeFiles/cmTC_69eb2.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_69eb2.dir/testCCompiler.c.o   -c /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_69eb2
+/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69eb2.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_69eb2.dir/testCCompiler.c.o  -o cmTC_69eb2 
 make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_18252/fast"
-/usr/bin/make -f CMakeFiles/cmTC_18252.dir/build.make CMakeFiles/cmTC_18252.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_21723/fast"
+/usr/bin/make -f CMakeFiles/cmTC_21723.dir/build.make CMakeFiles/cmTC_21723.dir/build
 make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_18252.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_18252.dir/CMakeCCompilerABI.c.o   -c /home/viewsharp/programs/clion-2017.2.3/bin/cmake/share/cmake-3.9/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_18252
-/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18252.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_18252.dir/CMakeCCompilerABI.c.o  -o cmTC_18252 
+Building C object CMakeFiles/cmTC_21723.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_21723.dir/CMakeCCompilerABI.c.o   -c /home/viewsharp/programs/clion-2017.2.3/bin/cmake/share/cmake-3.9/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_21723
+/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21723.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_21723.dir/CMakeCCompilerABI.c.o  -o cmTC_21723 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -59,8 +59,8 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.5) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_18252' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccecSO3q.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_18252 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_18252.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_21723' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cc8CQInm.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_21723 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_21723.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
 make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
 
 
@@ -68,14 +68,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_18252/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_18252.dir/build.make CMakeFiles/cmTC_18252.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_21723/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_21723.dir/build.make CMakeFiles/cmTC_21723.dir/build]
   ignore line: [make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»]
-  ignore line: [Building C object CMakeFiles/cmTC_18252.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_18252.dir/CMakeCCompilerABI.c.o   -c /home/viewsharp/programs/clion-2017.2.3/bin/cmake/share/cmake-3.9/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_18252]
-  ignore line: [/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18252.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_18252.dir/CMakeCCompilerABI.c.o  -o cmTC_18252 ]
+  ignore line: [Building C object CMakeFiles/cmTC_21723.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_21723.dir/CMakeCCompilerABI.c.o   -c /home/viewsharp/programs/clion-2017.2.3/bin/cmake/share/cmake-3.9/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_21723]
+  ignore line: [/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21723.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_21723.dir/CMakeCCompilerABI.c.o  -o cmTC_21723 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -85,13 +85,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.5) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_18252' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccecSO3q.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_18252 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_18252.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_21723' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cc8CQInm.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_21723 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_21723.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccecSO3q.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc8CQInm.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -109,7 +109,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_18252] ==> ignore
+    arg [cmTC_21723] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -121,7 +121,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_18252.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_21723.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -151,14 +151,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ccf2c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ccf2c.dir/build.make CMakeFiles/cmTC_ccf2c.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_69fea/fast"
+/usr/bin/make -f CMakeFiles/cmTC_69fea.dir/build.make CMakeFiles/cmTC_69fea.dir/build
 make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_ccf2c.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_ccf2c.dir/feature_tests.c.o   -c /home/viewsharp/GitHub/Pacman/CMakeFiles/feature_tests.c
-Linking C executable cmTC_ccf2c
-/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ccf2c.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_ccf2c.dir/feature_tests.c.o  -o cmTC_ccf2c 
+Building C object CMakeFiles/cmTC_69fea.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_69fea.dir/feature_tests.c.o   -c /home/viewsharp/GitHub/Pacman/CMakeFiles/feature_tests.c
+Linking C executable cmTC_69fea
+/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69fea.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_69fea.dir/feature_tests.c.o  -o cmTC_69fea 
 make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
 
 
@@ -171,14 +171,14 @@ make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeF
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_bb4dd/fast"
-/usr/bin/make -f CMakeFiles/cmTC_bb4dd.dir/build.make CMakeFiles/cmTC_bb4dd.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_abc33/fast"
+/usr/bin/make -f CMakeFiles/cmTC_abc33.dir/build.make CMakeFiles/cmTC_abc33.dir/build
 make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_bb4dd.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_bb4dd.dir/feature_tests.c.o   -c /home/viewsharp/GitHub/Pacman/CMakeFiles/feature_tests.c
-Linking C executable cmTC_bb4dd
-/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb4dd.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_bb4dd.dir/feature_tests.c.o  -o cmTC_bb4dd 
+Building C object CMakeFiles/cmTC_abc33.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_abc33.dir/feature_tests.c.o   -c /home/viewsharp/GitHub/Pacman/CMakeFiles/feature_tests.c
+Linking C executable cmTC_abc33
+/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_abc33.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_abc33.dir/feature_tests.c.o  -o cmTC_abc33 
 make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
 
 
@@ -191,14 +191,14 @@ make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeF
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_35f28/fast"
-/usr/bin/make -f CMakeFiles/cmTC_35f28.dir/build.make CMakeFiles/cmTC_35f28.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_8ae6c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8ae6c.dir/build.make CMakeFiles/cmTC_8ae6c.dir/build
 make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_35f28.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_35f28.dir/feature_tests.c.o   -c /home/viewsharp/GitHub/Pacman/CMakeFiles/feature_tests.c
-Linking C executable cmTC_35f28
-/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35f28.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_35f28.dir/feature_tests.c.o  -o cmTC_35f28 
+Building C object CMakeFiles/cmTC_8ae6c.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_8ae6c.dir/feature_tests.c.o   -c /home/viewsharp/GitHub/Pacman/CMakeFiles/feature_tests.c
+Linking C executable cmTC_8ae6c
+/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ae6c.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_8ae6c.dir/feature_tests.c.o  -o cmTC_8ae6c 
 make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
 
 
@@ -209,28 +209,28 @@ make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeF
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4c008/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4c008.dir/build.make CMakeFiles/cmTC_4c008.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_8ab64/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8ab64.dir/build.make CMakeFiles/cmTC_8ab64.dir/build
 make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_4c008.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_4c008.dir/testCXXCompiler.cxx.o -c /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_4c008
-/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c008.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_4c008.dir/testCXXCompiler.cxx.o  -o cmTC_4c008 
+Building CXX object CMakeFiles/cmTC_8ab64.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_8ab64.dir/testCXXCompiler.cxx.o -c /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_8ab64
+/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ab64.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_8ab64.dir/testCXXCompiler.cxx.o  -o cmTC_8ab64 
 make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3d2a0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3d2a0.dir/build.make CMakeFiles/cmTC_3d2a0.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_88ee1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_88ee1.dir/build.make CMakeFiles/cmTC_88ee1.dir/build
 make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_3d2a0.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_3d2a0.dir/CMakeCXXCompilerABI.cpp.o -c /home/viewsharp/programs/clion-2017.2.3/bin/cmake/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_3d2a0
-/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d2a0.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_3d2a0.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_3d2a0 
+Building CXX object CMakeFiles/cmTC_88ee1.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_88ee1.dir/CMakeCXXCompilerABI.cpp.o -c /home/viewsharp/programs/clion-2017.2.3/bin/cmake/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_88ee1
+/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_88ee1.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_88ee1.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_88ee1 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -240,8 +240,8 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.5) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_3d2a0' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxfWw0J.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_3d2a0 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_3d2a0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_88ee1' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccoxOKLF.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_88ee1 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_88ee1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
 make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
 
 
@@ -249,14 +249,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_3d2a0/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_3d2a0.dir/build.make CMakeFiles/cmTC_3d2a0.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_88ee1/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_88ee1.dir/build.make CMakeFiles/cmTC_88ee1.dir/build]
   ignore line: [make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»]
-  ignore line: [Building CXX object CMakeFiles/cmTC_3d2a0.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_3d2a0.dir/CMakeCXXCompilerABI.cpp.o -c /home/viewsharp/programs/clion-2017.2.3/bin/cmake/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_3d2a0]
-  ignore line: [/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d2a0.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_3d2a0.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_3d2a0 ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_88ee1.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_88ee1.dir/CMakeCXXCompilerABI.cpp.o -c /home/viewsharp/programs/clion-2017.2.3/bin/cmake/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_88ee1]
+  ignore line: [/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_88ee1.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_88ee1.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_88ee1 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -266,13 +266,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.5) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_3d2a0' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxfWw0J.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_3d2a0 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_3d2a0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_88ee1' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccoxOKLF.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_88ee1 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_88ee1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccxfWw0J.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccoxOKLF.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -290,7 +290,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_3d2a0] ==> ignore
+    arg [cmTC_88ee1] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -302,7 +302,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_3d2a0.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_88ee1.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -330,14 +330,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_48690/fast"
-/usr/bin/make -f CMakeFiles/cmTC_48690.dir/build.make CMakeFiles/cmTC_48690.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_418df/fast"
+/usr/bin/make -f CMakeFiles/cmTC_418df.dir/build.make CMakeFiles/cmTC_418df.dir/build
 make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_48690.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_48690.dir/feature_tests.cxx.o -c /home/viewsharp/GitHub/Pacman/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_48690
-/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48690.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_48690.dir/feature_tests.cxx.o  -o cmTC_48690 
+Building CXX object CMakeFiles/cmTC_418df.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_418df.dir/feature_tests.cxx.o -c /home/viewsharp/GitHub/Pacman/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_418df
+/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_418df.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_418df.dir/feature_tests.cxx.o  -o cmTC_418df 
 make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
 
 
@@ -403,14 +403,14 @@ make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeF
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ad690/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ad690.dir/build.make CMakeFiles/cmTC_ad690.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_1636d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1636d.dir/build.make CMakeFiles/cmTC_1636d.dir/build
 make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_ad690.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_ad690.dir/feature_tests.cxx.o -c /home/viewsharp/GitHub/Pacman/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_ad690
-/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad690.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_ad690.dir/feature_tests.cxx.o  -o cmTC_ad690 
+Building CXX object CMakeFiles/cmTC_1636d.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_1636d.dir/feature_tests.cxx.o -c /home/viewsharp/GitHub/Pacman/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_1636d
+/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1636d.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_1636d.dir/feature_tests.cxx.o  -o cmTC_1636d 
 make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
 
 
@@ -476,14 +476,14 @@ make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeF
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fc037/fast"
-/usr/bin/make -f CMakeFiles/cmTC_fc037.dir/build.make CMakeFiles/cmTC_fc037.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_c362e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c362e.dir/build.make CMakeFiles/cmTC_c362e.dir/build
 make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_fc037.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_fc037.dir/feature_tests.cxx.o -c /home/viewsharp/GitHub/Pacman/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_fc037
-/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fc037.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_fc037.dir/feature_tests.cxx.o  -o cmTC_fc037 
+Building CXX object CMakeFiles/cmTC_c362e.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_c362e.dir/feature_tests.cxx.o -c /home/viewsharp/GitHub/Pacman/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_c362e
+/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c362e.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_c362e.dir/feature_tests.cxx.o  -o cmTC_c362e 
 make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
 
 
@@ -549,14 +549,14 @@ make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeF
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_099d3/fast"
-/usr/bin/make -f CMakeFiles/cmTC_099d3.dir/build.make CMakeFiles/cmTC_099d3.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_88a3b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_88a3b.dir/build.make CMakeFiles/cmTC_88a3b.dir/build
 make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_099d3.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_099d3.dir/feature_tests.cxx.o -c /home/viewsharp/GitHub/Pacman/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_099d3
-/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_099d3.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_099d3.dir/feature_tests.cxx.o  -o cmTC_099d3 
+Building CXX object CMakeFiles/cmTC_88a3b.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_88a3b.dir/feature_tests.cxx.o -c /home/viewsharp/GitHub/Pacman/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_88a3b
+/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_88a3b.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_88a3b.dir/feature_tests.cxx.o  -o cmTC_88a3b 
 make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
 
 
@@ -620,28 +620,28 @@ make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeF
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ffb8f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ffb8f.dir/build.make CMakeFiles/cmTC_ffb8f.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_50c3d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_50c3d.dir/build.make CMakeFiles/cmTC_50c3d.dir/build
 make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_ffb8f.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_ffb8f.dir/CheckIncludeFile.c.o   -c /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_ffb8f
-/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ffb8f.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_ffb8f.dir/CheckIncludeFile.c.o  -o cmTC_ffb8f 
+Building C object CMakeFiles/cmTC_50c3d.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_50c3d.dir/CheckIncludeFile.c.o   -c /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_50c3d
+/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50c3d.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_50c3d.dir/CheckIncludeFile.c.o  -o cmTC_50c3d 
 make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a66ba/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a66ba.dir/build.make CMakeFiles/cmTC_a66ba.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_d56cd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d56cd.dir/build.make CMakeFiles/cmTC_d56cd.dir/build
 make[1]: вход в каталог «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_a66ba.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_a66ba.dir/CheckFunctionExists.c.o   -c /home/viewsharp/programs/clion-2017.2.3/bin/cmake/share/cmake-3.9/Modules/CheckFunctionExists.c
-Linking C executable cmTC_a66ba
-/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a66ba.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_a66ba.dir/CheckFunctionExists.c.o  -o cmTC_a66ba -lpthread 
+Building C object CMakeFiles/cmTC_d56cd.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_d56cd.dir/CheckFunctionExists.c.o   -c /home/viewsharp/programs/clion-2017.2.3/bin/cmake/share/cmake-3.9/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d56cd
+/home/viewsharp/programs/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d56cd.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_d56cd.dir/CheckFunctionExists.c.o  -o cmTC_d56cd -lpthread 
 make[1]: выход из каталога «/home/viewsharp/GitHub/Pacman/CMakeFiles/CMakeTmp»
 
 

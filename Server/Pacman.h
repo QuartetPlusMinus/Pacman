@@ -20,11 +20,9 @@ public:
             BaseBeing(x, y),
             tryCount(0),
             newDirection(this->direction()) {
-        set_health(10);
+        set_health(4);
         this->name = name;
     }
-
-    void getBeing(Being *data) final;
 
     void setNewDirection();
 

@@ -21,34 +21,24 @@ void GameLoop::loop(string name) {
     StartReply *startReply;
     StartRequest startRequest;
 
-    do {
+    while (true) {
         startReply = connection->Start(startRequest, hex);
         cout<<"Start: sleep = " << startReply->time() << endl;
-        if (startReply->time() != 0) {
-            usleep((useconds_t)startReply->time());
-            delete  startReply;
-        }
-    } while (startReply->time() != 0); // CORE
+        if (startReply->time() != 0)
+            break;
+        usleep((useconds_t)startReply->time());
+        delete  startReply;
+    }
 
-    beings = new BeingView *[startReply->being_size()];
     beingCount = startReply->being_size();
-    cout<<"bC = " << beingCount << endl;
+    beings = new BeingView *[beingCount];
+
+    Factory factory(font);
 
     for (int i = 0; i < beingCount; i++) {
-        const BeingInit *beingInit = &(startReply->being(i));
-        switch(beingInit->type()) {
-		// Read about `Factory` pattern
-            case PACMAN:
-                beings[i] = new Pacman(beingInit->name(), beingInit->data(), font);
-                cout << "Health" << beings[i]->health() << endl;
-                break;
-            case GHOST:
-                beings[i] = new Ghost(beingInit->data());
-                break;
-            default:
-                break;
-        }
+        beings[i] = factory.make(startReply->being(i));
     }
+
     id = startReply->id();
     direction = beings[id]->direction();
 
@@ -57,19 +47,6 @@ void GameLoop::loop(string name) {
     TileMap tMap(startReply, &window);
 
     delete startReply;
-
-//    health = new Health();
-//    nicknames = new Text *[2];
-//
-//    for (int i =0; i < 2; i++) {
-//        nicknames[i] = new Text();
-//        nicknames[i]->setFont(font);
-//        nicknames[i]->setString(((Pacman*)beings[i])->name);
-//        nicknames[i]->setCharacterSize(24);
-//        nicknames[i]->setColor(sf::Color::Red);
-//
-//        cout << (((Pacman*)beings[i])->name) << endl;
-//    }
     
     while (window.isOpen()) {
         window.clear();
@@ -80,12 +57,6 @@ void GameLoop::loop(string name) {
         window.display();
         window.setFramerateLimit(60);
     }
-
-   // delete[] health;
-//    for (int i =0; i < 2; i++) {
-//        delete[] nicknames[i];
-//    }
-//    delete[] nicknames;
 }
 
 void GameLoop::loopBody (RenderWindow &window) {
@@ -128,9 +99,11 @@ void GameLoop::loopBody (RenderWindow &window) {
 
     for (int i = 0; i < beingCount; i++) {
         beings[i]->setData(reply->being(i));
-//        window->draw(*beings[i]->getSprite());
         beings[i]->draw(&window);
-        
+    }
+
+    for (int i = 0; i < reply->coins_size(); i++) {
+        //drawCoin(reply->coins(i));
     }
 
     delete reply;

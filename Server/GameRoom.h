@@ -31,23 +31,30 @@ public:
     void getStartReply(StartReply *reply) {
         for (int i = 0; i < pacmans.size(); i++) {
             BeingInit *data = reply->add_being();
-            pacmans[i].getBeing(data->mutable_data());
+//            pacmans[i].getBeing(data->mutable_data());
+            *data->mutable_data() = pacmans[i];
             data->set_type(PACMAN);
             data->set_name(pacmans[i].name);
         }
         for (int i = 0; i < GHOST_COUNT; i++) {
             BeingInit *data = reply->add_being();
-            ghosts[i].getBeing(data->mutable_data());
+//            ghosts[i].getBeing(data->mutable_data());
+            *data->mutable_data() = ghosts[i];
             data->set_type(GHOST);
         }
     }
 
     void getIterationReply(IterationReply *reply) {
-        for (int i = 0; i < pacmans.size(); i++) {
-            pacmans[i].getBeing(reply->add_being());
+        for (auto p: pacmans) {
+            //pacmans[i].getBeing(reply->add_being());
+            *reply->add_being() = p;
         }
         for (int i = 0; i < GHOST_COUNT; i++) {
-            ghosts[i].getBeing(reply->add_being());
+            //ghosts[i].getBeing(reply->add_being());
+            *reply->add_being() = ghosts[i];
+        }
+        for (auto c: coins) {
+            *reply->add_coins() = c;
         }
     }
 
@@ -66,14 +73,25 @@ public:
     }
 
     void start() {
-
         for (unsigned int i = 0; i < GHOST_COUNT; i++) {
             ghosts[i] = Ghost(320 + 32 * i, 416, pacmans.size());
+        }
+        Point *p;
+        for (unsigned int j = 0; j < TileMap->length(); j++) {
+            for (unsigned int i = 0; i < TileMap[j].length(); i++) {
+                if (TileMap[j][i] == '.') {
+                    p = new Point;
+                    p->set_x(i);
+                    p->set_y(j);
+                    coins.push_back(*p);
+                    delete p;
+                }
+            }
         }
     }
 
     void addPlayer(string name) {
-        pacmans.push_back(Pacman(32 + 64 * pacmans.size(), 96, name));
+        pacmans.push_back(Pacman(32 + 64 * pacmans.size(), 32, name));
     }
 
     char nextBlock(BaseBeing &being) {

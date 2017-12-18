@@ -148,6 +148,12 @@
 		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/BeingView.h">
 			<Option target="pacman"/>
 		</Unit>
+		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/Factory.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/Factory.h">
+			<Option target="pacman"/>
+		</Unit>
 		<Unit filename="/home/viewsharp/GitHub/Pacman/Client/GameLoop.cpp">
 			<Option target="pacman"/>
 		</Unit>

@@ -5,8 +5,7 @@
 #include "BeingView.h"
 
 void BeingView::setData(const Being &data) {
-    mutable_pos()->set_x(data.pos().x());
-    mutable_pos()->set_y(data.pos().y());
+    *mutable_pos() = data.pos();
     set_status(data.status());
     set_direction(data.direction());
 }

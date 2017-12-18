@@ -18,6 +18,18 @@ string
 generated/service.grpc.pb.h
 -
 
+/home/viewsharp/GitHub/Pacman/Client/Factory.cpp
+Factory.h
+/home/viewsharp/GitHub/Pacman/Client/Factory.h
+
+/home/viewsharp/GitHub/Pacman/Client/Factory.h
+BeingView.h
+/home/viewsharp/GitHub/Pacman/Client/BeingView.h
+Pacman.h
+/home/viewsharp/GitHub/Pacman/Client/Pacman.h
+Ghost.h
+/home/viewsharp/GitHub/Pacman/Client/Ghost.h
+
 /home/viewsharp/GitHub/Pacman/Client/GameLoop.cpp
 GameLoop.h
 /home/viewsharp/GitHub/Pacman/Client/GameLoop.h
@@ -43,6 +55,8 @@ Ghost.h
 /home/viewsharp/GitHub/Pacman/Client/Ghost.h
 TileMap.h
 /home/viewsharp/GitHub/Pacman/Client/TileMap.h
+Factory.h
+/home/viewsharp/GitHub/Pacman/Client/Factory.h
 
 /home/viewsharp/GitHub/Pacman/Client/Ghost.cpp
 Ghost.h

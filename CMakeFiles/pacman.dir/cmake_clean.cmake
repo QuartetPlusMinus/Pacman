@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/pacman.dir/Client/Pacman.cpp.o"
   "CMakeFiles/pacman.dir/Client/BeingView.cpp.o"
   "CMakeFiles/pacman.dir/Client/TileMap.cpp.o"
+  "CMakeFiles/pacman.dir/Client/Factory.cpp.o"
   "CMakeFiles/pacman.dir/generated/service.pb.cc.o"
   "CMakeFiles/pacman.dir/generated/service.grpc.pb.cc.o"
   "pacman.pdb"

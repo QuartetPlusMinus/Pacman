@@ -163,6 +163,33 @@ Client/BeingView.cpp.s:
 	$(MAKE) -f CMakeFiles/pacman.dir/build.make CMakeFiles/pacman.dir/Client/BeingView.cpp.s
 .PHONY : Client/BeingView.cpp.s
 
+Client/Factory.o: Client/Factory.cpp.o
+
+.PHONY : Client/Factory.o
+
+# target to build an object file
+Client/Factory.cpp.o:
+	$(MAKE) -f CMakeFiles/pacman.dir/build.make CMakeFiles/pacman.dir/Client/Factory.cpp.o
+.PHONY : Client/Factory.cpp.o
+
+Client/Factory.i: Client/Factory.cpp.i
+
+.PHONY : Client/Factory.i
+
+# target to preprocess a source file
+Client/Factory.cpp.i:
+	$(MAKE) -f CMakeFiles/pacman.dir/build.make CMakeFiles/pacman.dir/Client/Factory.cpp.i
+.PHONY : Client/Factory.cpp.i
+
+Client/Factory.s: Client/Factory.cpp.s
+
+.PHONY : Client/Factory.s
+
+# target to generate assembly for a file
+Client/Factory.cpp.s:
+	$(MAKE) -f CMakeFiles/pacman.dir/build.make CMakeFiles/pacman.dir/Client/Factory.cpp.s
+.PHONY : Client/Factory.cpp.s
+
 Client/GameLoop.o: Client/GameLoop.cpp.o
 
 .PHONY : Client/GameLoop.o
@@ -560,6 +587,9 @@ help:
 	@echo "... Client/BeingView.o"
 	@echo "... Client/BeingView.i"
 	@echo "... Client/BeingView.s"
+	@echo "... Client/Factory.o"
+	@echo "... Client/Factory.i"
+	@echo "... Client/Factory.s"
 	@echo "... Client/GameLoop.o"
 	@echo "... Client/GameLoop.i"
 	@echo "... Client/GameLoop.s"

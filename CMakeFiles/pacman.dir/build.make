@@ -239,9 +239,33 @@ CMakeFiles/pacman.dir/Client/TileMap.cpp.o.provides: CMakeFiles/pacman.dir/Clien
 CMakeFiles/pacman.dir/Client/TileMap.cpp.o.provides.build: CMakeFiles/pacman.dir/Client/TileMap.cpp.o
 
 
+CMakeFiles/pacman.dir/Client/Factory.cpp.o: CMakeFiles/pacman.dir/flags.make
+CMakeFiles/pacman.dir/Client/Factory.cpp.o: Client/Factory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viewsharp/GitHub/Pacman/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/pacman.dir/Client/Factory.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pacman.dir/Client/Factory.cpp.o -c /home/viewsharp/GitHub/Pacman/Client/Factory.cpp
+
+CMakeFiles/pacman.dir/Client/Factory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pacman.dir/Client/Factory.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/viewsharp/GitHub/Pacman/Client/Factory.cpp > CMakeFiles/pacman.dir/Client/Factory.cpp.i
+
+CMakeFiles/pacman.dir/Client/Factory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pacman.dir/Client/Factory.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/viewsharp/GitHub/Pacman/Client/Factory.cpp -o CMakeFiles/pacman.dir/Client/Factory.cpp.s
+
+CMakeFiles/pacman.dir/Client/Factory.cpp.o.requires:
+
+.PHONY : CMakeFiles/pacman.dir/Client/Factory.cpp.o.requires
+
+CMakeFiles/pacman.dir/Client/Factory.cpp.o.provides: CMakeFiles/pacman.dir/Client/Factory.cpp.o.requires
+	$(MAKE) -f CMakeFiles/pacman.dir/build.make CMakeFiles/pacman.dir/Client/Factory.cpp.o.provides.build
+.PHONY : CMakeFiles/pacman.dir/Client/Factory.cpp.o.provides
+
+CMakeFiles/pacman.dir/Client/Factory.cpp.o.provides.build: CMakeFiles/pacman.dir/Client/Factory.cpp.o
+
+
 CMakeFiles/pacman.dir/generated/service.pb.cc.o: CMakeFiles/pacman.dir/flags.make
 CMakeFiles/pacman.dir/generated/service.pb.cc.o: generated/service.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viewsharp/GitHub/Pacman/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/pacman.dir/generated/service.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viewsharp/GitHub/Pacman/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/pacman.dir/generated/service.pb.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pacman.dir/generated/service.pb.cc.o -c /home/viewsharp/GitHub/Pacman/generated/service.pb.cc
 
 CMakeFiles/pacman.dir/generated/service.pb.cc.i: cmake_force
@@ -265,7 +289,7 @@ CMakeFiles/pacman.dir/generated/service.pb.cc.o.provides.build: CMakeFiles/pacma
 
 CMakeFiles/pacman.dir/generated/service.grpc.pb.cc.o: CMakeFiles/pacman.dir/flags.make
 CMakeFiles/pacman.dir/generated/service.grpc.pb.cc.o: generated/service.grpc.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viewsharp/GitHub/Pacman/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/pacman.dir/generated/service.grpc.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viewsharp/GitHub/Pacman/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/pacman.dir/generated/service.grpc.pb.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pacman.dir/generated/service.grpc.pb.cc.o -c /home/viewsharp/GitHub/Pacman/generated/service.grpc.pb.cc
 
 CMakeFiles/pacman.dir/generated/service.grpc.pb.cc.i: cmake_force
@@ -296,6 +320,7 @@ pacman_OBJECTS = \
 "CMakeFiles/pacman.dir/Client/Pacman.cpp.o" \
 "CMakeFiles/pacman.dir/Client/BeingView.cpp.o" \
 "CMakeFiles/pacman.dir/Client/TileMap.cpp.o" \
+"CMakeFiles/pacman.dir/Client/Factory.cpp.o" \
 "CMakeFiles/pacman.dir/generated/service.pb.cc.o" \
 "CMakeFiles/pacman.dir/generated/service.grpc.pb.cc.o"
 
@@ -309,6 +334,7 @@ pacman: CMakeFiles/pacman.dir/Client/Ghost.cpp.o
 pacman: CMakeFiles/pacman.dir/Client/Pacman.cpp.o
 pacman: CMakeFiles/pacman.dir/Client/BeingView.cpp.o
 pacman: CMakeFiles/pacman.dir/Client/TileMap.cpp.o
+pacman: CMakeFiles/pacman.dir/Client/Factory.cpp.o
 pacman: CMakeFiles/pacman.dir/generated/service.pb.cc.o
 pacman: CMakeFiles/pacman.dir/generated/service.grpc.pb.cc.o
 pacman: CMakeFiles/pacman.dir/build.make
@@ -319,7 +345,7 @@ pacman: /usr/lib/x86_64-linux-gnu/libsfml-audio.so
 pacman: /usr/lib/x86_64-linux-gnu/libsfml-window.so
 pacman: /usr/lib/x86_64-linux-gnu/libsfml-system.so
 pacman: CMakeFiles/pacman.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/viewsharp/GitHub/Pacman/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable pacman"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/viewsharp/GitHub/Pacman/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable pacman"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pacman.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -334,6 +360,7 @@ CMakeFiles/pacman.dir/requires: CMakeFiles/pacman.dir/Client/Ghost.cpp.o.require
 CMakeFiles/pacman.dir/requires: CMakeFiles/pacman.dir/Client/Pacman.cpp.o.requires
 CMakeFiles/pacman.dir/requires: CMakeFiles/pacman.dir/Client/BeingView.cpp.o.requires
 CMakeFiles/pacman.dir/requires: CMakeFiles/pacman.dir/Client/TileMap.cpp.o.requires
+CMakeFiles/pacman.dir/requires: CMakeFiles/pacman.dir/Client/Factory.cpp.o.requires
 CMakeFiles/pacman.dir/requires: CMakeFiles/pacman.dir/generated/service.pb.cc.o.requires
 CMakeFiles/pacman.dir/requires: CMakeFiles/pacman.dir/generated/service.grpc.pb.cc.o.requires
 

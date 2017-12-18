@@ -17,6 +17,7 @@
 #include "Pacman.h"
 #include "Ghost.h"
 #include "TileMap.h"
+#include "Factory.h"
 
 using namespace sf;
 using namespace std;
