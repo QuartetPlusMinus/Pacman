@@ -7,22 +7,20 @@
 void GameLoop::loop(string name) {
 
     ConnectRequest connectRequest;
-    ConnectReply *connectReply;
-
     connectRequest.set_name(name);
 
-    connectReply = connection->Connect(connectRequest);
+    auto connectReply = connection->Connect(connectRequest);
 
-    hex = connectReply->hex();
-    cout<<"Connect to server. id_hex = "<<hex<<endl;
+    connection->setHex(connectReply->hex());
 
     delete connectReply;
+    
 
     StartReply *startReply;
     StartRequest startRequest;
 
     while (true) {
-        startReply = connection->Start(startRequest, hex);
+        startReply = connection->Start(startRequest);
         cout<<"Start: sleep = " << startReply->time() << endl;
         if (startReply->time() == 0)
             break;
@@ -52,14 +50,55 @@ void GameLoop::loop(string name) {
         window.clear();
         tMap.draw();
         
-        loopBody(window);
+        if (loopBody(window))
+            break;
         
         window.display();
         window.setFramerateLimit(60);
     }
+
+    EndRequest endRequest;
+    auto endReply = connection->End(endRequest);
+    cout << "points = " << endReply->points();
+
+    sf::Text gameStatus;
+    sf::Text gamePoints;
+
+    gameStatus.setFont(font);
+    gamePoints.setFont(font);
+    gamePoints.setString("Your score  " + std::to_string(endReply->points()));
+    gamePoints.setCharacterSize(50);
+    gamePoints.setColor(sf::Color::Red);
+    gamePoints.setPosition(200,300);
+
+    if (endReply->status() == WIN) {
+        gameStatus.setString("YOU WIN!");
+    } else {
+        gameStatus.setString("LOL, YOU LOSE");
+    }
+    delete endReply;
+    gameStatus.setCharacterSize(50);
+    gameStatus.setColor(sf::Color::Red);
+    gameStatus.setPosition(200,200);
+
+    window.clear();
+
+    window.draw(gameStatus);
+    window.draw(gamePoints);
+    window.display();
+
+    while (window.isOpen()) {
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                window.close();
+                return;
+            }
+        }
+        window.setFramerateLimit(60);
+    }
 }
 
-void GameLoop::loopBody (RenderWindow &window) {
+bool GameLoop::loopBody (RenderWindow &window) {
     while (window.pollEvent(event)) {
         if (event.type == sf::Event::Closed) {
             window.close();
@@ -88,24 +127,27 @@ void GameLoop::loopBody (RenderWindow &window) {
         }
     }
 
-    IterationReply *reply;
     IterationRequest request;
-
     request.set_direction(direction);
-    reply = connection->Iteration(request, hex);
+
+    auto reply = connection->Iteration(request);
     
     direction = reply->being(id).direction();
     ((Pacman*)beings[id])->setSide(1);
-
-    for (int i = 0; i < beingCount; i++) {
-        beings[i]->setData(reply->being(i));
-        beings[i]->draw(&window);
-    }
 
     for (int i = 0; i < reply->coins_size(); i++) {
         coin.setPosition(reply->coins(i).x() * 32 + 40 ,reply->coins(i).y() * 32 + 40);
         window.draw(coin);
     }
 
+    for (int i = 0; i < beingCount; i++) {
+        beings[i]->setData(reply->being(i));
+        beings[i]->draw(&window);
+    }
+
+    bool result = (reply->coins_size() == 0);
+
     delete reply;
+
+    return result;
 }

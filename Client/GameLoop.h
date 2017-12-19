@@ -37,7 +37,7 @@ public:
             id(-1)
     {
         connection = new PlayerConnectionClient(host);
-        if (!font.loadFromFile("src/pacfont.regular.ttf"))
+        if (!font.loadFromFile("src/ARCADECLASSIC.TTF"))
         {
             cout << "Can't load fonts" << endl;
             throw "Ilnur";
@@ -45,6 +45,7 @@ public:
         Texture texture;
         texture.loadFromFile("src/lol.png");
         coin.setTexture(texture);
+
 
         loop(name);
     }
@@ -56,7 +57,7 @@ private:
 
     void loop(string name);
 
-    void loopBody(RenderWindow &window);
+    bool loopBody(RenderWindow &window);
 
     BeingView **beings;
     int beingCount;
@@ -67,6 +68,7 @@ private:
     Event event;
 
     Font font;
+
     Sprite coin;
     int id;
 };

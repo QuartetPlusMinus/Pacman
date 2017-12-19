@@ -19,7 +19,8 @@ public:
     Pacman(unsigned int x, unsigned int y, string &name) :
             BaseBeing(x, y),
             tryCount(0),
-            newDirection(this->direction()) {
+            newDirection(this->direction()),
+            coins(0) {
         set_health(4);
         this->name = name;
     }
@@ -30,6 +31,8 @@ public:
     Direction newDirection;
 
     string name;
+
+    int coins;
 
 private:
 

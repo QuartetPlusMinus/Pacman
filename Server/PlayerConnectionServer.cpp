@@ -78,6 +78,7 @@ Status PlayerConnectionImpl::Start(ServerContext *context, const StartRequest *r
 
 Status PlayerConnectionImpl::Iteration(ServerContext *context, const IterationRequest *request,
                  IterationReply *reply) {
+    
     LocClient client;
 
     try {
@@ -92,8 +93,18 @@ Status PlayerConnectionImpl::Iteration(ServerContext *context, const IterationRe
     return Status::OK;
 }
 
-Status PlayerConnectionImpl::End(ServerContext *context, const EndRequest *request,
-           EndReply *reply) {
+Status PlayerConnectionImpl::End(ServerContext *context, const EndRequest *request, EndReply *reply) {
+
+    LocClient client;
+
+    try {
+        client = clientFromContext(context);
+    } catch (...) {
+        return Status::CANCELLED;
+    }
+    
+    reply->set_points(client.points());
+    reply->set_status(WIN);
     return Status::OK;
 }
 

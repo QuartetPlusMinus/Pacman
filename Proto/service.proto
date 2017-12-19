@@ -33,6 +33,12 @@ enum BeingStatus {
     DYING = 2;
 }
 
+enum GameStatus {
+    RUN = 0;
+    WIN = 1;
+    LOSE = 2;
+}
+
 message BeingInit {
     BeingType type = 1;
     string name = 2;
@@ -78,5 +84,6 @@ message EndRequest {
 }
 
 message EndReply {
-
+    GameStatus status = 1;
+    uint32 points = 2;
 }

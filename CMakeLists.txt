@@ -42,7 +42,7 @@ include_directories(${GENERATED_PROTOBUF_PATH})
 link_libraries(grpc++_unsecure grpc gpr ${PROTOBUF_LIBRARY})
 
 
-set(CLIENT_FILES Client/main.cpp Client/PlayerConnectionClient.cpp Client/GameLoop.cpp Client/Ghost.cpp Client/Pacman.cpp Client/BeingView.cpp Client/TileMap.cpp Client/TileMap.h Client/Factory.cpp)
+set(CLIENT_FILES Client/main.cpp Client/PlayerConnectionClient.cpp Client/GameLoop.cpp  Client/Ghost.cpp Client/Pacman.cpp Client/BeingView.cpp Client/TileMap.cpp Client/TileMap.h Client/Factory.cpp)
 set(SERVER_FILES Server/main.cpp Server/PlayerConnectionServer.cpp Server/BaseBeing.cpp Server/Ghost.cpp Server/Pacman.cpp Server/MapManager.cpp Server/Client.h Server/GameRoom.h )
 
 # Define sources and executable
@@ -55,7 +55,7 @@ add_executable(pacman_server ${SERVER_FILES} ${GENERATED_PROTOBUF_FILES})
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake-modules" ${CMAKE_MODULE_PATH})
 #Find any version 2.X of SFML
 #See the FindSFML.cmake file for additional details and instructions
-find_package(SFML 2 REQUIRED graphics network audio window system)
+find_package(SFML 2 REQUIRED graphics network audio window system )
 if(SFML_FOUND)
     include_directories(${SFML_INCLUDE_DIR})
     target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES} ${SFML_DEPENDENCIES} )

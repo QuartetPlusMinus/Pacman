@@ -31,14 +31,12 @@ public:
     void getStartReply(StartReply *reply) {
         for (int i = 0; i < pacmans.size(); i++) {
             BeingInit *data = reply->add_being();
-//            pacmans[i].getBeing(data->mutable_data());
             *data->mutable_data() = pacmans[i];
             data->set_type(PACMAN);
             data->set_name(pacmans[i].name);
         }
         for (int i = 0; i < GHOST_COUNT; i++) {
             BeingInit *data = reply->add_being();
-//            ghosts[i].getBeing(data->mutable_data());
             *data->mutable_data() = ghosts[i];
             data->set_type(GHOST);
         }
@@ -46,11 +44,9 @@ public:
 
     void getIterationReply(IterationReply *reply) {
         for (auto p: pacmans) {
-            //pacmans[i].getBeing(reply->add_being());
             *reply->add_being() = p;
         }
         for (int i = 0; i < GHOST_COUNT; i++) {
-            //ghosts[i].getBeing(reply->add_being());
             *reply->add_being() = ghosts[i];
         }
         for (auto c: coins) {
@@ -72,19 +68,24 @@ public:
         }
     }
 
+    int points(int id) {
+        return pacmans[id].coins;
+    }
+
     void start() {
         for (unsigned int i = 0; i < GHOST_COUNT; i++) {
             ghosts[i] = Ghost(320 + 32 * i, 416, pacmans.size());
         }
         Point *p;
-        for (unsigned int j = 0; j < TileMap->length(); j++) {
-            for (unsigned int i = 0; i < TileMap[j].length(); i++) {
+//        for (unsigned int j = 0; j < MapManager::H; j++) {
+//            for (unsigned int i = 0; i < MapManager::W; i++) {
+        for (unsigned int j = 0; j < 5; j++) {
+            for (unsigned int i = 0; i < 5; i++) {
                 if (TileMap[j][i] == '.') {
-                    p = new Point;
-                    p->set_x(i);
-                    p->set_y(j);
-                    coins.push_back(*p);
-                    delete p;
+                    Point p;
+                    p.set_x(i);
+                    p.set_y(j);
+                    coins.push_back(p);
                 }
             }
         }
@@ -144,27 +145,36 @@ public:
     int clientInitCount;
 
 private:
-//
-//    Pacman *pacmans[PACMAN_COUNT];
+
     Ghost ghosts[GHOST_COUNT];
     steady_clock::time_point time;
     const nanoseconds stepTime;
-    vector<Point> coins;
     vector<Pacman> pacmans;
-
+    vector<Point> coins;
 
     void stepBody() {
-        for (int i = 0; i < pacmans.size(); i++) {
-            if (pacmans[i].tryCount) {
-                if (!have_collision(pacmans[i], pacmans[i].newDirection)) {
-                    pacmans[i].setNewDirection();
+        for (auto pacman = pacmans.begin(); pacman != pacmans.end(); pacman++) {
+            if (pacman->tryCount) {
+                if (!have_collision(*pacman, pacman->newDirection)) {
+                    pacman->setNewDirection();
                 } else {
-                    pacmans[i].tryCount--;
+                    pacman->tryCount--;
+                }
+            }
+            if (pacman->pos().x() % 32 - 16 < 3 || pacman->pos().y() % 32 - 16 < 3) {
+
+                for (auto coin = coins.begin(); coin != coins.end(); coin++) {
+                    if ((48 + coin->x() * 32 - pacman->pos().x()) < 32 &&
+                        (48 + coin->y() * 32 - pacman->pos().y()) < 32) {
+                        coins.erase(coin);
+                        pacman->coins++;
+                        break;
+                    }
                 }
             }
 
-            if (!have_collision(pacmans[i])) {
-                pacmans[i].step();
+            if (!have_collision(*pacman)) {
+                pacman->step();
             }
         }
 
@@ -182,8 +192,6 @@ private:
             if (!have_collision(ghosts[i])) {
                 ghosts[i].step();
             }
-
-//            cout << "x= " << pacmans[i].pos().x() << " y= " << pacmans[i].pos().y() << endl;
         }
     }
 

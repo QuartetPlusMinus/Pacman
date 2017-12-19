@@ -32,12 +32,17 @@ public:
     {}
 
     ConnectReply *Connect(ConnectRequest &request);
-    StartReply *Start(StartRequest &request, string hex);
-    IterationReply *Iteration(IterationRequest &request, string hex);
+    StartReply *Start(StartRequest &request);
+    IterationReply *Iteration(IterationRequest &request);
     EndReply *End(EndRequest &request);
+
+    void setHex(const string  &value) {
+        hex = value;
+    }
 
 private:
 
+    string hex;
     unique_ptr <PlayerConnection::Stub> stub_;
 };
 

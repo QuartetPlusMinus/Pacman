@@ -31,6 +31,10 @@ public:
     void setEvent(Direction direction) {
         room->setEvent(id, direction);
     }
+    
+    int points() {
+        return room->points(id);
+    }
 
     GameRoom<GHOST_COUNT> *room;
 

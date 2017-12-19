@@ -62,7 +62,7 @@ public:
         this->name = name;
         nickname.setFont(nameFont);
         nickname.setString(name);
-        nickname.setCharacterSize(14);
+        nickname.setCharacterSize(18);
         nickname.setColor(sf::Color::Red);
 //        nickname.setFillColor(sf::Color::Red);
     }

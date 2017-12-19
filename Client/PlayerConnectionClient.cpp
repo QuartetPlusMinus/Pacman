@@ -16,7 +16,7 @@ ConnectReply *PlayerConnectionClient::Connect(ConnectRequest &request) {
     return reply;
 }
 
-StartReply *PlayerConnectionClient::Start(StartRequest &request, string hex) {
+StartReply *PlayerConnectionClient::Start(StartRequest &request) {
     auto *reply = new StartReply();
     ClientContext context;
     context.AddMetadata("hex", hex);
@@ -29,7 +29,7 @@ StartReply *PlayerConnectionClient::Start(StartRequest &request, string hex) {
     return reply;
 }
 
-IterationReply *PlayerConnectionClient::Iteration(IterationRequest &request, string hex) {
+IterationReply *PlayerConnectionClient::Iteration(IterationRequest &request) {
     auto *reply = new IterationReply();
     ClientContext context;
     context.AddMetadata("hex", hex);
@@ -45,6 +45,8 @@ IterationReply *PlayerConnectionClient::Iteration(IterationRequest &request, str
 EndReply *PlayerConnectionClient::End(EndRequest &request) {
     auto *reply = new EndReply();
     ClientContext context;
+    cout << hex <<endl;
+    context.AddMetadata("hex", hex);
     Status status = stub_->End(&context, request, reply);
     if (!status.ok()) {
         std::cout << status.error_code() << ": " << status.error_message()
