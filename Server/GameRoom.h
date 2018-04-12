@@ -161,6 +161,15 @@ private:
                     pacman->tryCount--;
                 }
             }
+
+            for (int i = 0; i < GHOST_COUNT; ++i) {
+                if (ghosts[i].pos().x() == pacman->pos().x() &&
+                    ghosts[i].pos().y() == pacman->pos().y()) {
+                    pacman->set_health(pacman->health() - 1);
+                    std::cout << "---HEALTH----"<< pacman->health() << std::endl;
+                }
+            }
+
             if (pacman->pos().x() % 32 - 16 < 3 || pacman->pos().y() % 32 - 16 < 3) {
 
                 for (auto coin = coins.begin(); coin != coins.end(); coin++) {
@@ -178,17 +187,39 @@ private:
             }
         }
 
+//        for (int i = 0; i < GHOST_COUNT; i++) {
+
         for (int i = 0; i < GHOST_COUNT; i++) {
+//            ghosts[i].changeTarget();
             if (ghosts[i].pos().x() % 32 == 0 && ghosts[i].pos().y() % 32 == 0) {
-                bool front = nextBlock(ghosts[i]) != 's';
-                bool right = nextBlock(ghosts[i], ghosts[i].right()) != 's';
-                bool back = nextBlock(ghosts[i], ghosts[i].back()) != 's';
-                bool left = nextBlock(ghosts[i], ghosts[i].left()) != 's';
-                if (left || right || !front) {
-                    ghosts[i].changeDirection(front, right, back, left);
+                bool right = have_collision(ghosts[i], RIGHT);
+                bool left = have_collision(ghosts[i], LEFT);
+                bool top = have_collision(ghosts[i], UP);
+                bool bottom = have_collision(ghosts[i], DOWN);
+                if (!left && !right && top && bottom ||
+                    left && right && !top && !bottom) {
+                } else {
+                    ghosts[i].calcDirection(&pacmans[ghosts[i].getPlayerId()]);
+                    bool shortWay = true;
+                    if (rand() % 10 >= 8) {
+                        shortWay = false;
+                    }
+                    for (int dir = 0; dir < 4; ++dir) {
+                        if (!have_collision(ghosts[i], ghosts[i].dir_names[dir])) {
+                            if (!shortWay) {
+                                shortWay = true;
+                                continue;
+                            }
+                            ghosts[i].newDirection = ghosts[i].dir_names[dir];
+                            ghosts[i].setNewDirection();
+//                            std::cout << "SELECTED " << ghosts[i].dir_names[dir] << std::endl;
+                            break;
+                        }
+                    }
+
                 }
             }
-
+//
             if (!have_collision(ghosts[i])) {
                 ghosts[i].step();
             }
