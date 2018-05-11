@@ -4,12 +4,12 @@ project(Pacman)
 
 include_directories("${PROJECT_BINARY_DIR}")
 
-find_package(Protobuf REQUIRED)
-
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 include_directories(/usr/local/include)
 link_directories(/usr/local/lib)
+
+find_package(Protobuf REQUIRED)
 
 set(PROTO_PATH "${CMAKE_SOURCE_DIR}/Proto")
 set(SERVICE_PROTO "${PROTO_PATH}/service.proto")
